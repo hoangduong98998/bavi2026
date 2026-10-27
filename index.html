@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0f2a1f">
+<title>Ba Vì 06–07/11 · Suối Mơ</title>
+<meta name="description" content="Kế hoạch nội bộ 2 ngày 1 đêm của nhóm 12 người tại Suối Mơ, Ba Vì.">
+<!-- Ảnh xem trước khi gửi link vào Zalo/Messenger -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="⛰️ Ba Vì 06–07/11 · Suối Mơ">
+<meta property="og:description" content="Lịch trình, phân công, chia xe, ăn uống, ngân sách của chuyến đi. Cần mật khẩu để xem.">
+<meta property="og:image" content="https://suoimobavi.com.vn/images/config/du_1754557791.jpg">
+<script>try{if(localStorage.getItem('bavi_auth'))document.documentElement.classList.add('pre-auth')}catch(e){}</script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛰️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#0f2a1f; --forest2:#173d2d; --moss:#2f6b50; --leaf:#4f9a6f; --mint:#dff0e5;
+  --sun:#f0b429; --sun2:#ffd166; --lake:#3a8fb7; --ink:#1d2b24; --muted:#5b6f64;
+  --paper:#f7f4ec; --card:#ffffff; --line:#e4e0d4; --radius:18px;
+  --shadow:0 10px 30px rgba(15,42,31,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Be Vietnam Pro",system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--moss)}
+img{max-width:100%;display:block}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* ---------- KHÓA MẬT KHẨU ---------- */
+#gate{position:fixed;inset:0;z-index:999;display:flex;align-items:center;justify-content:center;padding:20px;
+  background:radial-gradient(1200px 600px at 20% 10%,#2f6b50 0%,transparent 60%),radial-gradient(900px 500px at 90% 90%,#3a8fb7 0%,transparent 55%),var(--forest)}
+#gate .card{width:100%;max-width:420px;background:rgba(255,255,255,.06);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.15);border-radius:24px;padding:34px 28px;color:#fff;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.4)}
+#gate .mtn{font-size:54px;line-height:1}
+#gate h1{font-family:"Playfair Display",serif;font-size:30px;margin:10px 0 4px}
+#gate p{color:#cfe3d7;margin:0 0 22px;font-size:15px}
+#gate input{width:100%;padding:14px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.25);background:rgba(0,0,0,.25);color:#fff;font-size:18px;text-align:center;letter-spacing:4px;font-family:inherit}
+#gate input:focus{outline:2px solid var(--sun)}
+#gate button{margin-top:14px;width:100%;padding:14px;border:0;border-radius:12px;background:var(--sun);color:#1b1b1b;font-weight:800;font-size:16px;cursor:pointer;font-family:inherit}
+#gate .err{color:#ff9b9b;min-height:22px;margin-top:10px;font-size:14px}
+.shake{animation:shake .4s}
+@keyframes shake{25%{transform:translateX(-8px)}50%{transform:translateX(8px)}75%{transform:translateX(-4px)}}
+body.locked #app{display:none}
+body:not(.locked) #gate,html.pre-auth #gate{display:none}
+
+/* ---------- THANH ĐIỀU HƯỚNG ---------- */
+nav{position:sticky;top:0;z-index:50;background:rgba(15,42,31,.92);backdrop-filter:blur(10px)}
+nav .wrap{display:flex;gap:4px;overflow-x:auto;padding:10px 20px;max-width:none;scrollbar-width:none}
+nav .wrap::-webkit-scrollbar{display:none}
+/* Không đủ chỗ thì làm mờ 2 mép để biết là vuốt ngang được */
+nav .wrap.over{-webkit-mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 24px),transparent);mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 24px),transparent)}
+nav a{flex:none;color:#d7eadf;text-decoration:none;font-size:14px;font-weight:600;padding:7px 12px;border-radius:999px;white-space:nowrap}
+nav a:first-child{margin-left:auto}
+nav a:last-child{margin-right:auto}
+nav a:hover,nav a.on{background:rgba(255,255,255,.12);color:#fff}
+
+/* ---------- ẢNH BÌA ---------- */
+header[id],section[id]{scroll-margin-top:56px}
+.hero{position:relative;min-height:88vh;min-height:88svh;display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:var(--forest)}
+.hero .bg{position:absolute;inset:0;background:linear-gradient(160deg,#2f6b50,#0f2a1f 55%,#1d4e6b)}
+.hero .bg img{width:100%;height:100%;object-fit:cover;opacity:.75}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,42,31,.15) 0%,rgba(15,42,31,.35) 40%,rgba(15,42,31,.95) 100%)}
+.hero .wrap{position:relative;z-index:2;padding-bottom:56px;width:100%}
+.tag{display:inline-block;background:rgba(240,180,41,.95);color:#1b1b1b;font-weight:800;font-size:13px;padding:6px 12px;border-radius:999px;letter-spacing:.5px}
+.hero h1{font-family:"Playfair Display",serif;font-size:clamp(40px,8vw,84px);line-height:1.02;margin:16px 0 10px}
+.hero h1 em{color:var(--sun2)}
+.hero .sub{font-size:clamp(16px,2.4vw,20px);color:#e2efe7;max-width:640px}
+.count{display:flex;gap:12px;margin:26px 0 22px;flex-wrap:wrap}
+.count div{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:12px 16px;min-width:78px;text-align:center;backdrop-filter:blur(6px)}
+.count b{display:block;font-size:30px;line-height:1.1}
+.count span{font-size:12px;color:#cfe3d7;text-transform:uppercase;letter-spacing:1px}
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:12px;font-weight:700;text-decoration:none;font-size:15px;border:0;cursor:pointer;font-family:inherit}
+.btn.sun{background:var(--sun);color:#1b1b1b}
+.btn.glass{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.25)}
+.btn.green{background:var(--moss);color:#fff}
+.btn.lake{background:var(--lake);color:#fff}
+.btn.light{background:var(--mint);color:var(--forest)}
+
+/* ---------- KHỐI NỘI DUNG ---------- */
+section{padding:72px 0}
+section.alt{background:#fff}
+section.dark{background:var(--forest);color:#e9f3ec}
+.kicker{color:var(--leaf);font-weight:800;letter-spacing:2px;text-transform:uppercase;font-size:13px}
+section.dark .kicker{color:var(--sun2)}
+h2{font-family:"Playfair Display",serif;font-size:clamp(30px,4.5vw,46px);margin:6px 0 10px;line-height:1.1}
+.lead{color:var(--muted);max-width:720px;margin:0 0 30px}
+section.dark .lead{color:#b9d4c3}
+.grid{display:grid;gap:18px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.card{background:var(--card);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);border:1px solid var(--line)}
+section.dark .card{background:var(--forest2);border-color:#24533e;box-shadow:none}
+.card h3{margin:0 0 8px;font-size:19px}
+.ico{font-size:30px;line-height:1;margin-bottom:10px}
+.stat b{font-size:24px;display:block;color:var(--forest)}
+.stat span{color:var(--muted);font-size:14px}
+.warn{border-left:5px solid var(--sun);background:#fff8e6}
+.danger{border-left:5px solid #d9534f;background:#fff1f0}
+.pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:12.5px;font-weight:700;background:var(--mint);color:var(--forest);margin:2px 4px 2px 0}
+.pill.sun{background:#fff1cc;color:#7a5600}
+.pill.lake{background:#dcefff;color:#1d4e6b}
+.pill.red{background:#ffe1e0;color:#9a2b27}
+.note{font-size:14px;color:var(--muted)}
+
+/* nội quy */
+.rule{display:flex;gap:14px;align-items:flex-start}
+.rule .ico{flex:none;width:48px;height:48px;border-radius:14px;background:var(--mint);display:flex;align-items:center;justify-content:center;font-size:24px;margin:0}
+.rule > div > b{display:block}
+.rule.hot .ico{background:#ffe1e0}
+
+/* phân công */
+.me{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:22px}
+.me select{padding:12px 14px;border-radius:12px;border:1px solid var(--line);font-size:16px;font-family:inherit;min-width:260px;background:#fff}
+#meCard{display:none;margin-bottom:28px;background:linear-gradient(135deg,var(--forest),#1d4e6b);color:#fff;border:0}
+#meCard h3{font-size:22px}
+#meCard ul{margin:8px 0 0;padding-left:20px}
+.team{border-top:6px solid var(--leaf)}
+.team.t2{border-top-color:var(--sun)}
+.team.t3{border-top-color:#e07a5f}
+.team.t4{border-top-color:var(--lake)}
+.team.t5{border-top-color:#8e6cc0}
+.team.t6{border-top-color:#d9534f}
+.team.t7{border-top-color:#3d9970}
+.team ul{margin:8px 0 0;padding-left:18px;color:var(--muted);font-size:14.5px}
+.people{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.person{display:inline-flex;align-items:center;gap:8px;background:#f3f7f4;border-radius:999px;padding:4px 12px 4px 4px;font-size:14px;font-weight:600}
+.av{width:30px;height:30px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:800;flex:none}
+.lead-star{color:#b07d00}
+
+/* xe */
+.car{position:relative;overflow:hidden}
+.car .big{font-size:44px;position:absolute;right:16px;top:12px;opacity:.9}
+.car .driver{font-size:13px;color:var(--muted)}
+.car ol{padding-left:20px;margin:10px 0}
+.car .cargo{font-size:14px;background:#f3f7f4;border-radius:10px;padding:8px 12px}
+
+/* lịch trình */
+.tabs{display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap}
+.tab{padding:10px 18px;border-radius:999px;border:1px solid var(--line);background:#fff;font-weight:700;cursor:pointer;font-family:inherit;font-size:15px;color:var(--ink)}
+.tab.on{background:var(--forest);color:#fff;border-color:var(--forest)}
+section.dark .tab{background:transparent;color:#d7eadf;border-color:#2f6b50}
+section.dark .tab.on{background:var(--sun);color:#1b1b1b;border-color:var(--sun)}
+.pane{display:none}
+.pane.on{display:block;animation:fade .35s}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.tl{position:relative;padding-left:30px}
+.tl::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:3px;background:#2f6b50;border-radius:3px}
+.ev{position:relative;margin-bottom:16px}
+.ev::before{content:"";position:absolute;left:-27px;top:20px;width:15px;height:15px;border-radius:50%;background:var(--sun);border:3px solid var(--forest)}
+.ev.free::before{background:var(--leaf)}
+.ev.must::before{background:#ff6b6b}
+.ev .time{font-weight:800;color:var(--sun2);font-size:15px}
+.ev h4{margin:2px 0 4px;font-size:17px;color:#fff}
+.ev p{margin:0;color:#b9d4c3;font-size:14.5px}
+
+/* vui chơi */
+.act{padding:0;overflow:hidden}
+.act .ph{height:170px;background:linear-gradient(135deg,var(--leaf),var(--lake));display:flex;align-items:center;justify-content:center;font-size:54px;position:relative}
+.act .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.act .bd{padding:16px 18px}
+.act h3{font-size:17px}
+.act p{margin:0;color:var(--muted);font-size:14px}
+.video{position:relative;padding-top:56.25%;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:#000}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video .yt{position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;cursor:pointer;background:#000 center/cover no-repeat}
+.video .yt::after{content:"▶";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:72px;height:50px;border-radius:14px;background:#e62117;color:#fff;font-size:24px;display:flex;align-items:center;justify-content:center}
+.games .card{text-align:left}
+.games .ico{font-size:34px}
+
+/* ăn uống */
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:#f3f7f4;font-size:13px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted)}
+td.num,th.num{text-align:right;white-space:nowrap}
+tr.total td{font-weight:800;background:#fff8e6}
+tr.grp td{background:#eef6f1;font-weight:800;color:var(--forest)}
+.tbl{overflow-x:auto;border-radius:14px;border:1px solid var(--line);background:#fff}
+.meal{display:flex;gap:14px;align-items:flex-start}
+.meal .when{flex:none;width:86px;font-weight:800;color:var(--moss);font-size:14px}
+.meal + .meal{margin-top:14px;padding-top:14px;border-top:1px dashed var(--line)}
+.menu-gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.menu-gal button{border:0;padding:0;background:none;cursor:zoom-in;border-radius:12px;overflow:hidden;box-shadow:var(--shadow);position:relative}
+.menu-gal img{width:100%;aspect-ratio:3/4;object-fit:cover;transition:transform .3s}
+.menu-gal button:hover img{transform:scale(1.05)}
+.menu-gal span{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(0,0,0,.75));color:#fff;font-size:12.5px;font-weight:700;padding:18px 8px 8px;text-align:left}
+
+/* chọn món từng bữa */
+.opts{display:grid;gap:10px;margin-top:12px}
+.opt{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border:2px solid var(--line);border-radius:14px;cursor:pointer;background:#fff;transition:border-color .2s,background .2s}
+.opt input{margin-top:4px;width:18px;height:18px;accent-color:var(--moss);flex:none}
+.opt:has(input:checked){border-color:var(--leaf);background:#f1f8f3}
+.opt .t{flex:1;min-width:0}
+.opt .t b{display:block}
+.opt .t small{color:var(--muted);font-size:13.5px;display:block;line-height:1.5}
+.opt .pr{flex:none;font-weight:800;color:var(--forest);white-space:nowrap}
+.presets{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 20px}
+.presets button{padding:8px 14px;border-radius:999px;border:1px dashed var(--moss);background:#fff;font-weight:700;cursor:pointer;font-family:inherit;font-size:14px;color:var(--forest)}
+.presets button.on{background:var(--moss);color:#fff;border-style:solid}
+.sum{position:sticky;top:64px}
+.over{color:#9a2b27;font-weight:700}
+.under{color:var(--moss);font-weight:700}
+
+/* ngân sách */
+.bar{margin:12px 0}
+.bar .lbl{display:flex;justify-content:space-between;font-size:14px;font-weight:600;margin-bottom:5px}
+.bar .trk{height:14px;background:#edf1ee;border-radius:999px;overflow:hidden}
+.bar .fill{height:100%;border-radius:999px;background:var(--leaf);width:0;transition:width 1.2s ease}
+.big-num{font-size:40px;font-weight:800;color:var(--forest);line-height:1}
+.vs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+
+/* chuẩn bị */
+.chk label{display:flex;gap:10px;align-items:center;padding:9px 4px;border-bottom:1px dashed var(--line);cursor:pointer;font-size:15px}
+.chk input{width:20px;height:20px;accent-color:var(--moss);flex:none}
+.chk input:checked + span{text-decoration:line-through;color:#9aa8a0}
+.prog{height:10px;background:#edf1ee;border-radius:999px;overflow:hidden;margin:8px 0 4px}
+.prog div{height:100%;background:var(--sun);width:0;transition:width .3s}
+.dl{display:grid;grid-template-columns:110px 1fr;gap:10px 16px;font-size:15px}
+.dl b{color:var(--moss)}
+.faq li{margin-bottom:8px}
+
+/* liên hệ */
+.map{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);min-height:340px;background:#dfe9e2}
+.map iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+.contact a.btn{width:100%;justify-content:flex-start;margin-bottom:10px}
+
+/* hộp ảnh phóng to */
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:200;display:none;align-items:center;justify-content:center;padding:20px;cursor:zoom-out}
+#lb.on{display:flex}
+#lb img{max-height:92vh;max-width:96vw;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+#lb .x{position:absolute;top:14px;right:20px;color:#fff;font-size:34px}
+
+footer{background:#0b1f17;color:#9fbcac;padding:34px 0;font-size:14px;text-align:center}
+footer button{margin-top:10px}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
+.reveal.in{opacity:1;transform:none}
+@media (max-width:640px){
+  section{padding:54px 0}
+  .hero{min-height:92vh;min-height:92svh}
+  .count div{min-width:66px;padding:10px 12px}
+  .count b{font-size:24px}
+  .meal{flex-direction:column;gap:4px}
+  .dl{grid-template-columns:1fr;gap:2px}
+  .dl b{margin-top:10px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .pane.on,.shake{animation:none}
+}
+@media print{nav,#gate,footer button,.btns,.tabs,.video,.map,#lb{display:none!important}.reveal{opacity:1;transform:none}.pane{display:block!important}}
+</style>
+</head>
+<body class="locked">
+
+<!-- ================= KHÓA MẬT KHẨU ================= -->
+<div id="gate">
+  <form class="card" id="gateForm" autocomplete="off">
+    <div class="mtn">⛰️</div>
+    <h1>Ba Vì 06·07/11</h1>
+    <p>Trang kế hoạch nội bộ của nhóm.<br>Nhập mật khẩu để xem nhé!</p>
+    <input id="pw" type="password" placeholder="• • • • • • •" aria-label="Mật khẩu" autofocus>
+    <button type="submit">Vào xem kế hoạch →</button>
+    <div class="err" id="err"></div>
+  </form>
+</div>
+
+<div id="app">
+<!-- ================= ĐIỀU HƯỚNG ================= -->
+<nav><div class="wrap" id="navLinks">
+  <a href="#top" title="Đầu trang" aria-label="Đầu trang">🏠</a>
+  <a href="#tongquan">📌 Tổng quan</a>
+  <a href="#noiquy">📜 Nội quy</a>
+  <a href="#phancong">👥 Phân công</a>
+  <a href="#xe">🚗 Chia xe</a>
+  <a href="#lichtrinh">🗓️ Lịch trình</a>
+  <a href="#vuichoi">🎢 Vui chơi</a>
+  <a href="#anuong">🍖 Ăn uống</a>
+  <a href="#ngansach">💰 Ngân sách</a>
+  <a href="#chuanbi">🎒 Chuẩn bị</a>
+  <a href="#lienhe">📍 Liên hệ</a>
+</div></nav>
+
+<!-- ================= ẢNH BÌA ================= -->
+<header class="hero" id="top">
+  <div class="bg"><img src="https://suoimobavi.com.vn/images/config/du_1754557791.jpg" alt="Khu du lịch Suối Mơ – Ba Vì" fetchpriority="high" decoding="async" onerror="this.remove()"></div>
+  <div class="wrap">
+    <span class="tag">2 NGÀY 1 ĐÊM</span>
+    <h1>Lên núi thôi,<br><em>Suối Mơ</em> Ba Vì!</h1>
+    <div class="sub">Thứ 6, 06/11 → Thứ 7, 07/11/2026 <br> Khu du lịch sinh thái Suối Mơ, xóm Quýt, Yên Bài, Ba Vì, Hà Nội</div>
+    <div class="count" id="count">
+      <div><b id="cd-d">--</b><span>ngày</span></div>
+      <div><b id="cd-h">--</b><span>giờ</span></div>
+      <div><b id="cd-m">--</b><span>phút</span></div>
+      <div><b id="cd-s">--</b><span>giây</span></div>
+    </div>
+    <div class="btns">
+      <a class="btn sun" href="https://www.google.com/maps/dir/?api=1&origin=H%E1%BB%8Dc+vi%E1%BB%87n+K%E1%BB%B9+thu%E1%BA%ADt+Qu%C3%A2n+s%E1%BB%B1+Xu%C3%A2n+Ph%C6%B0%C6%A1ng&destination=Khu+du+l%E1%BB%8Bch+Su%E1%BB%91i+M%C6%A1+Ba+V%C3%AC&travelmode=driving" target="_blank" rel="noopener">🧭 Chỉ đường từ Khu Xuân Phương</a>
+      <a class="btn glass" href="tel:0989688800">📞 Gọi khu du lịch Suối Mơ</a>
+      <a class="btn glass" href="#phancong">👀 Xem việc của tôi</a>
+    </div>
+  </div>
+</header>
+
+<!-- ================= TỔNG QUAN ================= -->
+<section id="tongquan">
+  <div class="wrap">
+    <div class="kicker reveal">Tổng quan</div>
+    <h2 class="reveal">Chuyến đi trong 30 giây</h2>
+    <p class="lead reveal">Đi gần, chơi nhiều, ăn no, hát to. Mọi thông tin cần biết đều ở trang này.</p>
+    <div class="grid g4">
+      <div class="card stat reveal"><div class="ico">🕐</div><b>13h00 ngày 06/11</b><span>Tập trung lúc 12h30 tại Khu Xuân Phương – Học viện KTQS</span></div>
+      <div class="card stat reveal"><div class="ico">🏡</div><b>Villa View Hồ</b><span>3 phòng ngủ · 4 giường · 1 phòng khách · sân BBQ</span></div>
+      <div class="card stat reveal"><div class="ico">🛣️</div><b>≈45 km · 1 giờ</b><span>Đại lộ Thăng Long → Hòa Lạc → Yên Bài</span></div>
+      <div class="card stat reveal"><div class="ico">💵</div><b>1.000.000đ/người</b><span>Tổng quỹ 12 triệu · dự kiến chi ≈11,7–14,1 triệu tùy món ăn</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= NỘI QUY ================= -->
+<section id="noiquy" class="alt">
+  <div class="wrap">
+    <div class="kicker reveal">Nội quy của khu</div>
+    <h2 class="reveal">Những điều phải nhớ</h2>
+    <p class="lead reveal">Ba mục đánh dấu đỏ là quan trọng nhất, quên là phát sinh tiền hoặc bị kẹt.</p>
+    <div class="grid g2">
+      <div class="card rule reveal"><div class="ico">🔑</div><div><b>Nhận phòng 14h00 · 06/11</b><span class="note">Đến sớm thì gửi đồ, đi dạo quanh khu trước.</span></div></div>
+      <div class="card rule hot reveal"><div class="ico">⏰</div><div><b>Trả phòng 12h00 · 07/11</b><span class="note">Trả muộn mất thêm <b>100k/giờ/căn</b>. Trả phòng xong <b>vẫn được ở lại chơi trong khu</b>, ăn trưa ở nhà hàng.</span></div></div>
+      <div class="card rule hot reveal"><div class="ico">🚧</div><div><b>Cổng khu đóng lúc 22h00</b><span class="note">Sau 22h <b>không ai ra vào được</b>. Thiếu gì phải mua trước giờ này.</span></div></div>
+      <div class="card rule reveal"><div class="ico">🔊</div><div><b>Loa to chỉ đến 22h00</b><span class="note">Sau 22h chuyển sang nhạc nhẹ, chơi ma sói, Uno.</span></div></div>
+      <div class="card rule reveal"><div class="ico">🎟️</div><div><b>Giá villa đã gồm vé cổng</b><span class="note">3.100.000đ (06/11 tính giá ngày lẻ) + 4 × 250.000đ phụ thu = <b>4.100.000đ</b> cho 12 người lớn. </span></div></div>
+      <div class="card rule reveal"><div class="ico">🔥</div><div><b>Bếp miễn phí 1 loại</b><span class="note">Bếp nướng (có sẵn than, vỉ, kẹp, cồn khô) HOẶC bếp ga mini (kèm 2 bình ga); lấy cả hai loại bếp thêm <b>100.000đ</b>.</span></div></div>
+      <div class="card rule reveal"><div class="ico">🎁</div><div><b>Khu tặng đoàn</b><span class="note"><b>Bếp nướng BBQ to</b> (nếu tự mang đồ nướng) và <b>loa kéo</b>. Villa có <b>tủ lạnh</b>, <b>bàn ghế setup sẵn</b>.</span></div></div>
+      <div class="card rule reveal"><div class="ico">🧽</div><div><b>Tự dọn dẹp thì miễn phí</b><span class="note">Nhờ khu làm thì <b>250.000đ/bữa chính</b>. Đặt đồ ăn của khu thì không tính phí dọn.</span></div></div>
+      <div class="card rule hot reveal"><div class="ico">⚠️</div><div><b>Đặt phòng không hoàn, không hủy</b><span class="note">Chỉ đổi lịch được trong 5 tiếng sau khi đặt, hoặc trước ngày đi 14 ngày. Cọc <b>50% tiền phòng</b>, chuyển khoản vào tài khoản của khu.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PHÂN CÔNG ================= -->
+<section id="phancong">
+  <div class="wrap">
+    <div class="kicker reveal">Phân công</div>
+    <h2 class="reveal">Ai lo việc gì?</h2>
+    <p class="lead reveal">Chọn tên mình để xem ngay ban, xe, ca dọn dẹp và việc cần làm.</p>
+    <div class="me reveal">
+      <select id="who"><option value="">👤 Chọn tên của bạn…</option></select>
+    </div>
+    <div class="card" id="meCard"></div>
+    <div class="grid g3" id="teams"></div>
+
+    <div class="card reveal" style="margin-top:22px">
+      <h3>🧽 Lịch dọn dẹp</h3>
+      <p class="note" style="margin-top:0">Ngân sách đã dự trù <b>250.000đ nhờ khu dọn</b> cho mỗi bữa tự nấu; nhóm tự rửa thì tiết kiệm được khoản này. Ai nấu bữa nào thì không rửa bữa đó.</p>
+      <div class="dl">
+        <b>Tối 06/11</b><div>Dương Huy Hoàng, Nguyễn Hải Long, Nguyễn Văn Thắng, Phạm Quang Tùng <span class="note">(nếu tự nướng BBQ).</span></div>
+        <b>Sáng 07/11</b><div>Bùi Văn Kiên, Bùi Văn Dương, Nguyễn Trung Long <span class="note">(nếu tự nấu mì).</span></div>
+        <b>Trưa 07/11</b><div>Ăn ở nhà hàng, không phải rửa. Cả nhóm thu dọn villa, kiểm đồ, trả phòng trước 12h.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CHIA XE ================= -->
+<section id="xe" class="alt">
+  <div class="wrap">
+    <div class="kicker reveal">Di chuyển</div>
+    <h2 class="reveal">Chia xe</h2>
+    <p class="lead reveal">Tập trung <b>12h30</b> tại Khu Xuân Phương – Học viện KTQS, xuất phát đúng <b>13h00</b>. Mỗi xe 4 người, còn cốp chở đồ.</p>
+    <div class="grid g3" id="cars"></div>
+    <p class="note reveal" style="margin-top:16px">⛽ Chị Thủy, anh Kiên đổ xăng trước khi tập trung; tiền xăng lấy từ quỹ chung, khoảng 250k/xe khứ hồi. 🔌 Xe Hoàng là xe điện, sạc đầy trước, không tính tiền xăng. 🧊 Mua đá viên ở đoạn đường gần Yên Bài để đá đỡ tan.</p>
+  </div>
+</section>
+
+<!-- ================= LỊCH TRÌNH ================= -->
+<section id="lichtrinh" class="dark">
+  <div class="wrap">
+    <div class="kicker reveal">Lịch trình</div>
+    <h2 class="reveal">Cụ thể đến từng giờ</h2>
+    <p class="lead reveal">🟡 Hoạt động chung &nbsp; 🟢 Tự do, ai thích gì chơi nấy &nbsp; 🔴 Mốc bắt buộc</p>
+    <div class="tabs" data-group="day">
+      <button class="tab on" data-pane="d1">Ngày 1 · Thứ 6 (06/11)</button>
+      <button class="tab" data-pane="d2">Ngày 2 · Thứ 7 (07/11)</button>
+    </div>
+    <div class="pane on" id="d1"><div class="tl" id="tl1"></div></div>
+    <div class="pane" id="d2"><div class="tl" id="tl2"></div></div>
+  </div>
+</section>
+
+<!-- ================= VUI CHƠI ================= -->
+<section id="vuichoi">
+  <div class="wrap">
+    <div class="kicker reveal">Vui chơi</div>
+    <h2 class="reveal">Ai thích gì chơi nấy</h2>
+    <p class="lead reveal">Các trò dưới đây <b>đã có trong vé cổng</b>, không bắt buộc. Đầu tháng 11 nước khá lạnh, nhưng khu xác nhận bể bơi, zipline, kayak vẫn mở bình thường.</p>
+    <div class="grid g3">
+      <div class="card act reveal"><div class="ph">🌊<img src="images/vui-choi/loi-suoi.jpg" alt="Lội suối" loading="lazy" decoding="async" onerror="this.remove()"></div><div class="bd"><h3>Lội suối, thác tự nhiên</h3><p>Suối trong, đá đẹp. Đi dạo rừng, chụp ảnh sống ảo.</p></div></div>
+      <div class="card act reveal"><div class="ph">🏊<img src="images/vui-choi/be-boi.jpg" alt="Bể bơi" loading="lazy" decoding="async" onerror="this.remove()"></div><div class="bd"><h3>Bể bơi 1.000m²</h3><p>Có cầu trượt. Nhớ mang đồ bơi nếu dám xuống nước tháng 11 😄</p></div></div>
+      <div class="card act reveal"><div class="ph">🪂<img src="images/vui-choi/zipline.jpg" alt="Zipline" loading="lazy" decoding="async" onerror="this.remove()"></div><div class="bd"><h3>Trượt zipline qua hồ</h3><p>Dành cho hội thích cảm giác mạnh. Nên chơi sáng ngày 2 lúc khu còn vắng.</p></div></div>
+      <div class="card act reveal"><div class="ph">🛶<img src="images/vui-choi/kayak.jpg" alt="Chèo kayak" loading="lazy" decoding="async" onerror="this.remove()"></div><div class="bd"><h3>Chèo kayak</h3><p>Chèo đôi trên hồ, đẹp nhất lúc gần hoàng hôn.</p></div></div>
+      <div class="card act reveal"><div class="ph">🌈<img src="images/vui-choi/truot-cau-vong.jpg" alt="Trượt cầu vồng" loading="lazy" decoding="async" onerror="this.remove()"></div><div class="bd"><h3>Trượt cầu vồng</h3><p>Miễn phí 1 lượt, lên ảnh rất đẹp.</p></div></div>
+      <div class="card act reveal"><div class="ph">🎯<img src="images/vui-choi/tro-choi.jpg" alt="Trò chơi dân gian" loading="lazy" decoding="async" onerror="this.remove()"></div><div class="bd"><h3>Trò chơi dân gian, bi-a, xe đạp</h3><p>Cà kheo, xích đu, đạp xe quanh khu, bi-a.</p></div></div>
+      <div class="card act reveal"><div class="ph">🎣<img src="images/vui-choi/cau-ca.jpg" alt="Câu cá" loading="lazy" decoding="async" onerror="this.remove()"></div><div class="bd"><h3>Câu cá ở hồ</h3><p>Thuê cần 50k, mồi 50k (người chơi tự trả).</p></div></div>
+      <div class="card act reveal"><div class="ph">📸<img src="images/vui-choi/villa-view-ho.jpg" alt="Villa view hồ" loading="lazy" decoding="async" onerror="this.remove()"></div><div class="bd"><h3>Ảnh tập thể lúc hoàng hôn</h3><p>17h00 ngày 06/11 ở view hồ. <b>Cả nhóm có mặt!</b></p></div></div>
+      <div class="card act reveal"><div class="ph">🌫️<img src="images/vui-choi/ho-tu-tren-cao.jpg" alt="Hồ Suối Mơ nhìn từ trên cao" loading="lazy" decoding="async" onerror="this.remove()"></div><div class="bd"><h3>Dạo hồ ngắm sương sớm</h3><p>6h30 ngày 07/11 cho ai dậy được.</p></div></div>
+    </div>
+
+    <h3 class="reveal" style="margin:42px 0 14px;font-size:24px">🎉 Hoạt động chung</h3>
+    <div class="grid g4 games">
+      <div class="card reveal"><div class="ico">🍢</div><h3>Cùng nướng BBQ</h3><p class="note">16h30–20h · Ban ẩm thực + ban nướng, ai rảnh vào phụ</p></div>
+      <div class="card reveal"><div class="ico">🎤</div><h3>Karaoke loa kéo</h3><p class="note">20h–21h45 · Khu tặng loa kéo · MC: Kiên & Bùi Văn Dương mở màn</p></div>
+      <div class="card reveal"><div class="ico">🔥</div><h3>Lửa trại</h3><p class="note">20h–22h · Không bắt buộc, 600k cho 12 người, đặt trước 1 ngày</p></div>
+      <div class="card reveal"><div class="ico">🐺</div><h3>Ma sói</h3><p class="note">22h–23h · Quản trò: anh Kiên. 12 người: 3 sói, tiên tri, bảo vệ, phù thủy, thợ săn, 5 dân</p></div>
+      <div class="card reveal"><div class="ico">🃏</div><h3>Uno & bài tây</h3><p class="note">Từ 23h · Bên ấm trà, đồ nướng còn lại</p></div>
+      <div class="card reveal"><div class="ico">🕵️</div><h3>Ai là gián điệp</h3><p class="note">Xen kẽ · Không cần dụng cụ</p></div>
+      <div class="card reveal"><div class="ico">🎶</div><h3>Đoán bài hát</h3><p class="note">Xen kẽ · Kiên & Dương ngân nga, cả nhóm đoán</p></div>
+      <div class="card reveal"><div class="ico">🍜</div><h3>Ăn khuya</h3><p class="note">Mì tôm nóng giữa trời se lạnh Ba Vì</p></div>
+    </div>
+
+    <h3 class="reveal" style="margin:42px 0 14px;font-size:24px">🎬 Xem trước Suối Mơ</h3>
+    <div class="grid g2">
+      <!-- Chỉ tải trình phát YouTube (~1 MB) khi bấm vào ảnh -->
+      <div class="video reveal"><button class="yt" data-id="zPrry2MGFrc" aria-label="Phát video Khám phá khu du lịch Suối Mơ" style="background-image:url(https://i.ytimg.com/vi/zPrry2MGFrc/hqdefault.jpg)"></button></div>
+      <div class="card reveal">
+        <h3>Video ngắn của khu</h3>
+        <p class="note">Bấm để xem trên YouTube:</p>
+        <a class="btn light" style="margin:6px 6px 0 0" href="https://www.youtube.com/shorts/2k33rgOkYew" target="_blank" rel="noopener">▶ Trượt zipline</a>
+        <a class="btn light" style="margin:6px 6px 0 0" href="https://www.youtube.com/shorts/vLfPJ3KJPUM" target="_blank" rel="noopener">▶ Chèo kayak</a>
+        <a class="btn light" style="margin:6px 6px 0 0" href="https://www.youtube.com/shorts/m1qg4e7k0MQ" target="_blank" rel="noopener">▶ Trượt cầu vồng</a>
+        <a class="btn light" style="margin:6px 6px 0 0" href="https://suoimobavi.com.vn/" target="_blank" rel="noopener">🌐 Website Suối Mơ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ĂN UỐNG ================= -->
+<section id="anuong" class="alt">
+  <div class="wrap">
+    <div class="kicker reveal">Ăn uống</div>
+    <h2 class="reveal">Ăn gì? Chọn từng bữa</h2>
+    <p class="lead reveal">Ban ẩm thực: <b>chị Thủy</b> (trưởng ban), <b>anh Dương Xuân Thắng</b> (phó ban), <b>Thoại, Ngọc, Bảo Anh</b>. Mỗi bữa chọn 1 phương án, cả nhóm chốt trước <b>02/11</b>. Bấm thử để xem tổng tiền thay đổi.</p>
+    <div class="tabs" data-group="food">
+      <button class="tab on" data-pane="chon">🍽️ Chọn món từng bữa</button>
+      <button class="tab" data-pane="cho">🛒 Đi chợ (bữa tự nấu)</button>
+      <button class="tab" data-pane="menu">📖 Thực đơn Suối Mơ</button>
+    </div>
+
+    <!-- CHỌN MÓN -->
+    <div class="pane on" id="chon">
+      <div class="presets" id="presets"></div>
+      <div class="grid g2" style="align-items:start">
+        <div id="meals" style="display:grid;gap:18px"></div>
+        <div class="card sum">
+          <h3>🧮 Tổng theo lựa chọn</h3>
+          <div class="note">Tiền ăn 3 bữa</div><div style="font-size:24px;font-weight:800" id="sumFood">–</div>
+          <div class="note" style="margin-top:10px">Tổng chuyến đi (gồm khoản chung <span id="sumFixed"></span>)</div>
+          <div class="big-num" id="sumAll">–</div>
+          <div class="note" style="margin-top:6px">≈ <b id="sumPer">–</b>/người · <span id="sumGap"></span></div>
+          <label class="opt" style="margin-top:14px"><input type="checkbox" id="optFire"><span class="t"><b>🔥 Thêm lửa trại</b><small>Khu báo giá 600k cho 12 người (≈50k/người)</small></span><span class="pr">+600k</span></label>
+          <p class="note" style="margin-top:14px">🧽 Bữa tự nấu đã cộng <b>250k nhờ khu dọn</b>. Đặt đồ của khu hoặc ăn nhà hàng thì không mất phí dọn.<br>🔥 Tự mang đồ nướng thì khu tặng bếp nướng BBQ to, bếp ga mượn miễn phí. Đặt set BBQ thì khu lo bếp nướng. 🎤 Loa kéo khu tặng.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ĐI CHỢ -->
+    <div class="pane" id="cho">
+      <div class="grid g2">
+        <div class="card">
+          <h3>👩‍🍳 Ai làm gì khi tự nướng</h3>
+          <ul style="padding-left:18px;margin:0">
+            <li><b>Thủy</b>: chỉ huy bếp, ướp thịt tại nhà sáng 06/11, chia khẩu phần</li>
+            <li><b>Dương Xuân Thắng</b>: mua thịt, xách đồ, phụ sơ chế</li>
+            <li><b>Thoại, Ngọc</b>: rau, ngô khoai, nước chấm</li>
+            <li><b>Bảo Anh</b>: cuộn bò nấm, xiên que, bày bàn</li>
+            <li><b>Ban nướng</b> (Trung Long, Văn Thắng, Tùng): nhóm than 17h30, nướng theo đợt để ai cũng được ăn nóng</li>
+          </ul>
+          <p class="note" style="margin-top:12px">Đặt set BBQ thì ban ẩm thực chỉ mua đồ uống, ăn vặt, bày bàn; ban nướng nướng nếu chọn tự nướng.</p>
+        </div>
+        <div class="card">
+          <h3>🔥 Khu đã có sẵn</h3>
+          <p class="note" style="margin:0">Tự mang đồ nướng thì khu <b>tặng bếp nướng BBQ to</b> (có than, vỉ, kẹp, cồn khô). Bếp ga mini kèm 2 bình ga. Villa có <b>tủ lạnh</b>, <b>bàn ghế setup sẵn</b>. Không cần mua than.</p>
+        </div>
+      </div>
+      <h3 style="margin:30px 0 12px">🛒 Danh sách đi chợ (giá tham khảo tháng 10/2026)</h3>
+      <div class="tbl"><table id="shop"></table></div>
+    </div>
+
+    <!-- THỰC ĐƠN -->
+    <div class="pane" id="menu">
+      <p class="note">Bấm vào ảnh để phóng to. Đặt món qua hotline/Zalo <a href="tel:0989688800">0989 688 800</a> · <a href="tel:0984888776">0984 888 776</a>.</p>
+      <div class="menu-gal" id="menuGal"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= NGÂN SÁCH ================= -->
+<section id="ngansach">
+  <div class="wrap">
+    <div class="kicker reveal">Ngân sách</div>
+    <h2 class="reveal">Tiền đi đâu?</h2>
+    <p class="lead reveal">Quỹ <b>1.000.000đ/người × 12 = 12.000.000đ</b>, Hoàng giữ. Mua gì cũng gửi ảnh hóa đơn vào nhóm Zalo; về sẽ công khai sổ chi và trả lại tiền dư.</p>
+    <div class="vs">
+      <div class="card"><div class="note">Tổng dự kiến <span id="budPick"></span></div><div class="big-num" id="budAll">–</div><div class="note" id="budNote"></div><div id="bars"></div></div>
+      <div class="card"><h3>4 gói gợi ý</h3>
+        <div class="tbl"><table id="pkgTbl"></table></div>
+        <ul class="note" style="padding-left:18px;margin-top:14px">
+          <li>✅ <b>Gói A, B nằm trong quỹ 12 triệu</b> (dư khoảng 165–270k). Thêm lửa trại thì gói B vượt khoảng 36k/người.</li>
+          <li>⚠️ Gói C vượt khoảng 90k/người, gói D khoảng 173k/người. Cách giảm: tự rửa bát bữa tối (-250k), bớt dự phòng, mua 1 thùng bia (-270k), bỏ hoa quả (-200k).</li>
+          <li>Giá đi chợ là giá tham khảo tháng 10/2026 ở siêu thị, chợ; mua ở chợ đầu mối có thể rẻ hơn.</li>
+          <li>Chọn món ở mục <a href="#anuong">Ăn uống</a>, bảng bên trái tự cập nhật.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CHUẨN BỊ ================= -->
+<section id="chuanbi" class="alt">
+  <div class="wrap">
+    <div class="kicker reveal">Chuẩn bị</div>
+    <h2 class="reveal">Mốc thời gian & đồ mang theo</h2>
+    <div class="grid g2">
+      <div class="card reveal">
+        <h3>📅 Mốc trước chuyến đi</h3>
+        <div class="dl" id="milestones"></div>
+      </div>
+      <div class="card reveal chk">
+        <h3>🎒 Checklist đồ cá nhân</h3>
+        <p class="note" style="margin:0">Tích dần vào ô; điện thoại sẽ tự nhớ.</p>
+        <div class="prog"><div id="progBar"></div></div>
+        <div class="note" id="progTxt"></div>
+        <div id="checklist"></div>
+      </div>
+    </div>
+    <div class="grid g2" style="margin-top:18px">
+      <div class="card reveal">
+        <h3>🩹 Túi y tế (Thoại phụ trách)</h3>
+        <p class="note">Thuốc hạ sốt, đau bụng, say xe, dị ứng · băng cá nhân · dầu gió · xịt chống muỗi.</p>
+        <h3 style="margin-top:18px">🎤 Đồ chung (ban văn nghệ)</h3>
+        <p class="note">Loa kéo khu tặng · 2 bộ Uno · 1 bộ bài · tải app ma sói · danh sách bài hát.</p>
+        <h3 style="margin-top:18px">🌤️ Thời tiết</h3>
+        <p class="note">Ban ngày dễ chịu, đêm trên núi khá lạnh. Xem dự báo 2–3 ngày trước khi đi.</p>
+        <a class="btn light" href="https://www.google.com/search?q=th%E1%BB%9Di+ti%E1%BA%BFt+Ba+V%C3%AC" target="_blank" rel="noopener">🌦️ Xem thời tiết Ba Vì</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BẢN ĐỒ & LIÊN HỆ ================= -->
+<section id="lienhe" class="dark">
+  <div class="wrap">
+    <div class="kicker reveal">Bản đồ & liên hệ</div>
+    <h2 class="reveal">Đường đến Suối Mơ</h2>
+    <p class="lead reveal">Xóm Quýt, xã Yên Bài, Ba Vì, Hà Nội · cách Xuân Phương khoảng 45 km.</p>
+    <div class="grid g2">
+      <div class="map reveal"><iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Bản đồ Suối Mơ Ba Vì" src="https://maps.google.com/maps?q=Khu%20du%20l%E1%BB%8Bch%20Su%E1%BB%91i%20M%C6%A1%20Ba%20V%C3%AC&z=13&output=embed"></iframe></div>
+      <div class="contact reveal">
+        <a class="btn sun" href="https://maps.app.goo.gl/N6AvBYVKw7izCSHCA" target="_blank" rel="noopener">📍 Mở Google Maps – Suối Mơ</a>
+        <a class="btn lake" href="https://www.google.com/maps/dir/?api=1&origin=H%E1%BB%8Dc+vi%E1%BB%87n+K%E1%BB%B9+thu%E1%BA%ADt+Qu%C3%A2n+s%E1%BB%B1+Xu%C3%A2n+Ph%C6%B0%C6%A1ng&destination=Khu+du+l%E1%BB%8Bch+Su%E1%BB%91i+M%C6%A1+Ba+V%C3%AC&travelmode=driving" target="_blank" rel="noopener">🧭 Chỉ đường từ HVKTQS Xuân Phương</a>
+        <a class="btn green" href="tel:0989688800">📞 Ăn uống & villa: 0989 688 800</a>
+        <a class="btn green" href="tel:0984888776">📞 Ăn uống & villa: 0984 888 776</a>
+        <a class="btn green" href="tel:0962272818">☎️ Tổng đài khu (9h–18h): 0962 272 818</a>
+        <a class="btn glass" href="https://zalo.me/0989688800" target="_blank" rel="noopener">💬 Zalo đặt món: 0989 688 800</a>
+        <a class="btn glass" href="https://zalo.me/0962272818" target="_blank" rel="noopener">💬 Zalo tổng đài: 0962 272 818</a>
+        <a class="btn glass" href="mailto:anhhaoxk@gmail.com?subject=%C4%90%E1%BA%B7t%20villa%20view%20h%E1%BB%93%2006%2F11%2F2026%20-%2012%20ng%C6%B0%E1%BB%9Di&body=Ch%C3%A0o%20Su%E1%BB%91i%20M%C6%A1%2C%0A%0A%C4%90o%C3%A0n%20m%C3%ACnh%2012%20ng%C6%B0%E1%BB%9Di%20l%E1%BB%9Bn%20mu%E1%BB%91n%20%C4%91%E1%BA%B7t%20Villa%20View%20H%E1%BB%93%202N1%C4%90%20t%E1%BB%AB%2014h%20ng%C3%A0y%2006%2F11%2F2026%20%C4%91%E1%BA%BFn%2012h%20ng%C3%A0y%2007%2F11%2F2026.%0A%0AC%E1%BA%A3m%20%C6%A1n%21">✉️ Email: anhhaoxk@gmail.com</a>
+        <a class="btn glass" href="https://suoimobavi.com.vn/" target="_blank" rel="noopener">🌐 suoimobavi.com.vn</a>
+        <a class="btn glass" href="https://www.youtube.com/watch?v=zPrry2MGFrc" target="_blank" rel="noopener">▶️ Video giới thiệu trên YouTube</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    ⛰️ Kế hoạch đi chơi Ba Vì · Suối Mơ · 06–07/11/2026<br>
+    Trưởng đoàn: Dương Huy Hoàng · Trang nội bộ, vui lòng không chia sẻ ra ngoài
+    <br><button class="btn glass" id="logout" style="font-size:13px;padding:8px 14px">🔒 Khóa lại</button>
+  </div>
+</footer>
+</div>
+
+<div id="lb" role="dialog" aria-label="Ảnh phóng to"><span class="x" aria-hidden="true">×</span><img alt=""></div>
+
+<script src="sha256.js"></script>
+<script src="config.js"></script>
+<script>
+/* ================= DỮ LIỆU ================= */
+const PEOPLE = {
+  "Cao Thị Minh Thủy":   {c:"#e07a5f", team:"Ban ẩm thực (trưởng ban)", car:"Xe 1 – chị Thủy (bác tài)", clean:"Không (nấu chính)", tasks:["Lái xe 1 chở Thoại, Bảo Anh, Ngọc + thùng đá, đồ tươi","Lên danh sách đi chợ; nếu tự nướng thì sáng 06/11 mua thịt và ướp tại nhà","Đặt món với khu cùng Hoàng (03/11)","Chỉ huy bếp, chia khẩu phần"]},
+  "Bùi Văn Kiên":        {c:"#3a8fb7", team:"Ban văn nghệ & trò chơi", car:"Xe 2 – anh Kiên (bác tài)", clean:"Sáng 07/11 (nếu tự nấu)", tasks:["Lái xe 2, chở đồ uống, ăn vặt, Uno, bài","MC, hát mở màn karaoke 20h–21h45","Quản trò ma sói 22h–23h","Nhận loa kéo của khu, chuẩn bị danh sách bài hát"]},
+  "Nguyễn Trung Long":   {c:"#4f9a6f", team:"Ban nướng & lửa (trưởng ban)", car:"Xe 3 – Hoàng", clean:"Sáng 07/11 (nếu tự nấu)", tasks:["Nếu tự nướng: mua xiên, giấy bạc, găng tay (khu đã có than, vỉ, kẹp)","Nhóm than 17h30, chỉ huy nướng BBQ","Trông lửa trại (nếu thuê)"]},
+  "Dương Xuân Thắng":    {c:"#f0b429", team:"Ban ẩm thực (phó ban)", car:"Xe 3 – Hoàng", clean:"Không (nấu)", tasks:["Đi mua thịt cùng chị Thủy, khuân vác đồ","Phụ sơ chế, xiên que","Hỗ trợ chị Thủy chỉ huy bếp"]},
+  "Nguyễn Hải Long":     {c:"#8e6cc0", team:"Ban văn nghệ & trò chơi · Ảnh", car:"Xe 2 – anh Kiên", clean:"Tối 06/11 (nếu tự nướng)", tasks:["Quản trò Uno, bài (chuẩn bị 2 bộ Uno, 1 bộ bài)","Chụp ảnh, quay video, gom ảnh vào album chung","Rửa bát sau tiệc BBQ (nếu không nhờ khu)"]},
+  "Nguyễn Văn Thắng":    {c:"#d9534f", team:"Ban nướng & lửa", car:"Xe 3 – Hoàng", clean:"Tối 06/11 (nếu tự nướng)", tasks:["Phụ nhóm than, nướng theo đợt","Rửa bát sau tiệc BBQ (nếu không nhờ khu)"]},
+  "Phạm Quang Tùng":     {c:"#3d9970", team:"Ban nướng & lửa", car:"Xe 2 – anh Kiên", clean:"Tối 06/11 (nếu tự nướng)", tasks:["Phụ nướng BBQ, chuyển đồ nướng ra bàn","Rửa bát sau tiệc BBQ (nếu không nhờ khu)"]},
+  "Trần Thị Thanh Thoại":{c:"#ef476f", team:"Ban ẩm thực · Y tế", car:"Xe 1 – chị Thủy", clean:"Không (nấu) · Trưa 07/11: thu dọn, trả phòng", tasks:["Sơ chế rau, ngô khoai, pha nước chấm","Chuẩn bị túi thuốc y tế cho cả đoàn"]},
+  "Lý Bích Ngọc":        {c:"#118ab2", team:"Ban ẩm thực · Ảnh", car:"Xe 1 – chị Thủy", clean:"Không (nấu) · Trưa 07/11: thu dọn, trả phòng", tasks:["Sơ chế rau, ngô khoai, pha nước chấm","Chụp ảnh tập thể lúc hoàng hôn 17h"]},
+  "Bùi Bảo Anh":         {c:"#ff9f1c", team:"Ban ẩm thực", car:"Xe 1 – chị Thủy", clean:"Không (nấu) · Trưa 07/11: thu dọn, trả phòng", tasks:["Cuộn bò nấm kim châm, xiên que","Bày bàn tiệc BBQ"]},
+  "Dương Huy Hoàng":     {c:"#0f2a1f", team:"Trưởng đoàn & giữ quỹ chung", car:"Xe 3 – Hoàng (bác tài)", clean:"Tối 06/11 (nếu tự nướng)", tasks:["Chốt danh sách, thu quỹ, chuyển cọc villa 50% (28/10)","Đặt lửa trại trước 1 ngày (05/11) nếu nhóm thuê","Đặt bàn lẩu trưa và các món của khu (03/11)","Lập nhóm Zalo, ứng tiền cho các ban, giữ hóa đơn","Chốt sổ chi tiêu, trả lại tiền dư sau chuyến"]},
+  "Bùi Văn Dương":       {c:"#06d6a0", team:"Ban văn nghệ & trò chơi", car:"Xe 2 – anh Kiên", clean:"Sáng 07/11 (nếu tự nấu)", tasks:["MC, hát mở màn karaoke cùng anh Kiên","Dẫn trò đoán bài hát"]}
+};
+const TEAMS = [
+  {n:"👑 Trưởng đoàn & quỹ chung", cls:"", lead:"Dương Huy Hoàng", mem:["Dương Huy Hoàng"], job:["Đặt phòng, liên hệ khu, lập nhóm Zalo","Thu quỹ, ứng tiền cho các ban","Chốt sổ chi tiêu sau chuyến"]},
+  {n:"🍳 Ban ẩm thực", cls:"t2", lead:"Cao Thị Minh Thủy", mem:["Cao Thị Minh Thủy","Dương Xuân Thắng","Trần Thị Thanh Thoại","Lý Bích Ngọc","Bùi Bảo Anh"], job:["Lên danh sách và mua đồ ăn uống","Ướp thịt, sơ chế, nấu lẩu và bữa sáng","Chia đồ ăn"]},
+  {n:"🔥 Ban nướng & lửa", cls:"t3", lead:"Nguyễn Trung Long", mem:["Nguyễn Trung Long","Nguyễn Văn Thắng","Phạm Quang Tùng"], job:["Mua xiên, giấy bạc, găng tay (khu tặng bếp nướng to, có than)","Nhóm bếp, nướng BBQ","Trông lửa trại (nếu thuê)"]},
+  {n:"🎤 Ban văn nghệ & trò chơi", cls:"t4", lead:"Bùi Văn Kiên", mem:["Bùi Văn Kiên","Bùi Văn Dương","Nguyễn Hải Long"], job:["Nhận loa kéo khu tặng, danh sách bài hát","MC, karaoke","Kiên quản trò ma sói; Hải Long quản trò Uno, bài"]},
+  {n:"🚗 Lái xe", cls:"t5", mem:["Cao Thị Minh Thủy","Bùi Văn Kiên","Dương Huy Hoàng"], job:["Đổ xăng (Thủy, Kiên) / sạc đầy xe điện (Hoàng) trước 12h30","Chở người và đồ"]},
+  {n:"📸 Ảnh & quay phim", cls:"t7", mem:["Nguyễn Hải Long","Lý Bích Ngọc"], job:["Ảnh tập thể lúc hoàng hôn 17h","Video kỷ niệm","Gom ảnh vào 1 album chung"]},
+  {n:"🩹 Y tế", cls:"t6", mem:["Trần Thị Thanh Thoại"], job:["Thuốc hạ sốt, đau bụng, say xe, dị ứng","Băng cá nhân, dầu gió, chống muỗi"]}
+];
+const CARS = [
+  {n:"Xe 1 – chị Thủy", e:"🚙", d:"Cao Thị Minh Thủy", p:["Trần Thị Thanh Thoại","Bùi Bảo Anh","Lý Bích Ngọc"], cargo:"🧊 Thùng đá, đồ tươi, gia vị, đồ ăn sáng"},
+  {n:"Xe 2 – anh Kiên", e:"🚗", d:"Bùi Văn Kiên", p:["Nguyễn Hải Long","Bùi Văn Dương","Phạm Quang Tùng"], cargo:"🎲 Uno, bài, đồ uống, ăn vặt"},
+  {n:"Xe 3 – Hoàng", e:"🚘", d:"Dương Huy Hoàng", p:["Dương Xuân Thắng","Nguyễn Văn Thắng","Nguyễn Trung Long"], cargo:"🍖 Thịt đã ướp, đồ nướng, nước lọc, bia"}
+];
+const DAY1 = [
+  ["12h30","must","Tập trung tại Khu Xuân Phương – HVKTQS","Kiểm đồ, xếp đồ lên xe. Xe Thủy, Kiên đã đổ xăng; xe Hoàng (xe điện) đã sạc đầy."],
+  ["13h00","must","Xuất phát","Đại lộ Thăng Long → Hòa Lạc → Yên Bài. Mua đá viên ở đoạn gần Yên Bài."],
+  ["14h00","must","Nhận phòng","Chia phòng (nữ 1 phòng; nam 2 phòng + phòng khách), cất đồ, cho đồ tươi vào tủ lạnh."],
+  ["14h30 – 17h00","free","Vui chơi tự do","Zipline, kayak, lội suối, xe đạp, bi-a, câu cá… ai thích gì chơi nấy."],
+  ["16h30","","Sơ chế đồ nướng (nếu tự nướng)","Ban ẩm thực xiên que, cuộn bò nấm, rửa rau, luộc ngô khoai. Đặt set BBQ thì bỏ bước này."],
+  ["17h00","must","📸 Ảnh tập thể lúc hoàng hôn","Ở view hồ, cả nhóm có mặt."],
+  ["17h30","","Nhóm than","Ban nướng nhóm bếp nướng BBQ to khu tặng (có sẵn than, cồn khô), hoặc nhận set BBQ của khu."],
+  ["18h00 – 20h00","","🍖 Tiệc BBQ ngoài trời","Ăn, uống, nhạc nền từ Kiên & Dương."],
+  ["20h00 – 21h45","","🎤 Karaoke loa kéo (+ lửa trại)","Loa kéo khu tặng. Hát hết mình trước 22h."],
+  ["22h00","must","Cổng khu đóng · tắt loa to","Chuyển nhạc nhẹ. Dọn tiệc nướng, gom rác."],
+  ["22h00 – 24h00","","🐺 Ma sói · 🃏 Uno · ☕ trà & ăn khuya","Ma sói: anh Kiên quản trò · Uno, bài: Hải Long. Mì tôm nóng giữa trời lạnh."],
+  ["≈0h30","","Đi ngủ","Mai còn chơi tiếp!"]
+];
+const DAY2 = [
+  ["6h30","free","Dạo hồ ngắm sương sớm","Không bắt buộc, chụp ảnh sương núi."],
+  ["7h00 – 8h00","","☕ Ăn sáng","Tự nấu mì trứng xúc xích, hoặc ăn phở/bún của khu (theo phương án đã chốt)."],
+  ["8h00 – 11h00","free","Vui chơi tự do","Bơi, zipline, kayak… khu xác nhận vẫn hoạt động bình thường."],
+  ["11h00 – 12h00","must","Dọn dẹp & trả phòng","Gom rác, kiểm đồ thất lạc. Trả phòng TRƯỚC 12h (muộn mất 100k/giờ)."],
+  ["12h00 – 13h15","","🍲 Ăn trưa lẩu ở nhà hàng trong khu","Lẩu cá lăng hoặc cá tầm. Không phải nấu, không phải rửa."],
+  ["13h15 – 14h45","free","Chơi tiếp trong khu","Khu cho ở lại sau khi trả phòng. Chụp ảnh, đi dạo, mua quà."],
+  ["14h45 – 15h00","","Lên xe về","Ghé mua sữa tươi, bánh sữa Ba Vì làm quà (không bắt buộc)."],
+  ["≈16h00","must","Về đến Xuân Phương","Hoàng chốt sổ chi."]
+];
+/* Giá tham khảo tháng 10/2026 (siêu thị, chợ) */
+const SHOP = [
+  ["T1 · Tự nướng BBQ",[["Ba chỉ lợn 1,5kg (~120–150k/kg)",200],["Sườn non 1,5kg (~150k/kg)",230],["Cánh hoặc đùi gà 1,5kg (~80–110k/kg)",130],["Ba chỉ/bắp bò 1kg + 5 gói nấm kim châm",270],["Xúc xích 1kg (~41–50k/gói 500g)",90],["Tôm thẻ 0,7kg (~180–220k/kg)",140],["Gia vị ướp: sốt BBQ, mật ong, sa tế, tỏi, sả",70],["Ngô 10 bắp + khoai lang 2kg",110],["Rau sống, dưa chuột, cà chua, ớt chuông, chanh, ớt",90],["Bánh mì 12 cái",50],["Xiên, giấy bạc, găng tay (than, vỉ, kẹp khu đã có)",50],["Gia vị chung (dầu ăn, mắm, muối, hạt nêm, tỏi)",80]]],
+  ["S1 · Tự nấu bữa sáng",[["Mì tôm 15 gói (~4,5k/gói)",70],["Trứng 24 quả (~3k/quả)",70],["Xúc xích 24 cái (2 gói 500g)",85],["Hành, rau thơm",20]]],
+  ["Chung · Đồ uống",[["Bia Hà Nội 2 thùng (~270k/thùng)",540],["Nước ngọt 1 thùng 24 lon",220],["Nước lọc 2 thùng 24 chai",220],["Đá viên 3 bao",60],["Cà phê, trà gói, sữa Ba Vì",120]]],
+  ["Chung · Ăn vặt & khuya",[["Hướng dương, lạc, bim bim, mực khô",250],["Hoa quả",200],["Mì ăn khuya 10 gói",45]]],
+  ["Chung · Đồ dùng",[["Giấy ăn, cốc giấy, túi rác, nước rửa bát",120]]]
+];
+/* Khoản chung, phương án nào cũng có */
+const FIXED = [["Villa (đã gồm vé)",4100],["Đồ uống",1160],["Xăng 2 xe (Thủy, Kiên)",500],["Dự phòng",500],["Ăn vặt, hoa quả, mì khuya",495],["Đồ dùng",120]];
+const FIRE = 600;
+/* Phương án từng bữa: [mã, tên, mô tả, giá k] */
+const MEALS = [
+  {k:"toi", h:"🍖 Tối Thứ 6 · Tiệc BBQ", s:"Tối T6", opts:[
+    ["T1","Tự mua, tự nướng","Ba chỉ, sườn, cánh gà, bò cuộn nấm, xúc xích, tôm, ngô khoai… 1.510k + dọn 250k. Khu tặng bếp nướng BBQ to",1760],
+    ["T2","Set BBQ 250k/người","2 set: ba chỉ, sườn, cánh gà, bò cuộn nấm, đà điểu, rau, bánh mì bơ, ngô khoai, salad, hoa quả. Không phí dọn",3000],
+    ["T3","Set BBQ 300k/người","Như set 250k, thêm tôm nướng (12 con/set) và củ quả luộc chấm vừng lạc. Không phí dọn",3600]]},
+  {k:"sang", h:"☕ Sáng Thứ 7", s:"Sáng T7", opts:[
+    ["S1","Tự nấu mì tôm trứng xúc xích","Mì, trứng, xúc xích, hành 245k + dọn 250k",495],
+    ["S2","Ăn sáng của khu 50k/người","Mỗi người tự chọn phở/bún bò, phở/bún gà, bún chả. Được ngủ thêm, không phải rửa",600]]},
+  {k:"trua", h:"🍲 Trưa Thứ 7 · Nhà hàng trong khu", s:"Trưa T7", opts:[
+    ["L1","Lẩu cá lăng","2 nồi × 1.300k (mỗi nồi 2kg cá, đậu, rau, hoa quả, mì hoặc bún)",2600],
+    ["L2","Lẩu cá tầm","2 nồi × 1.500k (mỗi nồi 2kg cá, đậu, rau, hoa quả, mì hoặc bún)",3000]]}
+];
+const PKGS = [["A","Tiết kiệm",["T1","S1","L1"]],["B","Gợi ý",["T1","S2","L1"]],["C","Nhàn",["T2","S2","L1"]],["D","Sang",["T3","S2","L2"]]];
+const MILE = [
+  ["27–28/10","Chốt danh sách 12 người, thu quỹ 1.000k/người, lập nhóm Zalo (Hoàng)"],
+  ["28/10","<b>Chuyển cọc villa 50%</b> (≈2.050k) vào tài khoản khu gửi (Hoàng)"],
+  ["02/11","Cả nhóm <b>chốt món từng bữa</b> và mức góp quỹ"],
+  ["03/11","Đặt bàn lẩu trưa, set BBQ, ăn sáng với khu (Hoàng + Thủy)"],
+  ["04–05/11","Ban ẩm thực mua đồ uống, ăn vặt, đồ dùng (và đồ khô nếu tự nấu)"],
+  ["05/11","<b>Đặt lửa trại</b> với khu nếu thuê (Hoàng) · ban văn nghệ chuẩn bị Uno, bài, app ma sói"],
+  ["Sáng 06/11","Nếu tự nướng: mua thịt, rau tươi, ướp thịt tại nhà, cho vào thùng đá"],
+  ["12h30 06/11","<b>Tập trung</b> tại Khu Xuân Phương – HVKTQS"]
+];
+const CHECK = ["Áo khoác (đêm Ba Vì khá lạnh)","Quần áo thay","Đồ bơi (nếu muốn bơi)","Dép lê","Khăn tắm","Bàn chải, kem đánh răng","Sạc + sạc dự phòng","Thuốc cá nhân","Kem/xịt chống muỗi","Đèn pin hoặc điện thoại","Tiền mặt lẻ","Giấy tờ tùy thân"];
+const MENUS = [["set-bbq.jpg","Set BBQ 250k/300k"],["menu-lau.jpg","Menu lẩu"],["met-lon-man.jpg","Mẹt lợn mán"],["met-ga-doi.jpg","Mẹt gà đồi"],["met-de.jpg","Mẹt dê đủ món"],["met-thap-cam.jpg","Mẹt thập cẩm"],["canh-mon-man.jpg","Canh & món mặn"],["rau-theo-mua.jpg","Rau theo mùa"],["an-sang.jpg","Ăn sáng"],["bang-gia-2026.jpg","Bảng giá lưu trú 2026"]];
+
+/* ================= HÀM TIỆN ÍCH ================= */
+const $ = s => document.querySelector(s);
+const fmt = n => n.toLocaleString('vi-VN');
+const ini = n => n.split(' ').slice(-2).map(w=>w[0]).join('');
+const chip = (n, lead) => `<span class="person"><span class="av" style="background:${PEOPLE[n].c}">${ini(n)}</span>${n}${lead ? ' <span class="lead-star" title="Trưởng ban">★</span>' : ''}</span>`;
+const store = {
+  get(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } },
+  set(k,v){ try{ localStorage.setItem(k,v); }catch(e){} },
+  del(k){ try{ localStorage.removeItem(k); }catch(e){} }
+};
+
+/* ================= KHÓA MẬT KHẨU ================= */
+const CFG = window.SITE_CONFIG || {};
+let started = false;
+function unlock(){ document.body.classList.remove('locked'); init(); }
+if (store.get('bavi_auth') === CFG.PASSWORD_SHA256) unlock();
+document.documentElement.classList.remove('pre-auth');
+$('#gateForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const h = sha256($('#pw').value.trim());
+  if (h === CFG.PASSWORD_SHA256) {
+    if (CFG.REMEMBER_LOGIN) store.set('bavi_auth', h);
+    unlock(); window.scrollTo(0,0);
+  } else {
+    $('#err').textContent = 'Sai mật khẩu rồi, thử lại nhé!';
+    const c = $('#gateForm'); c.classList.remove('shake'); void c.offsetWidth; c.classList.add('shake');
+  }
+});
+$('#logout').addEventListener('click', () => { store.del('bavi_auth'); location.reload(); });
+
+/* ================= DỰNG TRANG ================= */
+function init(){
+  if (started) return; started = true;
+
+  // Đếm ngược
+  const target = new Date(CFG.DEPARTURE || "2026-11-06T13:00:00+07:00").getTime();
+  const tick = () => {
+    let d = Math.max(0, target - Date.now()) / 1000;
+    if (d <= 0) { $('#count').innerHTML = '<div style="min-width:auto"><b>🚀 Lên đường!</b><span>Chúc cả nhóm đi chơi vui vẻ</span></div>'; return; }
+    $('#cd-d').textContent = Math.floor(d/86400);
+    $('#cd-h').textContent = String(Math.floor(d%86400/3600)).padStart(2,'0');
+    $('#cd-m').textContent = String(Math.floor(d%3600/60)).padStart(2,'0');
+    $('#cd-s').textContent = String(Math.floor(d%60)).padStart(2,'0');
+    setTimeout(tick, 1000);
+  };
+  tick();
+
+  // Chọn tên
+  const sel = $('#who');
+  Object.keys(PEOPLE).forEach(n => sel.insertAdjacentHTML('beforeend', `<option>${n}</option>`));
+  const showMe = n => {
+    const card = $('#meCard');
+    if (!n) { card.style.display = 'none'; return; }
+    const p = PEOPLE[n];
+    card.innerHTML = `<h3>Xin chào ${n.split(' ').pop()}! 👋</h3>
+      <div><span class="pill sun">🏷️ ${p.team}</span><span class="pill lake">🚗 ${p.car}</span><span class="pill">🧽 Dọn dẹp: ${p.clean}</span></div>
+      <ul>${p.tasks.map(t=>`<li>${t}</li>`).join('')}</ul>
+      <p style="margin:12px 0 0;color:#cfe3d7;font-size:14px">⏰ Nhớ: tập trung 12h30 ngày 06/11 · cổng khu đóng 22h · trả phòng trước 12h ngày 07/11.</p>`;
+    card.style.display = 'block';
+    store.set('bavi_me', n);
+  };
+  sel.addEventListener('change', e => showMe(e.target.value));
+  const saved = store.get('bavi_me'); if (saved && PEOPLE[saved]) { sel.value = saved; showMe(saved); }
+
+  // Các ban
+  $('#teams').innerHTML = TEAMS.map(t => `<div class="card team ${t.cls} reveal"><h3>${t.n}</h3>
+    <div class="people">${t.mem.map(m => chip(m, m===t.lead)).join('')}</div>
+    <ul>${t.job.map(j=>`<li>${j}</li>`).join('')}</ul></div>`).join('');
+
+  // Xe
+  $('#cars').innerHTML = CARS.map(c => `<div class="card car reveal"><div class="big">${c.e}</div><h3>${c.n}</h3>
+    <div class="driver">Bác tài: <b>${c.d}</b></div>
+    <ol><li><b>${c.d}</b> 🧑‍✈️</li>${c.p.map(x=>`<li>${x}</li>`).join('')}</ol>
+    <div class="cargo">${c.cargo}</div></div>`).join('');
+
+  // Lịch trình
+  const tl = arr => arr.map(([t,k,h,p]) => `<div class="ev ${k}"><div class="time">${t}</div><h4>${h}</h4><p>${p}</p></div>`).join('');
+  $('#tl1').innerHTML = tl(DAY1); $('#tl2').innerHTML = tl(DAY2);
+
+  // Danh sách đi chợ
+  let total = 0, rows = '<tr><th>Món – số lượng</th><th class="num">Ước tính</th></tr>';
+  SHOP.forEach(([g,items]) => {
+    const sub = items.reduce((s,i)=>s+i[1],0); total += sub;
+    rows += `<tr class="grp"><td>${g}</td><td class="num">${fmt(sub)}k</td></tr>`;
+    items.forEach(([n,v]) => rows += `<tr><td>${n}</td><td class="num">${fmt(v)}k</td></tr>`);
+  });
+  rows += `<tr class="total"><td>Tổng nếu tự nấu cả tối và sáng (T1 + S1 + đồ chung)</td><td class="num">${fmt(total)}k</td></tr>`;
+  $('#shop').innerHTML = rows;
+
+  // Ảnh thực đơn
+  $('#menuGal').innerHTML = MENUS.map(([f,t]) => `<button data-src="images/${f}" aria-label="Phóng to: ${t}"><img src="images/thumb/${f}" alt="${t}" loading="lazy" decoding="async"><span>${t}</span></button>`).join('');
+  $('#menuGal').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    const img = $('#lb img'); img.src = b.dataset.src; img.alt = b.querySelector('img').alt;
+    $('#lb').classList.add('on');
+  });
+
+  // Video: bấm mới tải YouTube
+  document.querySelectorAll('.yt').forEach(b => b.addEventListener('click', () => {
+    b.outerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${b.dataset.id}?autoplay=1" title="${b.getAttribute('aria-label')}" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+  }));
+  $('#lb').addEventListener('click', () => $('#lb').classList.remove('on'));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') $('#lb').classList.remove('on'); });
+
+  // Ngân sách
+  const bars = (el, arr) => {
+    const max = Math.max(...arr.map(a=>a[1]));
+    $(el).innerHTML = arr.map(([n,v]) => `<div class="bar"><div class="lbl"><span>${n}</span><span>${fmt(v)}k</span></div><div class="trk"><div class="fill" data-w="${v/max*100}"></div></div></div>`).join('');
+  };
+  const grow = root => root.querySelectorAll('.fill').forEach(f => f.style.width = f.dataset.w + '%');
+
+  // Chọn món từng bữa → tổng tiền
+  const OPT = {}; MEALS.forEach(m => m.opts.forEach(o => OPT[o[0]] = o));
+  const fixedSum = FIXED.reduce((s,f)=>s+f[1],0);
+  const k = n => fmt(n) + 'k';
+  const pick = {toi:"T1", sang:"S2", trua:"L1"};
+  try { Object.assign(pick, JSON.parse(store.get('bavi_meals') || '{}')); } catch(e){}
+  MEALS.forEach(m => { if (!m.opts.some(o => o[0] === pick[m.k])) pick[m.k] = m.opts[0][0]; });
+  const fire = $('#optFire'); fire.checked = store.get('bavi_fire') === '1';
+
+  $('#meals').innerHTML = MEALS.map(m => `<div class="card"><h3>${m.h}</h3><div class="opts">${m.opts.map(([c,n,d,v]) =>
+    `<label class="opt"><input type="radio" name="${m.k}" value="${c}"><span class="t"><b>${c} · ${n}</b><small>${d}</small></span><span class="pr">${k(v)}</span></label>`).join('')}</div></div>`).join('');
+  $('#presets').innerHTML = '<span class="note" style="align-self:center">Gói nhanh:</span>' + PKGS.map(([c,n]) => `<button data-p="${c}">${c} · ${n}</button>`).join('');
+  $('#sumFixed').textContent = k(fixedSum);
+
+  const pkgTotal = codes => fixedSum + codes.reduce((s,c)=>s+OPT[c][3],0);
+  $('#pkgTbl').innerHTML = '<tr><th>Gói</th><th>Bữa</th><th class="num">Mỗi người</th></tr>' + PKGS.map(([c,n,cs]) =>
+    `<tr><td><b>${c}</b> · ${n}</td><td>${cs.join(' + ')}</td><td class="num">≈${k(Math.round(pkgTotal(cs)/12))}</td></tr>`).join('');
+
+  const render = () => {
+    const codes = MEALS.map(m => pick[m.k]);
+    MEALS.forEach(m => document.querySelector(`input[name="${m.k}"][value="${pick[m.k]}"]`).checked = true);
+    const food = codes.reduce((s,c)=>s+OPT[c][3],0);
+    const all = fixedSum + food + (fire.checked ? FIRE : 0);
+    const per = Math.round(all/12), gap = all - 12000;
+    const gapTxt = gap > 0 ? `<span class="over">vượt quỹ ${k(gap)} (≈${k(Math.ceil(gap/12))}/người)</span>` : `<span class="under">còn dư ${k(-gap)}</span>`;
+    $('#sumFood').textContent = k(food) + ' (' + codes.join(' + ') + ')';
+    $('#sumAll').textContent = k(all); $('#sumPer').textContent = k(per); $('#sumGap').innerHTML = gapTxt;
+    $('#budAll').textContent = k(all); $('#budPick').textContent = '(' + codes.join(' + ') + (fire.checked ? ' + lửa trại' : '') + ')';
+    $('#budNote').innerHTML = `≈ <b>${k(per)}/người</b> · ${gapTxt}`;
+    const p = PKGS.find(x => x[2].join() === codes.join());
+    document.querySelectorAll('#presets button').forEach(b => b.classList.toggle('on', !!p && b.dataset.p === p[0]));
+    const items = [...MEALS.map(m => [m.s + ': ' + OPT[pick[m.k]][1], OPT[pick[m.k]][3]]), ...FIXED];
+    if (fire.checked) items.push(["Lửa trại", FIRE]);
+    bars('#bars', items.sort((a,b)=>b[1]-a[1]));
+    if ($('#ngansach .reveal.in')) grow($('#ngansach'));
+    store.set('bavi_meals', JSON.stringify(pick)); store.set('bavi_fire', fire.checked ? '1' : '0');
+  };
+  $('#meals').addEventListener('change', e => { pick[e.target.name] = e.target.value; render(); });
+  $('#presets').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    const cs = PKGS.find(x => x[0] === b.dataset.p)[2];
+    MEALS.forEach((m,i) => pick[m.k] = cs[i]); render();
+  });
+  fire.addEventListener('change', render);
+  render();
+  setTimeout(() => grow($('#ngansach')), 300);
+
+  // Mốc chuẩn bị
+  $('#milestones').innerHTML = MILE.map(([d,t]) => `<b>${d}</b><div>${t}</div>`).join('');
+
+  // Checklist
+  const done = JSON.parse(store.get('bavi_check') || '[]');
+  $('#checklist').innerHTML = CHECK.map((c,i) => `<label><input type="checkbox" data-i="${i}" ${done.includes(i)?'checked':''}><span>${c}</span></label>`).join('');
+  const prog = () => {
+    const on = [...document.querySelectorAll('#checklist input:checked')].map(x=>+x.dataset.i);
+    store.set('bavi_check', JSON.stringify(on));
+    $('#progBar').style.width = (on.length/CHECK.length*100) + '%';
+    $('#progTxt').textContent = `Đã chuẩn bị ${on.length}/${CHECK.length} món` + (on.length===CHECK.length ? ' 🎉 Sẵn sàng!' : '');
+  };
+  $('#checklist').addEventListener('change', prog); prog();
+
+  // Chuyển tab
+  document.querySelectorAll('.tabs').forEach(g => g.addEventListener('click', e => {
+    const b = e.target.closest('.tab'); if (!b) return;
+    g.querySelectorAll('.tab').forEach(x => {
+      x.classList.toggle('on', x === b);
+      document.getElementById(x.dataset.pane).classList.toggle('on', x === b);
+    });
+    grow(document.getElementById(b.dataset.pane));
+  }));
+
+  // Hiện dần khi cuộn tới + tô sáng mục trên thanh điều hướng
+  const io = new IntersectionObserver(es => es.forEach(en => {
+    if (en.isIntersecting) { en.target.classList.add('in'); if (en.target.closest('#ngansach')) grow($('#ngansach')); io.unobserve(en.target); }
+  }), {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  const nav = $('#navLinks'), links = [...nav.children];
+  const fitNav = () => nav.classList.toggle('over', nav.scrollWidth > nav.clientWidth + 1);
+  fitNav(); window.addEventListener('resize', fitNav);
+  const so = new IntersectionObserver(es => es.forEach(en => {
+    if (!en.isIntersecting) return;
+    links.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + en.target.id));
+    // Kéo mục đang xem vào giữa thanh điều hướng (chỉ cuộn ngang thanh này)
+    const a = nav.querySelector('a.on');
+    if (a && nav.classList.contains('over')) {
+      nav.scrollTo({left: a.offsetLeft - nav.offsetLeft - (nav.clientWidth - a.offsetWidth) / 2, behavior: 'smooth'});
+    }
+  }), {rootMargin:'-45% 0px -50% 0px'});
+  document.querySelectorAll('header[id],section[id]').forEach(s => so.observe(s));
+}
+
+/* ================= XEM KHI MẤT SÓNG ================= */
+if ('serviceWorker' in navigator && window.isSecureContext && location.protocol !== 'file:') {
+  window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
+}
+</script>
+</body>
+</html>
