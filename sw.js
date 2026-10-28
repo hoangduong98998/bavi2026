@@ -2,7 +2,7 @@
    - Trang, config.js: lấy bản mới trên mạng trước (chờ tối đa 3 giây), mất mạng thì dùng bản đã lưu.
    - Ảnh, font: dùng bản đã lưu nếu có.
    Sửa danh sách file thì tăng số phiên bản CACHE. */
-const CACHE = 'bavi-v13';
+const CACHE = 'bavi-v14';
 const MENUS = ['set-bbq','menu-lau','met-lon-man','met-ga-doi','met-de','met-thap-cam','canh-mon-man','rau-theo-mua','an-sang','bang-gia-2026'];
 const CORE = ['./', 'index.html', 'config.js', ...MENUS.map(m => `images/thumb/${m}.jpg`)];
 const CACHE_HOSTS = ['fonts.googleapis.com', 'fonts.gstatic.com', 'suoimobavi.com.vn', 'i.ytimg.com'];
