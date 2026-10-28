@@ -199,9 +199,7 @@ tr.grp td{background:#eef6f1;font-weight:800;color:var(--forest)}
 .opt .t b{display:block}
 .opt .t small{color:var(--muted);font-size:13.5px;display:block;line-height:1.5}
 .opt .pr{flex:none;font-weight:800;color:var(--forest);white-space:nowrap}
-.presets{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 20px}
-.presets button{padding:8px 14px;border-radius:999px;border:1px dashed var(--moss);background:#fff;font-weight:700;cursor:pointer;font-family:inherit;font-size:14px;color:var(--forest)}
-.presets button.on{background:var(--moss);color:#fff;border-style:solid}
+.opt.chosen{border-color:var(--leaf);background:#f1f8f3;cursor:default}
 .sum{position:sticky;top:64px}
 .over{color:#9a2b27;font-weight:700}
 .under{color:var(--moss);font-weight:700}
@@ -317,7 +315,7 @@ footer button{margin-top:10px}
       <div class="card stat reveal"><div class="ico">🕐</div><b>13h00 ngày 06/11</b><span>Tập trung lúc 12h30 tại Khu Xuân Phương – Học viện KTQS</span></div>
       <div class="card stat reveal"><div class="ico">🏡</div><b>Villa View Hồ</b><span>3 phòng ngủ · 4 giường · 1 phòng khách · sân BBQ</span></div>
       <div class="card stat reveal"><div class="ico">🛣️</div><b>≈45 km · 1 giờ</b><span>Đại lộ Thăng Long → Hòa Lạc → Yên Bài</span></div>
-      <div class="card stat reveal"><div class="ico">💵</div><b>1.000.000đ/người</b><span>Tổng quỹ 12 triệu · dự kiến chi ≈11,7–14,1 triệu tùy món ăn</span></div>
+      <div class="card stat reveal"><div class="ico">💵</div><b>1.000.000đ/người</b><span>Quỹ 12 triệu + góp thêm 100k/người · dự kiến chi ≈12,4–13 triệu</span></div>
     </div>
   </div>
 </section>
@@ -336,7 +334,7 @@ footer button{margin-top:10px}
       <div class="card rule reveal"><div class="ico">🎟️</div><div><b>Giá villa đã gồm vé cổng</b><span class="note">3.100.000đ (06/11 tính giá ngày lẻ) + 4 × 250.000đ phụ thu = <b>4.100.000đ</b> cho 12 người lớn. </span></div></div>
       <div class="card rule reveal"><div class="ico">🔥</div><div><b>Bếp miễn phí 1 loại</b><span class="note">Bếp nướng (có sẵn than, vỉ, kẹp, cồn khô) HOẶC bếp ga mini (kèm 2 bình ga); lấy cả hai loại bếp thêm <b>100.000đ</b>.</span></div></div>
       <div class="card rule reveal"><div class="ico">🎁</div><div><b>Khu tặng đoàn</b><span class="note"><b>Bếp nướng BBQ to</b> (nếu tự mang đồ nướng) và <b>loa kéo</b>. Villa có <b>tủ lạnh</b>, <b>bàn ghế setup sẵn</b>.</span></div></div>
-      <div class="card rule reveal"><div class="ico">🧽</div><div><b>Tự dọn dẹp thì miễn phí</b><span class="note">Nhờ khu làm thì <b>250.000đ/bữa chính</b>. Đặt đồ ăn của khu thì không tính phí dọn.</span></div></div>
+      <div class="card rule reveal"><div class="ico">🧽</div><div><b>Đã thuê khu dọn tối 06/11</b><span class="note">Nhờ khu dọn <b>250.000đ/bữa chính</b>: nhóm thuê khu dọn tiệc BBQ. Sáng ăn nhà hàng hoặc mì ly, trưa ăn nhà hàng nên không phải rửa bát.</span></div></div>
       <div class="card rule hot reveal"><div class="ico">⚠️</div><div><b>Đặt phòng không hoàn, không hủy</b><span class="note">Chỉ đổi lịch được trong 5 tiếng sau khi đặt, hoặc trước ngày đi 14 ngày. Cọc <b>50% tiền phòng</b>, chuyển khoản vào tài khoản của khu.</span></div></div>
     </div>
   </div>
@@ -347,7 +345,7 @@ footer button{margin-top:10px}
   <div class="wrap">
     <div class="kicker reveal">Phân công</div>
     <h2 class="reveal">Ai lo việc gì?</h2>
-    <p class="lead reveal">Chọn tên mình để xem ngay ban, xe, ca dọn dẹp và việc cần làm.</p>
+    <p class="lead reveal">Chọn tên mình để xem ngay ban, xe, việc buổi BBQ và việc cần làm. Buổi nấu nướng vất vả nhất nên ban ẩm thực và ban nướng được tăng cường thêm người.</p>
     <div class="me reveal">
       <select id="who"><option value="">👤 Chọn tên của bạn…</option></select>
     </div>
@@ -355,12 +353,16 @@ footer button{margin-top:10px}
     <div class="grid g3" id="teams"></div>
 
     <div class="card reveal" style="margin-top:22px">
-      <h3>🧽 Lịch dọn dẹp</h3>
-      <p class="note" style="margin-top:0">Ngân sách đã dự trù <b>250.000đ nhờ khu dọn</b> cho mỗi bữa tự nấu; nhóm tự rửa thì tiết kiệm được khoản này. Ai nấu bữa nào thì không rửa bữa đó.</p>
+      <h3>🍖 Lịch buổi BBQ tối 06/11</h3>
+      <p class="note" style="margin-top:0">Không có ca rửa bát (đã thuê khu dọn 250k), nên Hoàng, Hải Long vào ban ẩm thực; Kiên, Bùi Văn Dương vào ban nướng.</p>
       <div class="dl">
-        <b>Tối 06/11</b><div>Dương Huy Hoàng, Nguyễn Hải Long, Nguyễn Văn Thắng, Phạm Quang Tùng <span class="note">(nếu tự nướng BBQ).</span></div>
-        <b>Sáng 07/11</b><div>Bùi Văn Kiên, Bùi Văn Dương, Nguyễn Trung Long <span class="note">(nếu tự nấu mì).</span></div>
-        <b>Trưa 07/11</b><div>Ăn ở nhà hàng, không phải rửa. Cả nhóm thu dọn villa, kiểm đồ, trả phòng trước 12h.</div>
+        <b>Sáng 06/11</b><div>Đi chợ: Thủy, Dương Xuân Thắng, Hoàng · Ướp thịt tại nhà: Thủy, Thoại, Ngọc, Bảo Anh.</div>
+        <b>16h30–17h45</b><div>Sơ chế: Thủy chỉ huy · D.X.Thắng khuân đồ, chặt sườn · Thoại, Ngọc rau, nước chấm · Bảo Anh, Hải Long cuộn bò nấm, xiên que · Hoàng luộc ngô khoai, bày bàn, đồ uống.</div>
+        <b>17h30</b><div>Nhóm than: Trung Long, Văn Thắng, Tùng.</div>
+        <b>18h–19h</b><div>Nướng ca 1: Trung Long, Văn Thắng, Kiên.</div>
+        <b>19h–20h</b><div>Nướng ca 2: Trung Long, Tùng, Bùi Văn Dương.</div>
+        <b>20h</b><div>Trung Long, Văn Thắng, Tùng trông lửa trại · Kiên, Dương mở karaoke.</div>
+        <b>22h</b><div>Khu vào dọn tiệc nướng. Nhóm chỉ gom rác, cất đồ thừa vào tủ lạnh.</div>
       </div>
     </div>
   </div>
@@ -412,14 +414,14 @@ footer button{margin-top:10px}
 
     <h3 class="reveal" style="margin:42px 0 14px;font-size:24px">🎉 Hoạt động chung</h3>
     <div class="grid g4 games">
-      <div class="card reveal"><div class="ico">🍢</div><h3>Cùng nướng BBQ</h3><p class="note">16h30–20h · Ban ẩm thực + ban nướng, ai rảnh vào phụ</p></div>
+      <div class="card reveal"><div class="ico">🍢</div><h3>Cùng nướng BBQ</h3><p class="note">16h30–20h · Ban ẩm thực (7) + ban nướng (5), nướng 2 ca</p></div>
       <div class="card reveal"><div class="ico">🎤</div><h3>Karaoke loa kéo</h3><p class="note">20h–21h45 · Khu tặng loa kéo · MC: Kiên & Bùi Văn Dương mở màn</p></div>
-      <div class="card reveal"><div class="ico">🔥</div><h3>Lửa trại</h3><p class="note">20h–22h · Không bắt buộc, 600k cho 12 người, đặt trước 1 ngày</p></div>
+      <div class="card reveal"><div class="ico">🔥</div><h3>Lửa trại</h3><p class="note">20h–22h · Đã đặt, 600k cho 12 người · Ban nướng trông lửa</p></div>
       <div class="card reveal"><div class="ico">🐺</div><h3>Ma sói</h3><p class="note">22h–23h · Quản trò: anh Kiên. 12 người: 3 sói, tiên tri, bảo vệ, phù thủy, thợ săn, 5 dân</p></div>
       <div class="card reveal"><div class="ico">🃏</div><h3>Uno & bài tây</h3><p class="note">Từ 23h · Bên ấm trà, đồ nướng còn lại</p></div>
       <div class="card reveal"><div class="ico">🕵️</div><h3>Ai là gián điệp</h3><p class="note">Xen kẽ · Không cần dụng cụ</p></div>
       <div class="card reveal"><div class="ico">🎶</div><h3>Đoán bài hát</h3><p class="note">Xen kẽ · Kiên & Dương ngân nga, cả nhóm đoán</p></div>
-      <div class="card reveal"><div class="ico">🍜</div><h3>Ăn khuya</h3><p class="note">Mì tôm nóng giữa trời se lạnh Ba Vì</p></div>
+      <div class="card reveal"><div class="ico">🍜</div><h3>Ăn khuya</h3><p class="note">Mì ly nóng giữa trời se lạnh Ba Vì</p></div>
     </div>
 
     <h3 class="reveal" style="margin:42px 0 14px;font-size:24px">🎬 Xem trước Suối Mơ</h3>
@@ -442,27 +444,26 @@ footer button{margin-top:10px}
 <section id="anuong" class="alt">
   <div class="wrap">
     <div class="kicker reveal">Ăn uống</div>
-    <h2 class="reveal">Ăn gì? Chọn từng bữa</h2>
-    <p class="lead reveal">Ban ẩm thực: <b>chị Thủy</b> (trưởng ban), <b>anh Dương Xuân Thắng</b> (phó ban), <b>Thoại, Ngọc, Bảo Anh</b>. Mỗi bữa chọn 1 phương án, cả nhóm chốt trước <b>02/11</b>. Bấm thử để xem tổng tiền thay đổi.</p>
+    <h2 class="reveal">Ăn gì? Đã chốt</h2>
+    <p class="lead reveal">Ban ẩm thực: <b>chị Thủy</b> (trưởng ban), <b>anh Dương Xuân Thắng</b> (phó ban), <b>Thoại, Ngọc, Bảo Anh</b>, tăng cường <b>Hoàng, Hải Long</b>. Tối T6 tự nướng BBQ (thuê khu dọn) · sáng T7 ai dậy trước 9h ăn nhà hàng, dậy muộn ăn mì ly · trưa T7 2 nồi lẩu cá tầm · có lửa trại.</p>
     <div class="tabs" data-group="food">
-      <button class="tab on" data-pane="chon">🍽️ Chọn món từng bữa</button>
-      <button class="tab" data-pane="cho">🛒 Đi chợ (bữa tự nấu)</button>
+      <button class="tab on" data-pane="chon">🍽️ Thực đơn đã chốt</button>
+      <button class="tab" data-pane="cho">🛒 Đi chợ</button>
       <button class="tab" data-pane="menu">📖 Thực đơn Suối Mơ</button>
     </div>
 
     <!-- CHỌN MÓN -->
     <div class="pane on" id="chon">
-      <div class="presets" id="presets"></div>
       <div class="grid g2" style="align-items:start">
         <div id="meals" style="display:grid;gap:18px"></div>
         <div class="card sum">
-          <h3>🧮 Tổng theo lựa chọn</h3>
-          <div class="note">Tiền ăn 3 bữa</div><div style="font-size:24px;font-weight:800" id="sumFood">–</div>
+          <h3>🧮 Tổng chi dự kiến</h3>
+          <div class="note">Tiền ăn 3 bữa + lửa trại</div><div style="font-size:24px;font-weight:800" id="sumFood">–</div>
           <div class="note" style="margin-top:10px">Tổng chuyến đi (gồm khoản chung <span id="sumFixed"></span>)</div>
           <div class="big-num" id="sumAll">–</div>
           <div class="note" style="margin-top:6px">≈ <b id="sumPer">–</b>/người · <span id="sumGap"></span></div>
-          <label class="opt" style="margin-top:14px"><input type="checkbox" id="optFire"><span class="t"><b>🔥 Thêm lửa trại</b><small>Khu báo giá 600k cho 12 người (≈50k/người)</small></span><span class="pr">+600k</span></label>
-          <p class="note" style="margin-top:14px">🧽 Bữa tự nấu đã cộng <b>250k nhờ khu dọn</b>. Đặt đồ của khu hoặc ăn nhà hàng thì không mất phí dọn.<br>🔥 Tự mang đồ nướng thì khu tặng bếp nướng BBQ to, bếp ga mượn miễn phí. Đặt set BBQ thì khu lo bếp nướng. 🎤 Loa kéo khu tặng.</p>
+          <label class="opt" style="margin-top:14px;display:block;cursor:default"><span class="t"><b>☕ Số người ăn sáng ở nhà hàng: <span id="bfLbl"></span></b><small>Kéo để ước tính; ai dậy sau 9h ăn mì ly (đã mua sẵn)</small></span><input type="range" id="bfN" min="0" max="12" step="1" style="width:100%;margin-top:8px;accent-color:var(--moss)" aria-label="Số người ăn sáng ở nhà hàng"></label>
+          <p class="note" style="margin-top:14px">🧽 Tối T6 đã cộng <b>250k nhờ khu dọn</b>; ăn nhà hàng không mất phí dọn.<br>🔥 Tự mang đồ nướng nên khu tặng bếp nướng BBQ to; bếp ga mini mượn miễn phí để đun nước pha mì ly. 🎤 Loa kéo khu tặng.</p>
         </div>
       </div>
     </div>
@@ -471,15 +472,16 @@ footer button{margin-top:10px}
     <div class="pane" id="cho">
       <div class="grid g2">
         <div class="card">
-          <h3>👩‍🍳 Ai làm gì khi tự nướng</h3>
+          <h3>👩‍🍳 Ai làm gì buổi BBQ</h3>
           <ul style="padding-left:18px;margin:0">
             <li><b>Thủy</b>: chỉ huy bếp, ướp thịt tại nhà sáng 06/11, chia khẩu phần</li>
-            <li><b>Dương Xuân Thắng</b>: mua thịt, xách đồ, phụ sơ chế</li>
-            <li><b>Thoại, Ngọc</b>: rau, ngô khoai, nước chấm</li>
-            <li><b>Bảo Anh</b>: cuộn bò nấm, xiên que, bày bàn</li>
-            <li><b>Ban nướng</b> (Trung Long, Văn Thắng, Tùng): nhóm than 17h30, nướng theo đợt để ai cũng được ăn nóng</li>
+            <li><b>Dương Xuân Thắng</b>: đi chợ, khuân đồ, chặt sườn, xếp thịt theo đợt</li>
+            <li><b>Thoại, Ngọc</b>: rau, nước chấm</li>
+            <li><b>Bảo Anh, Hải Long</b>: cuộn bò nấm, xiên que</li>
+            <li><b>Hoàng</b>: đi chợ (trả tiền), luộc ngô khoai, bày bàn, đồ uống</li>
+            <li><b>Ban nướng</b>: Trung Long chỉ huy · ca 1 (18h–19h) Văn Thắng, Kiên · ca 2 (19h–20h) Tùng, Bùi Văn Dương</li>
           </ul>
-          <p class="note" style="margin-top:12px">Đặt set BBQ thì ban ẩm thực chỉ mua đồ uống, ăn vặt, bày bàn; ban nướng nướng nếu chọn tự nướng.</p>
+          <p class="note" style="margin-top:12px">Ăn xong khu vào dọn (250k), không ai phải rửa bát.</p>
         </div>
         <div class="card">
           <h3>🔥 Khu đã có sẵn</h3>
@@ -506,13 +508,14 @@ footer button{margin-top:10px}
     <p class="lead reveal">Quỹ <b>1.000.000đ/người × 12 = 12.000.000đ</b>, Hoàng giữ. Mua gì cũng gửi ảnh hóa đơn vào nhóm Zalo; về sẽ công khai sổ chi và trả lại tiền dư.</p>
     <div class="vs">
       <div class="card"><div class="note">Tổng dự kiến <span id="budPick"></span></div><div class="big-num" id="budAll">–</div><div class="note" id="budNote"></div><div id="bars"></div></div>
-      <div class="card"><h3>4 gói gợi ý</h3>
-        <div class="tbl"><table id="pkgTbl"></table></div>
+      <div class="card"><h3>Tổng theo bữa sáng</h3>
+        <div class="tbl"><table id="bfTbl"></table></div>
         <ul class="note" style="padding-left:18px;margin-top:14px">
-          <li>✅ <b>Gói A, B nằm trong quỹ 12 triệu</b> (dư khoảng 165–270k). Thêm lửa trại thì gói B vượt khoảng 36k/người.</li>
-          <li>⚠️ Gói C vượt khoảng 90k/người, gói D khoảng 173k/người. Cách giảm: tự rửa bát bữa tối (-250k), bớt dự phòng, mua 1 thùng bia (-270k), bỏ hoa quả (-200k).</li>
+          <li>⚠️ Phương án đã chốt (gồm lửa trại) <b>vượt quỹ 12 triệu khoảng 430–1.030k</b> tùy số người ăn sáng ở nhà hàng.</li>
+          <li>✅ <b>Mỗi người góp thêm 100k</b> → quỹ 13,2 triệu, dư khoảng 170–770k, về trả lại.</li>
+          <li>Cách giảm nếu cần: mua 1 thùng bia (-270k), bỏ hoa quả vì lẩu đã có tráng miệng (-200k), bớt dự phòng.</li>
           <li>Giá đi chợ là giá tham khảo tháng 10/2026 ở siêu thị, chợ; mua ở chợ đầu mối có thể rẻ hơn.</li>
-          <li>Chọn món ở mục <a href="#anuong">Ăn uống</a>, bảng bên trái tự cập nhật.</li>
+          <li>Kéo số người ăn sáng ở mục <a href="#anuong">Ăn uống</a>, bảng bên trái tự cập nhật.</li>
         </ul>
       </div>
     </div>
@@ -591,90 +594,84 @@ footer button{margin-top:10px}
 <script>
 /* ================= DỮ LIỆU ================= */
 const PEOPLE = {
-  "Cao Thị Minh Thủy":   {c:"#e07a5f", team:"Ban ẩm thực (trưởng ban)", car:"Xe 1 – chị Thủy (bác tài)", clean:"Không (nấu chính)", tasks:["Lái xe 1 chở Thoại, Bảo Anh, Ngọc + thùng đá, đồ tươi","Lên danh sách đi chợ; nếu tự nướng thì sáng 06/11 mua thịt và ướp tại nhà","Đặt món với khu cùng Hoàng (03/11)","Chỉ huy bếp, chia khẩu phần"]},
-  "Bùi Văn Kiên":        {c:"#3a8fb7", team:"Ban văn nghệ & trò chơi", car:"Xe 2 – anh Kiên (bác tài)", clean:"Sáng 07/11 (nếu tự nấu)", tasks:["Lái xe 2, chở đồ uống, ăn vặt, Uno, bài","MC, hát mở màn karaoke 20h–21h45","Quản trò ma sói 22h–23h","Nhận loa kéo của khu, chuẩn bị danh sách bài hát"]},
-  "Nguyễn Trung Long":   {c:"#4f9a6f", team:"Ban nướng & lửa (trưởng ban)", car:"Xe 3 – Hoàng", clean:"Sáng 07/11 (nếu tự nấu)", tasks:["Nếu tự nướng: mua xiên, giấy bạc, găng tay (khu đã có than, vỉ, kẹp)","Nhóm than 17h30, chỉ huy nướng BBQ","Trông lửa trại (nếu thuê)"]},
-  "Dương Xuân Thắng":    {c:"#f0b429", team:"Ban ẩm thực (phó ban)", car:"Xe 3 – Hoàng", clean:"Không (nấu)", tasks:["Đi mua thịt cùng chị Thủy, khuân vác đồ","Phụ sơ chế, xiên que","Hỗ trợ chị Thủy chỉ huy bếp"]},
-  "Nguyễn Hải Long":     {c:"#8e6cc0", team:"Ban văn nghệ & trò chơi · Ảnh", car:"Xe 2 – anh Kiên", clean:"Tối 06/11 (nếu tự nướng)", tasks:["Quản trò Uno, bài (chuẩn bị 2 bộ Uno, 1 bộ bài)","Chụp ảnh, quay video, gom ảnh vào album chung","Rửa bát sau tiệc BBQ (nếu không nhờ khu)"]},
-  "Nguyễn Văn Thắng":    {c:"#d9534f", team:"Ban nướng & lửa", car:"Xe 3 – Hoàng", clean:"Tối 06/11 (nếu tự nướng)", tasks:["Phụ nhóm than, nướng theo đợt","Rửa bát sau tiệc BBQ (nếu không nhờ khu)"]},
-  "Phạm Quang Tùng":     {c:"#3d9970", team:"Ban nướng & lửa", car:"Xe 2 – anh Kiên", clean:"Tối 06/11 (nếu tự nướng)", tasks:["Phụ nướng BBQ, chuyển đồ nướng ra bàn","Rửa bát sau tiệc BBQ (nếu không nhờ khu)"]},
-  "Trần Thị Thanh Thoại":{c:"#ef476f", team:"Ban ẩm thực · Y tế", car:"Xe 1 – chị Thủy", clean:"Không (nấu) · Trưa 07/11: thu dọn, trả phòng", tasks:["Sơ chế rau, ngô khoai, pha nước chấm","Chuẩn bị túi thuốc y tế cho cả đoàn"]},
-  "Lý Bích Ngọc":        {c:"#118ab2", team:"Ban ẩm thực · Ảnh", car:"Xe 1 – chị Thủy", clean:"Không (nấu) · Trưa 07/11: thu dọn, trả phòng", tasks:["Sơ chế rau, ngô khoai, pha nước chấm","Chụp ảnh tập thể lúc hoàng hôn 17h"]},
-  "Bùi Bảo Anh":         {c:"#ff9f1c", team:"Ban ẩm thực", car:"Xe 1 – chị Thủy", clean:"Không (nấu) · Trưa 07/11: thu dọn, trả phòng", tasks:["Cuộn bò nấm kim châm, xiên que","Bày bàn tiệc BBQ"]},
-  "Dương Huy Hoàng":     {c:"#0f2a1f", team:"Trưởng đoàn & giữ quỹ chung", car:"Xe 3 – Hoàng (bác tài)", clean:"Tối 06/11 (nếu tự nướng)", tasks:["Chốt danh sách, thu quỹ, chuyển cọc villa 50% (28/10)","Đặt lửa trại trước 1 ngày (05/11) nếu nhóm thuê","Đặt bàn lẩu trưa và các món của khu (03/11)","Lập nhóm Zalo, ứng tiền cho các ban, giữ hóa đơn","Chốt sổ chi tiêu, trả lại tiền dư sau chuyến"]},
-  "Bùi Văn Dương":       {c:"#06d6a0", team:"Ban văn nghệ & trò chơi", car:"Xe 2 – anh Kiên", clean:"Sáng 07/11 (nếu tự nấu)", tasks:["MC, hát mở màn karaoke cùng anh Kiên","Dẫn trò đoán bài hát"]}
+  "Cao Thị Minh Thủy":   {c:"#e07a5f", team:"Ban ẩm thực (trưởng ban)", car:"Xe 1 – chị Thủy (bác tài)", bbq:"Chỉ huy bếp, chia khẩu phần", tasks:["Lái xe 1 chở Thoại, Bảo Anh, Ngọc + thùng đá, đồ tươi","Lên danh sách đi chợ; sáng 06/11 đi chợ cùng D.X.Thắng, Hoàng rồi ướp thịt tại nhà","Đặt bàn lẩu cá tầm, báo khu dọn tối 06/11 cùng Hoàng (03/11)","16h30 chỉ huy sơ chế, chia khẩu phần theo đợt nướng"]},
+  "Bùi Văn Kiên":        {c:"#3a8fb7", team:"Ban văn nghệ & trò chơi · Tăng cường ban nướng", car:"Xe 2 – anh Kiên (bác tài)", bbq:"Nướng ca 1 (18h–19h)", tasks:["Lái xe 2, chở đồ uống, ăn vặt, mì ly, Uno, bài","Nướng BBQ ca 1 (18h–19h) cùng Trung Long, Văn Thắng","MC, hát mở màn karaoke 20h–21h45","Quản trò ma sói 22h–23h","Nhận loa kéo của khu, chuẩn bị danh sách bài hát"]},
+  "Nguyễn Trung Long":   {c:"#4f9a6f", team:"Ban nướng & lửa (trưởng ban)", car:"Xe 3 – Hoàng", bbq:"Nhóm than, chỉ huy nướng cả 2 ca", tasks:["Mua xiên, giấy bạc, găng tay (khu đã có than, vỉ, kẹp)","Nhóm than 17h30, chỉ huy nướng BBQ cả 2 ca (18h–20h)","20h nhận lửa trại từ khu, trông lửa an toàn"]},
+  "Dương Xuân Thắng":    {c:"#f0b429", team:"Ban ẩm thực (phó ban)", car:"Xe 3 – Hoàng", bbq:"Khuân đồ, chặt sườn, xếp thịt theo đợt", tasks:["Sáng 06/11 đi mua thịt cùng chị Thủy, Hoàng","Khuân đồ từ xe, chặt sườn, xếp thịt theo đợt nướng","Hỗ trợ chị Thủy chỉ huy bếp"]},
+  "Nguyễn Hải Long":     {c:"#8e6cc0", team:"Ban văn nghệ & trò chơi · Ảnh · Tăng cường ban ẩm thực", car:"Xe 2 – anh Kiên", bbq:"Cuộn bò nấm, xiên que", tasks:["16h30 sơ chế cùng Bảo Anh: cuộn bò nấm, xiên que","Chụp ảnh, quay video, gom ảnh vào album chung","Quản trò Uno, bài (chuẩn bị 2 bộ Uno, 1 bộ bài)"]},
+  "Nguyễn Văn Thắng":    {c:"#d9534f", team:"Ban nướng & lửa", car:"Xe 3 – Hoàng", bbq:"Nhóm than, nướng ca 1 (18h–19h)", tasks:["17h30 nhóm than cùng Trung Long, Tùng","Nướng ca 1 (18h–19h)","Trông lửa trại từ 20h"]},
+  "Phạm Quang Tùng":     {c:"#3d9970", team:"Ban nướng & lửa", car:"Xe 2 – anh Kiên", bbq:"Nhóm than, nướng ca 2 (19h–20h)", tasks:["17h30 nhóm than cùng Trung Long, Văn Thắng","Nướng ca 2 (19h–20h)","Trông lửa trại từ 20h"]},
+  "Trần Thị Thanh Thoại":{c:"#ef476f", team:"Ban ẩm thực · Y tế", car:"Xe 1 – chị Thủy", bbq:"Rau, nước chấm", tasks:["Sáng 06/11 ướp thịt tại nhà cùng chị Thủy","16h30 rửa rau, cắt dưa chuột, cà chua, pha nước chấm","Chuẩn bị túi thuốc y tế cho cả đoàn"]},
+  "Lý Bích Ngọc":        {c:"#118ab2", team:"Ban ẩm thực · Ảnh", car:"Xe 1 – chị Thủy", bbq:"Rau, nước chấm", tasks:["Sáng 06/11 ướp thịt tại nhà cùng chị Thủy","16h30 rửa rau, cắt dưa chuột, cà chua, pha nước chấm","Chụp ảnh tập thể lúc hoàng hôn 17h"]},
+  "Bùi Bảo Anh":         {c:"#ff9f1c", team:"Ban ẩm thực", car:"Xe 1 – chị Thủy", bbq:"Cuộn bò nấm, xiên que", tasks:["Sáng 06/11 ướp thịt tại nhà cùng chị Thủy","16h30 cuộn bò nấm kim châm, xiên que cùng Hải Long"]},
+  "Dương Huy Hoàng":     {c:"#0f2a1f", team:"Trưởng đoàn & giữ quỹ chung · Tăng cường ban ẩm thực", car:"Xe 3 – Hoàng (bác tài)", bbq:"Luộc ngô khoai, bày bàn, đồ uống", tasks:["Chốt danh sách, thu quỹ (thêm 100k/người trước 02/11), chuyển cọc villa 50% (28/10)","03/11 đặt bàn 2 nồi lẩu cá tầm, nhờ khu dọn tối 06/11, hỏi giờ ăn sáng","05/11 đặt lửa trại (600k), hẹn nhóm lửa 20h","Sáng 06/11 đi chợ cùng Thủy, D.X.Thắng; xe điện chở thịt","16h30 luộc ngô khoai, bày bàn, đá, đồ uống","Trả tiền tại khu, giữ hóa đơn, chốt sổ và trả lại tiền dư sau chuyến"]},
+  "Bùi Văn Dương":       {c:"#06d6a0", team:"Ban văn nghệ & trò chơi · Tăng cường ban nướng", car:"Xe 2 – anh Kiên", bbq:"Nướng ca 2 (19h–20h)", tasks:["Nướng BBQ ca 2 (19h–20h) cùng Trung Long, Tùng","MC, hát mở màn karaoke cùng anh Kiên","Dẫn trò đoán bài hát"]}
 };
 const TEAMS = [
-  {n:"👑 Trưởng đoàn & quỹ chung", cls:"", lead:"Dương Huy Hoàng", mem:["Dương Huy Hoàng"], job:["Đặt phòng, liên hệ khu, lập nhóm Zalo","Thu quỹ, ứng tiền cho các ban","Chốt sổ chi tiêu sau chuyến"]},
-  {n:"🍳 Ban ẩm thực", cls:"t2", lead:"Cao Thị Minh Thủy", mem:["Cao Thị Minh Thủy","Dương Xuân Thắng","Trần Thị Thanh Thoại","Lý Bích Ngọc","Bùi Bảo Anh"], job:["Lên danh sách và mua đồ ăn uống","Ướp thịt, sơ chế, nấu lẩu và bữa sáng","Chia đồ ăn"]},
-  {n:"🔥 Ban nướng & lửa", cls:"t3", lead:"Nguyễn Trung Long", mem:["Nguyễn Trung Long","Nguyễn Văn Thắng","Phạm Quang Tùng"], job:["Mua xiên, giấy bạc, găng tay (khu tặng bếp nướng to, có than)","Nhóm bếp, nướng BBQ","Trông lửa trại (nếu thuê)"]},
-  {n:"🎤 Ban văn nghệ & trò chơi", cls:"t4", lead:"Bùi Văn Kiên", mem:["Bùi Văn Kiên","Bùi Văn Dương","Nguyễn Hải Long"], job:["Nhận loa kéo khu tặng, danh sách bài hát","MC, karaoke","Kiên quản trò ma sói; Hải Long quản trò Uno, bài"]},
+  {n:"👑 Trưởng đoàn & quỹ chung", cls:"", lead:"Dương Huy Hoàng", mem:["Dương Huy Hoàng"], job:["Đặt phòng, liên hệ khu, lập nhóm Zalo","Thu quỹ, ứng tiền cho các ban, trả tiền tại khu","Chốt sổ chi tiêu sau chuyến"]},
+  {n:"🍳 Ban ẩm thực · 7 người", cls:"t2", lead:"Cao Thị Minh Thủy", mem:["Cao Thị Minh Thủy","Dương Xuân Thắng","Trần Thị Thanh Thoại","Lý Bích Ngọc","Bùi Bảo Anh","Dương Huy Hoàng","Nguyễn Hải Long"], job:["Lên danh sách, đi chợ sáng 06/11, ướp thịt tại nhà","16h30 sơ chế, bày bàn, pha nước chấm","Chia đồ ăn theo đợt nướng","Tăng cường: Hoàng, Hải Long"]},
+  {n:"🔥 Ban nướng & lửa · 5 người", cls:"t3", lead:"Nguyễn Trung Long", mem:["Nguyễn Trung Long","Nguyễn Văn Thắng","Phạm Quang Tùng","Bùi Văn Kiên","Bùi Văn Dương"], job:["Mua xiên, giấy bạc, găng tay (khu tặng bếp nướng to, có than)","Nhóm than 17h30, nướng 2 ca 18h–20h","Trông lửa trại từ 20h","Tăng cường: Kiên, Bùi Văn Dương"]},
+  {n:"🎤 Ban văn nghệ & trò chơi", cls:"t4", lead:"Bùi Văn Kiên", mem:["Bùi Văn Kiên","Bùi Văn Dương","Nguyễn Hải Long"], job:["Nhận loa kéo khu tặng, danh sách bài hát","MC, karaoke 20h–21h45","Kiên quản trò ma sói; Hải Long quản trò Uno, bài"]},
   {n:"🚗 Lái xe", cls:"t5", mem:["Cao Thị Minh Thủy","Bùi Văn Kiên","Dương Huy Hoàng"], job:["Đổ xăng (Thủy, Kiên) / sạc đầy xe điện (Hoàng) trước 12h30","Chở người và đồ"]},
   {n:"📸 Ảnh & quay phim", cls:"t7", mem:["Nguyễn Hải Long","Lý Bích Ngọc"], job:["Ảnh tập thể lúc hoàng hôn 17h","Video kỷ niệm","Gom ảnh vào 1 album chung"]},
   {n:"🩹 Y tế", cls:"t6", mem:["Trần Thị Thanh Thoại"], job:["Thuốc hạ sốt, đau bụng, say xe, dị ứng","Băng cá nhân, dầu gió, chống muỗi"]}
 ];
 const CARS = [
-  {n:"Xe 1 – chị Thủy", e:"🚙", d:"Cao Thị Minh Thủy", p:["Trần Thị Thanh Thoại","Bùi Bảo Anh","Lý Bích Ngọc"], cargo:"🧊 Thùng đá, đồ tươi, gia vị, đồ ăn sáng"},
-  {n:"Xe 2 – anh Kiên", e:"🚗", d:"Bùi Văn Kiên", p:["Nguyễn Hải Long","Bùi Văn Dương","Phạm Quang Tùng"], cargo:"🎲 Uno, bài, đồ uống, ăn vặt"},
+  {n:"Xe 1 – chị Thủy", e:"🚙", d:"Cao Thị Minh Thủy", p:["Trần Thị Thanh Thoại","Bùi Bảo Anh","Lý Bích Ngọc"], cargo:"🧊 Thùng đá, đồ tươi, gia vị"},
+  {n:"Xe 2 – anh Kiên", e:"🚗", d:"Bùi Văn Kiên", p:["Nguyễn Hải Long","Bùi Văn Dương","Phạm Quang Tùng"], cargo:"🎲 Uno, bài, đồ uống, ăn vặt, mì ly"},
   {n:"Xe 3 – Hoàng", e:"🚘", d:"Dương Huy Hoàng", p:["Dương Xuân Thắng","Nguyễn Văn Thắng","Nguyễn Trung Long"], cargo:"🍖 Thịt đã ướp, đồ nướng, nước lọc, bia"}
 ];
 const DAY1 = [
   ["12h30","must","Tập trung tại Khu Xuân Phương – HVKTQS","Kiểm đồ, xếp đồ lên xe. Xe Thủy, Kiên đã đổ xăng; xe Hoàng (xe điện) đã sạc đầy."],
   ["13h00","must","Xuất phát","Đại lộ Thăng Long → Hòa Lạc → Yên Bài. Mua đá viên ở đoạn gần Yên Bài."],
   ["14h00","must","Nhận phòng","Chia phòng (nữ 1 phòng; nam 2 phòng + phòng khách), cất đồ, cho đồ tươi vào tủ lạnh."],
-  ["14h30 – 17h00","free","Vui chơi tự do","Zipline, kayak, lội suối, xe đạp, bi-a, câu cá… ai thích gì chơi nấy."],
-  ["16h30","","Sơ chế đồ nướng (nếu tự nướng)","Ban ẩm thực xiên que, cuộn bò nấm, rửa rau, luộc ngô khoai. Đặt set BBQ thì bỏ bước này."],
-  ["17h00","must","📸 Ảnh tập thể lúc hoàng hôn","Ở view hồ, cả nhóm có mặt."],
-  ["17h30","","Nhóm than","Ban nướng nhóm bếp nướng BBQ to khu tặng (có sẵn than, cồn khô), hoặc nhận set BBQ của khu."],
-  ["18h00 – 20h00","","🍖 Tiệc BBQ ngoài trời","Ăn, uống, nhạc nền từ Kiên & Dương."],
-  ["20h00 – 21h45","","🎤 Karaoke loa kéo (+ lửa trại)","Loa kéo khu tặng. Hát hết mình trước 22h."],
-  ["22h00","must","Cổng khu đóng · tắt loa to","Chuyển nhạc nhẹ. Dọn tiệc nướng, gom rác."],
-  ["22h00 – 24h00","","🐺 Ma sói · 🃏 Uno · ☕ trà & ăn khuya","Ma sói: anh Kiên quản trò · Uno, bài: Hải Long. Mì tôm nóng giữa trời lạnh."],
+  ["14h30 – 16h30","free","Vui chơi tự do","Zipline, kayak, lội suối, xe đạp, bi-a, câu cá… ai thích gì chơi nấy."],
+  ["16h30 – 17h45","","🔪 Ban ẩm thực sơ chế (7 người)","Xiên que, cuộn bò nấm, rửa rau, pha nước chấm, luộc ngô khoai, bày bàn."],
+  ["17h00","must","📸 Ảnh tập thể lúc hoàng hôn","Ở view hồ, cả nhóm có mặt (tạm dừng sơ chế 15 phút)."],
+  ["17h30","","Nhóm than","Trung Long, Văn Thắng, Tùng nhóm bếp nướng BBQ to khu tặng (có sẵn than, cồn khô)."],
+  ["18h00 – 20h00","","🍖 Tiệc BBQ ngoài trời · nướng 2 ca","Ca 1 (18h–19h): Trung Long, Văn Thắng, Kiên · Ca 2 (19h–20h): Trung Long, Tùng, Bùi Văn Dương."],
+  ["20h00 – 21h45","","🔥 Lửa trại + 🎤 karaoke loa kéo","Ban nướng trông lửa trại; Kiên & Dương MC. Hát hết mình trước 22h."],
+  ["22h00","must","Cổng khu đóng · tắt loa to","Chuyển nhạc nhẹ. Khu vào dọn tiệc nướng (đã thuê 250k); nhóm chỉ gom rác, cất đồ thừa vào tủ lạnh."],
+  ["22h00 – 24h00","","🐺 Ma sói · 🃏 Uno · ☕ trà & ăn khuya","Ma sói: anh Kiên quản trò · Uno, bài: Hải Long. Mì ly nóng giữa trời lạnh."],
   ["≈0h30","","Đi ngủ","Mai còn chơi tiếp!"]
 ];
 const DAY2 = [
   ["6h30","free","Dạo hồ ngắm sương sớm","Không bắt buộc, chụp ảnh sương núi."],
-  ["7h00 – 8h00","","☕ Ăn sáng","Tự nấu mì trứng xúc xích, hoặc ăn phở/bún của khu (theo phương án đã chốt)."],
-  ["8h00 – 11h00","free","Vui chơi tự do","Bơi, zipline, kayak… khu xác nhận vẫn hoạt động bình thường."],
-  ["11h00 – 12h00","must","Dọn dẹp & trả phòng","Gom rác, kiểm đồ thất lạc. Trả phòng TRƯỚC 12h (muộn mất 100k/giờ)."],
-  ["12h00 – 13h15","","🍲 Ăn trưa lẩu ở nhà hàng trong khu","Lẩu cá lăng hoặc cá tầm. Không phải nấu, không phải rửa."],
+  ["7h00 – 9h00","","☕ Ai dậy trước 9h: ăn sáng ở nhà hàng","50k/bát, tự chọn phở/bún bò, phở/bún gà, bún chả. Hoàng trả từ quỹ."],
+  ["Sau 9h","","🍜 Dậy muộn: mì ly ở villa","Đun nước bằng bếp ga mini. Không phải rửa bát."],
+  ["9h00 – 11h00","free","Vui chơi tự do","Bơi, zipline, kayak… khu xác nhận vẫn hoạt động bình thường."],
+  ["11h00 – 12h00","must","Thu đồ & trả phòng","Gom rác, kiểm đồ thất lạc. Trả phòng TRƯỚC 12h (muộn mất 100k/giờ)."],
+  ["12h00 – 13h15","","🍲 Ăn trưa 2 nồi lẩu cá tầm","Nhà hàng trong khu, đã đặt bàn. Không phải nấu, không phải rửa."],
   ["13h15 – 14h45","free","Chơi tiếp trong khu","Khu cho ở lại sau khi trả phòng. Chụp ảnh, đi dạo, mua quà."],
   ["14h45 – 15h00","","Lên xe về","Ghé mua sữa tươi, bánh sữa Ba Vì làm quà (không bắt buộc)."],
   ["≈16h00","must","Về đến Xuân Phương","Hoàng chốt sổ chi."]
 ];
 /* Giá tham khảo tháng 10/2026 (siêu thị, chợ) */
 const SHOP = [
-  ["T1 · Tự nướng BBQ",[["Ba chỉ lợn 1,5kg (~120–150k/kg)",200],["Sườn non 1,5kg (~150k/kg)",230],["Cánh hoặc đùi gà 1,5kg (~80–110k/kg)",130],["Ba chỉ/bắp bò 1kg + 5 gói nấm kim châm",270],["Xúc xích 1kg (~41–50k/gói 500g)",90],["Tôm thẻ 0,7kg (~180–220k/kg)",140],["Gia vị ướp: sốt BBQ, mật ong, sa tế, tỏi, sả",70],["Ngô 10 bắp + khoai lang 2kg",110],["Rau sống, dưa chuột, cà chua, ớt chuông, chanh, ớt",90],["Bánh mì 12 cái",50],["Xiên, giấy bạc, găng tay (than, vỉ, kẹp khu đã có)",50],["Gia vị chung (dầu ăn, mắm, muối, hạt nêm, tỏi)",80]]],
-  ["S1 · Tự nấu bữa sáng",[["Mì tôm 15 gói (~4,5k/gói)",70],["Trứng 24 quả (~3k/quả)",70],["Xúc xích 24 cái (2 gói 500g)",85],["Hành, rau thơm",20]]],
+  ["Tự nướng BBQ tối 06/11",[["Ba chỉ lợn 1,5kg (~120–150k/kg)",200],["Sườn non 1,5kg (~150k/kg)",230],["Cánh hoặc đùi gà 1,5kg (~80–110k/kg)",130],["Ba chỉ/bắp bò 1kg + 5 gói nấm kim châm",270],["Xúc xích 1kg (~41–50k/gói 500g)",90],["Tôm thẻ 0,7kg (~180–220k/kg)",140],["Gia vị ướp: sốt BBQ, mật ong, sa tế, tỏi, sả",70],["Ngô 10 bắp + khoai lang 2kg",110],["Rau sống, dưa chuột, cà chua, ớt chuông, chanh, ớt",90],["Bánh mì 12 cái",50],["Xiên, giấy bạc, găng tay (than, vỉ, kẹp khu đã có)",50],["Gia vị chung (dầu ăn, mắm, muối, hạt nêm, tỏi)",80]]],
   ["Chung · Đồ uống",[["Bia Hà Nội 2 thùng (~270k/thùng)",540],["Nước ngọt 1 thùng 24 lon",220],["Nước lọc 2 thùng 24 chai",220],["Đá viên 3 bao",60],["Cà phê, trà gói, sữa Ba Vì",120]]],
-  ["Chung · Ăn vặt & khuya",[["Hướng dương, lạc, bim bim, mực khô",250],["Hoa quả",200],["Mì ăn khuya 10 gói",45]]],
-  ["Chung · Đồ dùng",[["Giấy ăn, cốc giấy, túi rác, nước rửa bát",120]]]
+  ["Chung · Ăn vặt, khuya & mì ly",[["Hướng dương, lạc, bim bim, mực khô",250],["Hoa quả",200],["Mì ly 24 ly (~10k/ly): 12 ăn khuya, 12 cho ai dậy muộn",240]]],
+  ["Chung · Đồ dùng",[["Giấy ăn, bát đĩa và cốc giấy, túi rác",120]]]
 ];
-/* Khoản chung, phương án nào cũng có */
-const FIXED = [["Villa (đã gồm vé)",4100],["Đồ uống",1160],["Xăng 2 xe (Thủy, Kiên)",500],["Dự phòng",500],["Ăn vặt, hoa quả, mì khuya",495],["Đồ dùng",120]];
+/* Khoản chung */
+const FIXED = [["Villa (đã gồm vé)",4100],["Đồ uống",1160],["Ăn vặt, hoa quả, mì ly",690],["Xăng 2 xe (Thủy, Kiên)",500],["Dự phòng",500],["Đồ dùng",120]];
 const FIRE = 600;
-/* Phương án từng bữa: [mã, tên, mô tả, giá k] */
+/* Bữa đã chốt: [bữa, phương án, mô tả, giá k]; bữa sáng tính theo số người ăn nhà hàng */
 const MEALS = [
-  {k:"toi", h:"🍖 Tối Thứ 6 · Tiệc BBQ", s:"Tối T6", opts:[
-    ["T1","Tự mua, tự nướng","Ba chỉ, sườn, cánh gà, bò cuộn nấm, xúc xích, tôm, ngô khoai… 1.510k + dọn 250k. Khu tặng bếp nướng BBQ to",1760],
-    ["T2","Set BBQ 250k/người","2 set: ba chỉ, sườn, cánh gà, bò cuộn nấm, đà điểu, rau, bánh mì bơ, ngô khoai, salad, hoa quả. Không phí dọn",3000],
-    ["T3","Set BBQ 300k/người","Như set 250k, thêm tôm nướng (12 con/set) và củ quả luộc chấm vừng lạc. Không phí dọn",3600]]},
-  {k:"sang", h:"☕ Sáng Thứ 7", s:"Sáng T7", opts:[
-    ["S1","Tự nấu mì tôm trứng xúc xích","Mì, trứng, xúc xích, hành 245k + dọn 250k",495],
-    ["S2","Ăn sáng của khu 50k/người","Mỗi người tự chọn phở/bún bò, phở/bún gà, bún chả. Được ngủ thêm, không phải rửa",600]]},
-  {k:"trua", h:"🍲 Trưa Thứ 7 · Nhà hàng trong khu", s:"Trưa T7", opts:[
-    ["L1","Lẩu cá lăng","2 nồi × 1.300k (mỗi nồi 2kg cá, đậu, rau, hoa quả, mì hoặc bún)",2600],
-    ["L2","Lẩu cá tầm","2 nồi × 1.500k (mỗi nồi 2kg cá, đậu, rau, hoa quả, mì hoặc bún)",3000]]}
+  ["🍖 Tối Thứ 6","Tự mua, tự nướng BBQ","Ba chỉ, sườn, cánh gà, bò cuộn nấm, xúc xích, tôm, ngô khoai… 1.510k + khu dọn 250k. Khu tặng bếp nướng BBQ to",1760],
+  ["☕ Sáng Thứ 7","Trước 9h: nhà hàng · sau 9h: mì ly","Nhà hàng 50k/bát (phở/bún bò, phở/bún gà, bún chả). Dậy muộn ăn mì ly đã mua sẵn",null],
+  ["🍲 Trưa Thứ 7","2 nồi lẩu cá tầm","2 nồi × 1.500k ở nhà hàng trong khu (mỗi nồi 2kg cá, đậu, rau, hoa quả, mì hoặc bún)",3000],
+  ["🔥 Tối Thứ 6","Lửa trại","Đã đặt, khu báo 600k cho 12 người",FIRE]
 ];
-const PKGS = [["A","Tiết kiệm",["T1","S1","L1"]],["B","Gợi ý",["T1","S2","L1"]],["C","Nhàn",["T2","S2","L1"]],["D","Sang",["T3","S2","L2"]]];
+const BREAKFAST = 50, FUND = 12000, EXTRA = 100;
 const MILE = [
   ["27–28/10","Chốt danh sách 12 người, thu quỹ 1.000k/người, lập nhóm Zalo (Hoàng)"],
   ["28/10","<b>Chuyển cọc villa 50%</b> (≈2.050k) vào tài khoản khu gửi (Hoàng)"],
-  ["02/11","Cả nhóm <b>chốt món từng bữa</b> và mức góp quỹ"],
-  ["03/11","Đặt bàn lẩu trưa, set BBQ, ăn sáng với khu (Hoàng + Thủy)"],
-  ["04–05/11","Ban ẩm thực mua đồ uống, ăn vặt, đồ dùng (và đồ khô nếu tự nấu)"],
-  ["05/11","<b>Đặt lửa trại</b> với khu nếu thuê (Hoàng) · ban văn nghệ chuẩn bị Uno, bài, app ma sói"],
-  ["Sáng 06/11","Nếu tự nướng: mua thịt, rau tươi, ướp thịt tại nhà, cho vào thùng đá"],
+  ["02/11","Thu thêm <b>100k/người</b> (Hoàng)"],
+  ["03/11","Báo khu: <b>đặt bàn 2 nồi lẩu cá tầm</b> trưa 07/11, <b>nhờ dọn tối 06/11</b> (250k), hỏi giờ ăn sáng (Hoàng + Thủy)"],
+  ["04–05/11","Ban ẩm thực mua đồ uống, ăn vặt, 24 ly mì, đồ dùng · ban nướng mua xiên, giấy bạc, găng tay"],
+  ["05/11","<b>Đặt lửa trại</b> 600k, hẹn nhóm lửa 20h (Hoàng) · ban văn nghệ chuẩn bị Uno, bài, app ma sói"],
+  ["Sáng 06/11","Thủy, D.X.Thắng, Hoàng đi chợ; ban ẩm thực nữ ướp thịt tại nhà, cho vào thùng đá"],
   ["12h30 06/11","<b>Tập trung</b> tại Khu Xuân Phương – HVKTQS"]
 ];
 const CHECK = ["Áo khoác (đêm Ba Vì khá lạnh)","Quần áo thay","Đồ bơi (nếu muốn bơi)","Dép lê","Khăn tắm","Bàn chải, kem đánh răng","Sạc + sạc dự phòng","Thuốc cá nhân","Kem/xịt chống muỗi","Đèn pin hoặc điện thoại","Tiền mặt lẻ","Giấy tờ tùy thân"];
@@ -735,7 +732,7 @@ function init(){
     if (!n) { card.style.display = 'none'; return; }
     const p = PEOPLE[n];
     card.innerHTML = `<h3>Xin chào ${n.split(' ').pop()}! 👋</h3>
-      <div><span class="pill sun">🏷️ ${p.team}</span><span class="pill lake">🚗 ${p.car}</span><span class="pill">🧽 Dọn dẹp: ${p.clean}</span></div>
+      <div><span class="pill sun">🏷️ ${p.team}</span><span class="pill lake">🚗 ${p.car}</span><span class="pill">🍖 Tối 06/11: ${p.bbq}</span></div>
       <ul>${p.tasks.map(t=>`<li>${t}</li>`).join('')}</ul>
       <p style="margin:12px 0 0;color:#cfe3d7;font-size:14px">⏰ Nhớ: tập trung 12h30 ngày 06/11 · cổng khu đóng 22h · trả phòng trước 12h ngày 07/11.</p>`;
     card.style.display = 'block';
@@ -766,7 +763,7 @@ function init(){
     rows += `<tr class="grp"><td>${g}</td><td class="num">${fmt(sub)}k</td></tr>`;
     items.forEach(([n,v]) => rows += `<tr><td>${n}</td><td class="num">${fmt(v)}k</td></tr>`);
   });
-  rows += `<tr class="total"><td>Tổng nếu tự nấu cả tối và sáng (T1 + S1 + đồ chung)</td><td class="num">${fmt(total)}k</td></tr>`;
+  rows += `<tr class="total"><td>Tổng tiền đi chợ (BBQ + đồ chung)</td><td class="num">${fmt(total)}k</td></tr>`;
   $('#shop').innerHTML = rows;
 
   // Ảnh thực đơn
@@ -791,50 +788,38 @@ function init(){
   };
   const grow = root => root.querySelectorAll('.fill').forEach(f => f.style.width = f.dataset.w + '%');
 
-  // Chọn món từng bữa → tổng tiền
-  const OPT = {}; MEALS.forEach(m => m.opts.forEach(o => OPT[o[0]] = o));
+  // Bữa đã chốt → tổng tiền (chỉ bữa sáng thay đổi theo số người ăn nhà hàng)
   const fixedSum = FIXED.reduce((s,f)=>s+f[1],0);
   const k = n => fmt(n) + 'k';
-  const pick = {toi:"T1", sang:"S2", trua:"L1"};
-  try { Object.assign(pick, JSON.parse(store.get('bavi_meals') || '{}')); } catch(e){}
-  MEALS.forEach(m => { if (!m.opts.some(o => o[0] === pick[m.k])) pick[m.k] = m.opts[0][0]; });
-  const fire = $('#optFire'); fire.checked = store.get('bavi_fire') === '1';
+  const bf = $('#bfN');
+  const savedBf = parseInt(store.get('bavi_bf'), 10);
+  bf.value = Number.isInteger(savedBf) && savedBf >= 0 && savedBf <= 12 ? savedBf : 12;
+  const mealCost = n => MEALS.reduce((s,m)=>s+(m[3] ?? n*BREAKFAST),0);
+  const tripTotal = n => fixedSum + mealCost(n);
+  const gapOf = all => {
+    const gap = all - FUND;
+    return gap > 0 ? `<span class="over">vượt quỹ 12 triệu ${k(gap)} (≈${k(Math.ceil(gap/12))}/người)</span>` : `<span class="under">còn dư ${k(-gap)}</span>`;
+  };
 
-  $('#meals').innerHTML = MEALS.map(m => `<div class="card"><h3>${m.h}</h3><div class="opts">${m.opts.map(([c,n,d,v]) =>
-    `<label class="opt"><input type="radio" name="${m.k}" value="${c}"><span class="t"><b>${c} · ${n}</b><small>${d}</small></span><span class="pr">${k(v)}</span></label>`).join('')}</div></div>`).join('');
-  $('#presets').innerHTML = '<span class="note" style="align-self:center">Gói nhanh:</span>' + PKGS.map(([c,n]) => `<button data-p="${c}">${c} · ${n}</button>`).join('');
   $('#sumFixed').textContent = k(fixedSum);
-
-  const pkgTotal = codes => fixedSum + codes.reduce((s,c)=>s+OPT[c][3],0);
-  $('#pkgTbl').innerHTML = '<tr><th>Gói</th><th>Bữa</th><th class="num">Mỗi người</th></tr>' + PKGS.map(([c,n,cs]) =>
-    `<tr><td><b>${c}</b> · ${n}</td><td>${cs.join(' + ')}</td><td class="num">≈${k(Math.round(pkgTotal(cs)/12))}</td></tr>`).join('');
+  $('#bfTbl').innerHTML = '<tr><th>Bữa sáng</th><th class="num">Tổng</th><th class="num">Mỗi người</th></tr>' + [[12,'Cả 12 người ăn nhà hàng'],[6,'Nửa nhóm ăn nhà hàng'],[0,'Cả nhóm ăn mì ly']].map(([n,t]) =>
+    `<tr><td>${t}</td><td class="num">${k(tripTotal(n))}</td><td class="num">≈${k(Math.round(tripTotal(n)/12))}</td></tr>`).join('');
 
   const render = () => {
-    const codes = MEALS.map(m => pick[m.k]);
-    MEALS.forEach(m => document.querySelector(`input[name="${m.k}"][value="${pick[m.k]}"]`).checked = true);
-    const food = codes.reduce((s,c)=>s+OPT[c][3],0);
-    const all = fixedSum + food + (fire.checked ? FIRE : 0);
-    const per = Math.round(all/12), gap = all - 12000;
-    const gapTxt = gap > 0 ? `<span class="over">vượt quỹ ${k(gap)} (≈${k(Math.ceil(gap/12))}/người)</span>` : `<span class="under">còn dư ${k(-gap)}</span>`;
-    $('#sumFood').textContent = k(food) + ' (' + codes.join(' + ') + ')';
-    $('#sumAll').textContent = k(all); $('#sumPer').textContent = k(per); $('#sumGap').innerHTML = gapTxt;
-    $('#budAll').textContent = k(all); $('#budPick').textContent = '(' + codes.join(' + ') + (fire.checked ? ' + lửa trại' : '') + ')';
-    $('#budNote').innerHTML = `≈ <b>${k(per)}/người</b> · ${gapTxt}`;
-    const p = PKGS.find(x => x[2].join() === codes.join());
-    document.querySelectorAll('#presets button').forEach(b => b.classList.toggle('on', !!p && b.dataset.p === p[0]));
-    const items = [...MEALS.map(m => [m.s + ': ' + OPT[pick[m.k]][1], OPT[pick[m.k]][3]]), ...FIXED];
-    if (fire.checked) items.push(["Lửa trại", FIRE]);
+    const n = +bf.value, food = mealCost(n), all = fixedSum + food, per = Math.round(all/12);
+    const after = FUND + EXTRA*12 - all;
+    $('#meals').innerHTML = MEALS.map(([h,t,d,v]) => `<div class="opt chosen"><span class="t"><b>${h} · ${t}</b><small>${d}${v===null ? ` · <span style="font-weight:700">${n} người</span> ăn nhà hàng` : ''}</small></span><span class="pr">${k(v ?? n*BREAKFAST)}</span></div>`).join('');
+    $('#bfLbl').textContent = n + ' người';
+    $('#sumFood').textContent = k(food);
+    $('#sumAll').textContent = k(all); $('#sumPer').textContent = k(per); $('#sumGap').innerHTML = gapOf(all);
+    $('#budAll').textContent = k(all); $('#budPick').textContent = `(${n} người ăn sáng nhà hàng)`;
+    $('#budNote').innerHTML = `≈ <b>${k(per)}/người</b> · ${gapOf(all)}<br>Góp thêm ${EXTRA}k/người → quỹ ${k(FUND + EXTRA*12)}, ` + (after >= 0 ? `<span class="under">dư ${k(after)}</span>` : `<span class="over">vẫn thiếu ${k(-after)}</span>`);
+    const items = [...MEALS.map(([h,t,,v]) => [h.replace(/^\S+\s/,'') + ': ' + t.split(' · ')[0], v ?? n*BREAKFAST]), ...FIXED];
     bars('#bars', items.sort((a,b)=>b[1]-a[1]));
     if ($('#ngansach .reveal.in')) grow($('#ngansach'));
-    store.set('bavi_meals', JSON.stringify(pick)); store.set('bavi_fire', fire.checked ? '1' : '0');
+    store.set('bavi_bf', String(n));
   };
-  $('#meals').addEventListener('change', e => { pick[e.target.name] = e.target.value; render(); });
-  $('#presets').addEventListener('click', e => {
-    const b = e.target.closest('button'); if (!b) return;
-    const cs = PKGS.find(x => x[0] === b.dataset.p)[2];
-    MEALS.forEach((m,i) => pick[m.k] = cs[i]); render();
-  });
-  fire.addEventListener('change', render);
+  bf.addEventListener('input', render);
   render();
   setTimeout(() => grow($('#ngansach')), 300);
 
