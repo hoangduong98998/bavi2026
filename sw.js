@@ -2,7 +2,7 @@
    - Trang, config.js: lấy bản mới trên mạng trước (chờ tối đa 3 giây), mất mạng thì dùng bản đã lưu.
    - Ảnh, font: dùng bản đã lưu nếu có.
    Sửa danh sách file thì tăng số phiên bản CACHE. */
-const CACHE = 'bavi-v19';
+const CACHE = 'bavi-v20';
 const MENUS = ['set-bbq','menu-lau','met-lon-man','met-ga-doi','met-de','met-thap-cam','canh-mon-man','rau-theo-mua','an-sang','bang-gia-2026'];
 const CORE = ['./', 'index.html', 'config.js', ...MENUS.map(m => `images/thumb/${m}.jpg`)];
 const CACHE_HOSTS = ['fonts.googleapis.com', 'fonts.gstatic.com', 'suoimobavi.com.vn', 'i.ytimg.com'];
@@ -29,7 +29,8 @@ const networkFirst = req => new Promise(resolve => {
     return r;
   });
   const timer = setTimeout(fallback, 3000);
-  fetch(req).then(res => {
+  // no-cache: luôn hỏi lại GitHub Pages (trả 304 nếu chưa đổi), không dùng bản trình duyệt giữ 10 phút
+  fetch(req, {cache: 'no-cache'}).then(res => {
     clearTimeout(timer);
     save(req, res);
     if (!done) { done = true; resolve(res); }
