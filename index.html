@@ -156,6 +156,23 @@ section.dark .tab.on{background:var(--sun);color:#1b1b1b;border-color:var(--sun)
 .games .card{text-align:left}
 .games .ico{font-size:34px}
 
+/* teambuilding */
+.game{display:flex;flex-direction:column;gap:8px}
+.game .gh{display:flex;align-items:center;gap:10px}
+.game .no{flex:none;width:34px;height:34px;border-radius:50%;background:var(--forest);color:var(--sun2);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:15px}
+.game .gh .e{font-size:30px;line-height:1}
+.game h3{margin:0}
+.game > p{margin:0}
+.game details{margin-top:auto;border-top:1px dashed var(--line);padding-top:10px}
+.game summary{cursor:pointer;font-weight:700;color:var(--moss);list-style:none;font-size:14.5px}
+.game summary::-webkit-details-marker{display:none}
+.game summary::after{content:" ▾"}
+.game details[open] summary::after{content:" ▴"}
+.game details h4{margin:12px 0 4px;font-size:12.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted)}
+.game details ul{margin:0;padding-left:18px;font-size:14.5px}
+.game details li + li{margin-top:4px}
+.game details p{margin:0;font-size:14.5px}
+
 /* ăn uống */
 table{width:100%;border-collapse:collapse;font-size:14.5px}
 th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
@@ -248,6 +265,7 @@ footer button{margin-top:10px}
   <a href="#phancong">Phân công</a>
   <a href="#xe">Chia xe</a>
   <a href="#lichtrinh">Lịch trình</a>
+  <a href="#teambuilding">Teambuilding</a>
   <a href="#vuichoi">Vui chơi</a>
   <a href="#anuong">Ăn uống</a>
   <a href="#ngansach">Ngân sách</a>
@@ -361,6 +379,45 @@ footer button{margin-top:10px}
   </div>
 </section>
 
+<!-- ================= TEAMBUILDING ================= -->
+<section id="teambuilding" class="alt">
+  <div class="wrap">
+    <div class="kicker reveal">Teambuilding</div>
+    <h2 class="reveal">2 đội, 6 trò, 1 nhà vô địch</h2>
+    <p class="lead reveal">Chiều <b>Thứ 6 (06/11), 14h30–16h30</b>, ngay sau khi nhận phòng, cất đồ. Mặc đồ thể thao, mang thêm 1 bộ quần áo thay vì trò cuối đua thuyền trên hồ.</p>
+    <div class="grid g4">
+      <div class="card stat reveal"><div class="ico">⏰</div><b>14h30–16h30</b><span>Trò 1–5 trên sân, Trò 6 trên hồ của khu</span></div>
+      <div class="card stat reveal"><div class="ico">🎲</div><b>2 đội × 5 người</b><span>Bốc thăm chia đội, mỗi đội bầu 1 đội trưởng. 2 người còn lại làm quản trò, trọng tài</span></div>
+      <div class="card stat reveal"><div class="ico">🏆</div><b>Thắng 1 · Hòa 0,5</b><span>Hết 6 trò, đội nhiều điểm hơn vô địch. Bằng điểm thì 2 đội trưởng đấu thêm 1 lượt Trò 1</span></div>
+      <div class="card stat reveal"><div class="ico">⚖️</div><b>Trọng tài quyết</b><span>Quyết định tại chỗ là cuối cùng. Chấp hành hiệu lệnh, không xô đẩy</span></div>
+    </div>
+
+    <div class="grid g2" style="margin-top:18px">
+      <div class="card reveal">
+        <h3>📋 Chương trình</h3>
+        <div class="dl" id="tbPlan"></div>
+        <p class="note" style="margin:14px 0 0">🌧️ Mưa hoặc gió lớn: hoãn Trò 6; Trò 1, Trò 2 chơi trong phòng khách villa.</p>
+      </div>
+      <div class="card reveal">
+        <h3>🧰 Dụng cụ cần chuẩn bị</h3>
+        <ul style="padding-left:18px;margin:0;font-size:15px">
+          <li><b>Trò 1:</b> 1 chai nước (lấy trong đồ uống chung)</li>
+          <li><b>Trò 2:</b> 10 thẻ từ khóa (2 bộ × 5 từ), bấm giờ bằng điện thoại. Quản trò soạn, <b>giữ bí mật</b></li>
+          <li><b>Trò 3:</b> 1kg bột mì, 2 bát, 2 cốc giống nhau, 10 lá bài từ <b>1 bộ bài cũ riêng</b> (đừng dùng bộ bài chơi buổi tối)</li>
+          <li><b>Trò 4:</b> 2 quần đùi rộng cùng cỡ, 2 cọc (ghế hoặc chai nước to)</li>
+          <li><b>Trò 6:</b> 2 thuyền SUP đôi, 4 mái chèo, áo phao, cứu hộ (<b>đang hỏi khu</b>)</li>
+          <li><b>Chung:</b> còi, giấy bút ghi điểm</li>
+        </ul>
+        <p class="note" style="margin:12px 0 0">Khoảng 60–140k, lấy từ khoản dự phòng, không đổi tổng ngân sách.</p>
+      </div>
+    </div>
+
+    <h3 class="reveal" style="margin:42px 0 14px;font-size:24px">🎯 Thể lệ từng trò</h3>
+    <div class="grid g3" id="games"></div>
+    <p class="note reveal" style="margin-top:16px">Bấm <b>Xem luật chi tiết</b> ở mỗi trò để đọc đủ cách chơi, phạm luật, thắng thua. Phân công quản trò, trọng tài sẽ cập nhật sau.</p>
+  </div>
+</section>
+
 <!-- ================= VUI CHƠI ================= -->
 <section id="vuichoi">
   <div class="wrap">
@@ -381,6 +438,7 @@ footer button{margin-top:10px}
 
     <h3 class="reveal" style="margin:42px 0 14px;font-size:24px">🎉 Hoạt động chung</h3>
     <div class="grid g4 games">
+      <div class="card reveal"><div class="ico">🏆</div><h3>Teambuilding</h3><p class="note">14h30–16h30 · 2 đội × 5 người, 6 trò, cuối cùng đua thuyền trên hồ · <a href="#teambuilding">Xem thể lệ</a></p></div>
       <div class="card reveal"><div class="ico">🍢</div><h3>Cùng nướng BBQ</h3><p class="note">16h30–20h · Ban ẩm thực (7) + ban nướng (4), vừa nướng vừa ăn</p></div>
       <div class="card reveal"><div class="ico">🎤</div><h3>Karaoke loa kéo</h3><p class="note">20h–21h45 · Hát Karaoke · MC: Kiên & Bùi Văn Dương mở màn</p></div>
       <div class="card reveal"><div class="ico">🔥</div><h3>Lửa trại</h3><p class="note">20h–22h · Đã đặt, 600k cho 12 người · Ban nướng trông lửa</p></div>
@@ -587,8 +645,8 @@ const CARS = [
 const DAY1 = [
   ["12h30","must","Tập trung tại Khu Xuân Phương – HVKTQS","Kiểm đồ, xếp đồ lên xe."],
   ["13h00","must","Xuất phát","Đại lộ Thăng Long → Hòa Lạc → Yên Bài. Mua đá viên ở đoạn gần Yên Bài."],
-  ["14h00","must","Nhận phòng","Chia phòng (nữ 1 phòng; nam 2 phòng + phòng khách), cất đồ, cho đồ tươi vào tủ lạnh."],
-  ["14h30 – 16h30","free","Vui chơi tự do","Zipline, kayak, lội suối, xe đạp, bi-a, câu cá… ai thích gì chơi nấy."],
+  ["14h00","must","Nhận phòng","Chia phòng (nữ 1 phòng; nam 2 phòng + phòng khách), cất đồ, cho đồ tươi vào tủ lạnh, thay đồ thể thao."],
+  ["14h30 – 16h30","","🏆 Teambuilding 2 đội","Bốc thăm 2 đội × 5 người · Trò 1–5 trên sân · Trò 6 đua thuyền SUP trên hồ. Thể lệ ở mục <a href=\"#teambuilding\" style=\"color:var(--sun2)\">Teambuilding</a>."],
   ["16h30 – 17h45","","🔪 Ban ẩm thực sơ chế (7 người)","Xiên que, cuộn bò nấm, rửa rau, pha nước chấm, luộc ngô khoai, bày bàn."],
   ["17h00","must","📸 Ảnh tập thể lúc hoàng hôn","Ở view hồ, cả nhóm có mặt (tạm dừng sơ chế 15 phút). Ban truyền thông chụp."],
   ["17h30","","Nhóm than","Trung Long, Đức Thắng, Tùng nhóm bếp nướng BBQ to khu tặng (có sẵn than, cồn khô)."],
@@ -634,11 +692,64 @@ const MILE = [
   ["03/11","Báo khu: <b>đặt bàn 2 nồi lẩu cá tầm</b> trưa 07/11, <b>nhờ dọn tối 06/11</b> (250k), hỏi giờ ăn sáng (Hoàng + Thủy)"],
   ["04–05/11","Ban ẩm thực mua đồ uống, ăn vặt, 24 ly mì, đồ dùng · ban nướng mua xiên, giấy bạc, găng tay"],
   ["05/11","<b>Đặt lửa trại</b> 600k, hẹn nhóm lửa 20h (Hoàng) · Kiên tải app ma sói, cùng Dương làm danh sách bài hát · Hải Long chuẩn bị Uno, bài"],
+  ["05/11","Teambuilding: <b>hỏi khu thuyền SUP</b>, áo phao, cứu hộ, chỗ sân phẳng (Hoàng) · chuẩn bị bột mì, 1 bộ bài cũ, 2 quần đùi, còi, thẻ từ khóa (ban trò chơi, phân công sau)"],
   ["Trước 06/11","Hải Long tạo album ảnh chung, gửi link nhóm Zalo · Thoại chuẩn bị túi thuốc, hỏi ai say xe, dị ứng"],
   ["Sáng 06/11","Thủy, D.X.Thắng, Hoàng đi chợ; ban ẩm thực nữ ướp thịt tại nhà, cho vào thùng đá"],
   ["12h30 06/11","<b>Tập trung</b> tại Khu Xuân Phương – HVKTQS"]
 ];
-const CHECK = ["Áo khoác (đêm Ba Vì khá lạnh)","Quần áo thay","Đồ bơi (nếu muốn bơi)","Dép lê","Khăn tắm","Bàn chải, kem đánh răng","Sạc + sạc dự phòng","Thuốc cá nhân","Kem/xịt chống muỗi","Đèn pin hoặc điện thoại","Tiền mặt lẻ","Giấy tờ tùy thân"];
+/* Thêm món mới vào CUỐI mảng: ô đã tích được nhớ theo thứ tự */
+const CHECK = ["Áo khoác (đêm Ba Vì khá lạnh)","Quần áo thay","Đồ bơi (nếu muốn bơi)","Dép lê","Khăn tắm","Bàn chải, kem đánh răng","Sạc + sạc dự phòng","Thuốc cá nhân","Kem/xịt chống muỗi","Đèn pin hoặc điện thoại","Tiền mặt lẻ","Giấy tờ tùy thân","Đồ thể thao, giày chơi teambuilding (thêm 1 bộ đồ thay nếu đua thuyền)"];
+/* Teambuilding chiều 06/11 */
+const TB_PLAN = [
+  ["14h00","Nhận phòng, cất hành lý, thay đồ thể thao"],
+  ["14h30","Tập trung ở sân, <b>bốc thăm chia 2 đội</b>, mỗi đội bầu đội trưởng"],
+  ["14h40–15h40","Trò 1 → Trò 5 trên sân, mỗi trò khoảng 10–15 phút"],
+  ["15h40","Ra hồ, mặc áo phao, nghe hướng dẫn an toàn"],
+  ["15h50–16h20","<b>Trò 6 · đua thuyền SUP</b> (vòng loại, chung kết nếu cần)"],
+  ["16h20–16h30","Cộng điểm, công bố đội vô địch, chụp ảnh 2 đội"],
+  ["16h30","Ban ẩm thực vào sơ chế; ai ướt thì thay đồ, người khác chơi tự do"]
+];
+/* e: biểu tượng · n: tên · tags: số người, thời gian, nơi chơi · sum: tóm tắt · tools, how, foul, win, safe: luật chi tiết · warn: lưu ý */
+const GAMES = [
+  {e:"🍾", n:"Đầu, vai, đầu gối, chai", tags:["👥 5 người/đội","⏱ ~10 phút","📍 Sân"],
+   sum:"Hai đội đứng 2 hàng đối diện, chai nước đặt giữa từng cặp. Nghe hô “Chai!” thì chộp thật nhanh.",
+   tools:"1 chai nước (hoặc cốc nhựa) đặt giữa hai người đối diện.",
+   how:["Hai đội đứng 2 hàng đối diện theo từng cặp. Mỗi lượt 1 cặp thi đấu, tổng 5 lượt, mỗi người đấu 1 lượt.","Quản trò liên tục hô “Đầu”, “Vai”, “Đầu gối”; người chơi dùng hai tay chạm đúng bộ phận được hô.","Bất ngờ quản trò hô “Chai!”: ai chạm chai trước thắng lượt đó, đội ghi 1 điểm."],
+   foul:["Chạm chai trước hiệu lệnh “Chai!”: thua lượt đó, đội kia ghi 1 điểm.","Cả hai cùng phạm lỗi, hoặc trọng tài không rõ ai chạm trước: chơi lại lượt đó."],
+   win:"Sau 5 lượt, đội nhiều điểm hơn thắng."},
+  {e:"🤫", n:"Tâm đầu ý hợp", tags:["👥 1 đoán + 4 diễn","⏱ ~15 phút","📍 Sân hoặc phòng khách"],
+   sum:"4 người diễn bằng hành động, không nói, 1 người đoán từ khóa. Mỗi từ 1 phút, mỗi đội 5 từ.",
+   tools:"Thẻ từ khóa (mỗi đội 5 từ, hai bộ tương đương nhau), đồng hồ bấm giờ.",
+   how:["Mỗi đội cử 1 người đoán, không được nhìn từ khóa; 4 người còn lại dùng hành động để diễn tả.","Hai đội lần lượt thi, mỗi đội tối đa 5 từ.","Mỗi từ có 1 phút: đoán đúng thì chuyển ngay sang từ tiếp theo, hết 1 phút chưa đoán được thì bỏ qua."],
+   foul:["Người diễn không được nói, phát ra âm thanh, viết, vẽ, hoặc chỉ vào chữ hay vật có chữ. Phạm lỗi thì từ đó không được tính."],
+   win:"Đội đoán đúng nhiều từ hơn thắng. Bằng nhau thì đội có tổng thời gian đoán ngắn hơn thắng."},
+  {e:"🃏", n:"Truyền bột", tags:["👥 5 người/đội","⏱ 3 phút thi","📍 Sân"],
+   sum:"Ngậm lá bài trong miệng, truyền bột mì dọc hàng mà không dùng tay. Hết 3 phút, cốc nào nhiều bột hơn thắng.",
+   tools:"Bột mì; 1 bát bột ở vạch xuất phát (lượng bột hai đội bằng nhau); 1 cốc ở vạch đích (hai cốc giống nhau); mỗi người 1 lá bài.",
+   how:["Cả đội xếp hàng dọc, mỗi người ngậm 1 lá bài trong miệng.","Người đầu xúc bột từ bát, truyền sang lá bài của người kế tiếp, cứ thế dọc theo hàng.","Người cuối đổ bột vào cốc."],
+   foul:["Chỉ dùng lá bài ngậm trong miệng, không dùng tay. Ai phạm lỗi thì cả đội dừng lại và làm lại từ đầu."],
+   win:"Hết 3 phút, đội có nhiều bột trong cốc hơn thắng (cân điện tử hoặc so mực bột hai cốc)."},
+  {e:"🩳", n:"Thi mặc quần", tags:["👥 3 người/đội","⏱ ~10 phút","📍 Sân, cọc cách 10 m"],
+   sum:"Tiếp sức: mặc quần đùi không dùng tay, chạy tới cọc cách 10 m, về trao quần cho đồng đội.",
+   tools:"Mỗi đội 1 quần đùi rộng (hai quần cùng cỡ); mỗi đội 1 cọc cách vạch xuất phát khoảng 10 m.",
+   how:["Đội trưởng chọn 3 người và thứ tự chạy.","Có hiệu lệnh, người thứ nhất mặc quần đùi tại vạch xuất phát mà không dùng tay, rồi chạy tới cọc.","Chạy về vạch xuất phát, cởi quần (được dùng tay), đưa cho người kế tiếp. Người thứ hai, thứ ba làm tương tự.","“Mặc xong” là hai chân đã xỏ vào ống và quần kéo lên ngang hông; quần mặc ra ngoài trang phục đang mặc."],
+   foul:["Dùng tay để mặc: cởi ra, mặc lại.","Chưa chạm hoặc vòng qua cọc: quay lại làm cho đủ.","Xuất phát trước khi nhận quần: quay về vạch xuất phát."],
+   win:"Đội có người thứ ba về đến vạch xuất phát trước thắng."},
+  {e:"🐉", n:"Rồng rắn lên mây (biến thể)", tags:["👥 5 người/đội","⏱ tối đa 2 phút","📍 Sân, khu vực giới hạn"],
+   sum:"“Đầu rồng” tìm cách chạm “khúc đuôi” đội kia, vừa dang tay che chắn cho đuôi đội mình. Đứt hàng là thua.",
+   tools:"Không cần đồ, chỉ đánh dấu khu vực chơi.",
+   how:["Mỗi đội xếp hàng dọc, tay người sau nắm vào hoặc đặt lên vai người trước. Người đầu là “đầu rồng”, người cuối là “khúc đuôi”.","Có hiệu lệnh, đầu rồng dẫn đoàn đi tìm cách chạm vào khúc đuôi đội kia, đồng thời dang tay che chắn cho đoàn mình.","Hai đoàn chỉ chơi trong khu vực BTC khoanh."],
+   foul:["Không được buông tay nhau.","Không xô, đẩy, kéo, ghì đối phương; chỉ chạm nhẹ bằng tay.","Đoàn ra khỏi khu vực thi đấu bị xử thua."],
+   win:"Đầu rồng chạm được khúc đuôi đội kia thì đội mình thắng; hàng bị đứt thì đoàn đó thua. Chơi 1 ván, tối đa 2 phút; hết giờ chưa phân thắng bại, hoặc hai bên cùng chạm đuôi, cùng đứt hàng một lúc, thì hòa."},
+  {e:"🚣", n:"Đua thuyền SUP", tags:["👥 4 người/đội + 1 dự bị","⏱ ~30 phút","📍 Hồ của khu"],
+   sum:"Mỗi đội chia 2 thuyền đôi. Vòng loại 2 lượt; nếu mỗi đội thắng 1 lượt thì 2 thuyền thắng đấu chung kết.",
+   warn:"Đang hỏi khu có thuyền SUP chở 2 người không; không có thì đề xuất đua kayak đôi (đã có trong vé).",
+   tools:"Mỗi đội nhỏ 1 thuyền SUP chở 2 người (các thuyền cùng loại, cùng cỡ), mỗi người 1 mái chèo, áo phao cho tất cả; còi, phao hoặc cờ đánh dấu xuất phát, đích, làn đua.",
+   how:["Đội trưởng chia 4 người thành 2 đội nhỏ × 2 người. Người thứ 5 dự bị, thay người không biết bơi hoặc không đủ sức khỏe.","Hai người ngồi trên thuyền, chèo từ vạch xuất phát đến vạch đích. Cự ly do BTC cùng khu xác định (đề xuất 50–100 m).","<b>Vòng loại</b> 2 lượt: mỗi lượt 1 đội nhỏ của đội này gặp 1 đội nhỏ của đội kia, ghép cặp bằng bốc thăm.","Cả 2 đội nhỏ của một đội đều thắng thì đội đó thắng luôn. Mỗi đội thắng 1 lượt thì hai đội nhỏ thắng đấu <b>chung kết</b>, sau ít nhất 5 phút nghỉ."],
+   foul:["Xuất phát trước hiệu lệnh: xuất phát lại; phạm lỗi lần thứ hai thì thua lượt đó.","Cố ý va chạm, chắn đường, dùng mái chèo gạt hoặc té nước vào đối phương: thua lượt đó.","Ra khỏi làn đua mà cản trở đội khác: thua lượt đó.","Rơi xuống nước: được lên lại thuyền tại chỗ và đua tiếp, không phải quay lại xuất phát."],
+   win:"Đội nhỏ có mũi thuyền về đích trước, khi cả 2 người còn trên thuyền, thắng lượt đua. Không phân định được thì đua lại lượt đó.",
+   safe:"Bắt buộc mặc áo phao suốt thời gian tham gia. Có cứu hộ hoặc xuồng của khu túc trực trên hồ. Ai không biết bơi, sức khỏe không đảm bảo thì báo trước để thay bằng người dự bị. Gió lớn, mưa giông hoặc cứu hộ yêu cầu thì tạm dừng, hoãn."}
+];
 const MENUS = [["set-bbq.jpg","Set BBQ 250k/300k"],["menu-lau.jpg","Menu lẩu"],["met-lon-man.jpg","Mẹt lợn mán"],["met-ga-doi.jpg","Mẹt gà đồi"],["met-de.jpg","Mẹt dê đủ món"],["met-thap-cam.jpg","Mẹt thập cẩm"],["canh-mon-man.jpg","Canh & món mặn"],["rau-theo-mua.jpg","Rau theo mùa"],["an-sang.jpg","Ăn sáng"],["bang-gia-2026.jpg","Bảng giá lưu trú 2026"]];
 
 /* ================= HÀM TIỆN ÍCH ================= */
@@ -682,7 +793,7 @@ function init(){
     card.innerHTML = `<h3>Xin chào ${n.split(' ').pop()}! 👋</h3>
       <div><span class="pill sun">🏷️ ${p.team}</span><span class="pill lake">🚗 ${p.car}</span><span class="pill">🍖 Tối 06/11: ${p.bbq}</span></div>
       <ul>${p.tasks.map(t=>`<li>${t}</li>`).join('')}</ul>
-      <p style="margin:12px 0 0;color:#cfe3d7;font-size:14px">⏰ Nhớ: tập trung 12h30 ngày 06/11 · cổng khu đóng 22h · trả phòng trước 12h ngày 07/11.</p>`;
+      <p style="margin:12px 0 0;color:#cfe3d7;font-size:14px">⏰ Nhớ: tập trung 12h30 ngày 06/11 · 14h30 teambuilding · cổng khu đóng 22h · trả phòng trước 12h ngày 07/11.</p>`;
     card.style.display = 'block';
     store.set('bavi_me', n);
   };
@@ -703,6 +814,25 @@ function init(){
   // Lịch trình
   const tl = arr => arr.map(([t,k,h,p]) => `<div class="ev ${k}"><div class="time">${t}</div><h4>${h}</h4><p>${p}</p></div>`).join('');
   $('#tl1').innerHTML = tl(DAY1); $('#tl2').innerHTML = tl(DAY2);
+
+  // Teambuilding
+  $('#tbPlan').innerHTML = TB_PLAN.map(([t,d]) => `<b>${t}</b><div>${d}</div>`).join('');
+  const li = a => `<ul>${a.map(x=>`<li>${x}</li>`).join('')}</ul>`;
+  $('#games').innerHTML = GAMES.map((g,i) => `<div class="card game reveal">
+    <div class="gh"><span class="no">${i+1}</span><span class="e" aria-hidden="true">${g.e}</span></div>
+    <h3>Trò ${i+1}. ${g.n}</h3>
+    <div>${g.tags.map((t,j)=>`<span class="pill ${['','sun','lake'][j]||''}">${t}</span>`).join('')}</div>
+    <p class="note">${g.sum}</p>
+    ${g.warn ? `<p class="note" style="color:#9a2b27">⚠️ ${g.warn}</p>` : ''}
+    <details><summary>Xem luật chi tiết</summary>
+      <h4>Dụng cụ</h4><p>${g.tools}</p>
+      <h4>Cách chơi</h4>${li(g.how)}
+      <h4>Phạm luật</h4>${li(g.foul)}
+      <h4>Thắng thua</h4><p>${g.win}</p>
+      ${g.safe ? `<h4>An toàn</h4><p>${g.safe}</p>` : ''}
+    </details></div>`).join('');
+  // In trang thì mở hết luật chi tiết
+  window.addEventListener('beforeprint', () => document.querySelectorAll('#games details').forEach(d => d.open = true));
 
   // Danh sách đi chợ
   let total = 0, rows = '<tr><th>Món – số lượng</th><th class="num">Ước tính</th></tr>';
