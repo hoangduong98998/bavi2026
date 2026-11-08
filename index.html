@@ -213,6 +213,62 @@ tr.grp td{background:#eef6f1;font-weight:800;color:var(--forest)}
 .big-num{font-size:40px;font-weight:800;color:var(--forest);line-height:1}
 .vs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
 
+/* sao kê */
+.sk-sum{margin-bottom:24px}
+.sk-sum .stat b{font-size:26px;line-height:1.2;margin-bottom:2px}
+.sk-sum .in b{color:#2f7a4f}
+.sk-sum .out b{color:#b03a2e}
+.sk-list{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff;box-shadow:var(--shadow)}
+.sk-head{display:flex;justify-content:space-between;gap:4px 14px;flex-wrap:wrap;padding:12px 16px;background:#f3f7f4;font-size:14px;color:var(--muted)}
+.sk-head b{color:var(--forest)}
+.sk-day{padding:7px 16px;background:#faf8f2;border-top:1px solid var(--line);font-size:12.5px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--moss)}
+.sk-row{display:flex;gap:12px;align-items:center;width:100%;margin:0;padding:12px 16px;border:0;border-top:1px solid var(--line);background:#fff;text-align:left;font:inherit;color:inherit}
+button.sk-row{cursor:pointer;transition:background .15s}
+button.sk-row:hover,button.sk-row:focus-visible{background:#f4f9f5}
+.sk-ic{flex:none;width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:14px;background:#fdf0ee;overflow:hidden;color:#fff;font-weight:800}
+.sk-ic img{width:100%;height:100%;object-fit:cover;object-position:top}
+.sk-ic.none{background:#f3f1ea;border:2px dashed #d8d2c2;font-size:20px}
+.sk-main{flex:1;min-width:0}
+.sk-main b{display:block;font-size:15px;line-height:1.35}
+.sk-main small{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+.sk-amt{flex:none;text-align:right;font-weight:800;white-space:nowrap;font-size:15px}
+.sk-amt small{display:block;font-weight:500;color:var(--muted);font-size:12px}
+.sk-row.in .sk-amt{color:#2f7a4f}
+.sk-row.out .sk-amt{color:#b03a2e}
+.sk-go{flex:none;color:#b8c4bd;font-size:20px;margin-left:-4px}
+.sk-miss{color:#a07000}
+#skd{position:fixed;inset:0;z-index:150;background:rgba(11,31,23,.62);display:none;align-items:flex-end;justify-content:center}
+#skd.on{display:flex}
+#skd .box{position:relative;background:#fff;width:100%;max-width:640px;max-height:94vh;max-height:94dvh;overflow-y:auto;border-radius:22px 22px 0 0;padding:0 20px 24px;animation:fade .25s;overscroll-behavior:contain}
+#skd .skbar{position:sticky;top:0;z-index:2;display:flex;align-items:center;gap:8px;margin:0 -20px 14px;padding:12px 14px 10px 20px;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line)}
+#skd .skbar .pos{flex:1;font-size:13px;color:var(--muted);font-weight:600}
+#skd .nb{border:1px solid var(--line);background:#fff;border-radius:10px;min-width:40px;height:38px;font-size:18px;cursor:pointer;color:var(--forest);font-family:inherit}
+#skd .nb:disabled{opacity:.35;cursor:default}
+#skd .nb.x{background:var(--forest);color:#fff;border-color:var(--forest)}
+#skd h3{margin:6px 0 4px;font-size:20px;line-height:1.3}
+#skd .amt{font-size:30px;font-weight:800;line-height:1.2}
+#skd .amt.in{color:#2f7a4f}
+#skd .amt.out{color:#b03a2e}
+#skd .dl{grid-template-columns:auto 1fr;gap:6px 16px;margin:14px 0;font-size:14.5px}
+#skd .dl b{margin:0}
+#skd .tbl{margin:14px 0}
+#skd table{font-size:14px}
+#skd .pic{display:block;width:100%;border:1px solid var(--line);border-radius:14px;overflow:hidden;padding:0;background:#f6f6f6;cursor:zoom-in}
+#skd .pic img{width:100%}
+#skd .nopic{border:2px dashed var(--line);border-radius:14px;padding:22px;text-align:center;color:var(--muted);font-size:14.5px}
+@media (min-width:700px){#skd{align-items:center;padding:20px}#skd .box{border-radius:22px}}
+@media (max-width:640px){
+  .sk-list{margin:0 -20px;border-radius:0;border-left:0;border-right:0}
+  .sk-head{padding:10px 14px;font-size:13px}
+  .sk-day{padding:7px 14px}
+  .sk-row{padding:11px 14px;gap:10px}
+  .sk-ic{width:40px;height:40px}
+  .sk-go{display:none}
+  .sk-main b{font-size:14.5px}
+  .sk-amt{font-size:14px}
+  .sk-amt small{font-size:11.5px}
+}
+
 /* chuẩn bị */
 .chk label{display:flex;gap:10px;align-items:center;padding:9px 4px;border-bottom:1px dashed var(--line);cursor:pointer;font-size:15px}
 .chk input{width:20px;height:20px;accent-color:var(--moss);flex:none}
@@ -252,7 +308,7 @@ footer button{margin-top:10px}
   .reveal{opacity:1;transform:none;transition:none}
   .pane.on,.shake{animation:none}
 }
-@media print{nav,footer button,.btns,.tabs,.video,.map,#lb{display:none!important}.reveal{opacity:1;transform:none}.pane{display:block!important}}
+@media print{nav,footer button,.btns,.tabs,.video,.map,#lb,#skd{display:none!important}.reveal{opacity:1;transform:none}.pane{display:block!important}}
 </style>
 </head>
 <body>
@@ -270,6 +326,7 @@ footer button{margin-top:10px}
   <a href="#vuichoi">Vui chơi</a>
   <a href="#anuong">Ăn uống</a>
   <a href="#ngansach">Ngân sách</a>
+  <a href="#saoke">Sao kê</a>
   <a href="#chuanbi">Chuẩn bị</a>
   <a href="#lienhe">Liên hệ</a>
 </div></nav>
@@ -291,6 +348,7 @@ footer button{margin-top:10px}
       <a class="btn sun" href="https://www.google.com/maps/dir/?api=1&origin=H%E1%BB%8Dc+vi%E1%BB%87n+K%E1%BB%B9+thu%E1%BA%ADt+Qu%C3%A2n+s%E1%BB%B1+Xu%C3%A2n+Ph%C6%B0%C6%A1ng&destination=Khu+du+l%E1%BB%8Bch+Su%E1%BB%91i+M%C6%A1+Ba+V%C3%AC&travelmode=driving" target="_blank" rel="noopener">Chỉ đường từ Khu Xuân Phương</a>
       <a class="btn glass" href="tel:0989688800">Gọi khu du lịch Suối Mơ</a>
       <a class="btn glass" href="#phancong">Xem nhiệm vụ của tôi</a>
+      <a class="btn glass" href="#saoke">🧾 Xem sao kê quỹ</a>
     </div>
   </div>
 </header>
@@ -530,7 +588,7 @@ footer button{margin-top:10px}
   <div class="wrap">
     <div class="kicker reveal">Ngân sách</div>
     <h2 class="reveal">Tiền đi đâu?</h2>
-    <p class="lead reveal">Quỹ <b>1.000.000đ/người × 12 = 12.000.000đ</b>, Hoàng giữ. Mua gì cũng gửi ảnh hóa đơn vào nhóm Zalo; về sẽ công khai sổ chi và trả lại tiền dư.</p>
+    <p class="lead reveal">Quỹ <b>1.000.000đ/người × 12 = 12.000.000đ</b>, Hoàng giữ. Mua gì cũng gửi ảnh hóa đơn vào nhóm Zalo; về sẽ công khai sổ chi và trả lại tiền dư. Số thu chi thực tế xem ở mục <a href="#saoke">Sao kê</a>.</p>
     <div class="vs">
       <div class="card"><div class="note">Tổng dự kiến <span id="budPick"></span></div><div class="big-num" id="budAll">–</div><div class="note" id="budNote"></div><div id="bars"></div></div>
       <div class="card"><h3>Tổng theo bữa sáng</h3>
@@ -546,8 +604,26 @@ footer button{margin-top:10px}
   </div>
 </section>
 
+<!-- ================= SAO KÊ ================= -->
+<section id="saoke" class="alt">
+  <div class="wrap">
+    <div class="kicker reveal">Sao kê</div>
+    <h2 class="reveal">Sổ thu chi của quỹ</h2>
+    <p class="lead reveal">Mọi khoản thu, chi của chuyến đi, xếp theo thời gian. Bấm vào một khoản chi để xem hóa đơn, xác nhận chuyển khoản và từng món đã mua. Số tài khoản cá nhân trên ảnh đã được che.</p>
+    <div class="grid g3 sk-sum" id="skSum"></div>
+    <div class="tabs" data-group="sk">
+      <button class="tab on" data-pane="skAll">📋 Tất cả</button>
+      <button class="tab" data-pane="skIn">📥 Thu</button>
+      <button class="tab" data-pane="skOut">📤 Chi</button>
+    </div>
+    <div class="pane on" id="skAll"></div>
+    <div class="pane" id="skIn"></div>
+    <div class="pane" id="skOut"></div>
+  </div>
+</section>
+
 <!-- ================= CHUẨN BỊ ================= -->
-<section id="chuanbi" class="alt">
+<section id="chuanbi">
   <div class="wrap">
     <div class="kicker reveal">Chuẩn bị</div>
     <h2 class="reveal">Mốc thời gian & đồ mang theo</h2>
@@ -613,6 +689,10 @@ footer button{margin-top:10px}
 </div>
 
 <div id="lb" role="dialog" aria-label="Ảnh phóng to"><span class="x" aria-hidden="true">×</span><img alt=""></div>
+<div id="skd" role="dialog" aria-modal="true" aria-label="Chi tiết giao dịch"><div class="box" tabindex="-1">
+  <div class="skbar"><button class="nb" data-go="-1" aria-label="Khoản trước">‹</button><button class="nb" data-go="1" aria-label="Khoản sau">›</button><span class="pos" id="skPos"></span><button class="nb x" data-go="0" aria-label="Đóng">✕</button></div>
+  <div id="skBody"></div>
+</div></div>
 
 <script src="config.js"></script>
 <script>
@@ -622,7 +702,7 @@ const PEOPLE = {
   "Bùi Văn Kiên":        {c:"#3a8fb7", team:"Ban văn nghệ (trưởng ban) · Tăng cường Ban ẩm thực · Lái xe 2", car:"Xe 2 – anh Kiên (bác tài)", bbq:"Chuẩn bị ngô khoai, bày bàn, đồ uống", tasks:["05/11 chuẩn bị cho ban văn nghệ: bộ bài ma sói hoặc app ma sói, làm danh sách bài hát cùng Dương","Đổ xăng xe 2 trước 12h30; chở đồ uống, ăn vặt, mì ly, Uno, bài","Nhận phòng xong thì nhận loa kéo của khu, thử loa","16h30 chuẩn bị ngô khoai, bày bàn, đá, đồ uống, bát đĩa","20h MC, hát mở màn karaoke cùng Dương; 22h tắt loa to","22h–23h quản trò ma sói"]},
   "Nguyễn Trung Long":   {c:"#4f9a6f", team:"Ban nướng & lửa (trưởng ban) · Ban trò chơi · Tăng cường Ban truyền thông", car:"Xe 3 – Hoàng", bbq:"Nhóm than, chỉ huy nướng 18h–20h", tasks:["04–05/11 mua xiên, giấy bạc, găng tay (khu có sẵn than, vỉ, kẹp, cồn khô)","04–05/11 cùng ban trò chơi chuẩn bị đồ teambuilding, Uno, bài theo phân chia của Hoàng","14h30 06/11 cùng ban trò chơi bày dụng cụ, đánh dấu sân; sau đó chơi teambuilding","17h30 nhóm than cùng Đức Thắng, Tùng","18h–20h chỉ huy nướng cùng Đức Thắng, Tùng, Bùi Văn Dương; vừa nướng vừa ăn","20h nhận lửa trại từ khu, trông lửa an toàn cùng Đức Thắng, Tùng","Quay clip buổi nướng và lửa trại, gửi vào album chung"]},
   "Dương Xuân Thắng":    {c:"#f0b429", team:"Ban ẩm thực (phó ban) · Ban trò chơi · Tăng cường Ban văn nghệ", car:"Xe 3 – Hoàng", bbq:"Khuân đồ, chặt sườn, xếp thịt theo đợt", tasks:["04–05/11 cùng chị Thủy điều phối ban mua đồ uống, ăn vặt, mì ly, đồ dùng","04–05/11 cùng ban trò chơi chuẩn bị đồ teambuilding, Uno, bài theo phân chia của Hoàng","Sáng 06/11 đi chợ mua thịt, tôm, rau cùng chị Thủy, Hoàng, Ngọc","14h30 cùng ban trò chơi bày dụng cụ, đánh dấu sân; sau đó chơi teambuilding","16h30 khuân đồ từ xe, chặt sườn, xếp thịt theo đợt nướng; thay chị Thủy chỉ huy bếp khi cần","20h hỗ trợ loa kéo, karaoke cùng Kiên, Dương"]},
-  "Nguyễn Hải Long":     {c:"#8e6cc0", team:"Ban truyền thông (trưởng ban) · Tăng cường Ban ẩm thực", car:"Xe 2 – anh Kiên", bbq:"Cuộn bò nấm, xiên que", tasks:["Trước 06/11 tạo album ảnh chung, gửi link vào nhóm Zalo","16h30 cuộn bò nấm, xiên que cùng Bảo Anh","17h chụp ảnh tập thể lúc hoàng hôn cùng Ngọc; chụp ảnh, quay video suốt chuyến","Sau chuyến gom ảnh, video của cả đoàn vào album, đăng nhóm Zalo"]},
+  "Lê Hải Long":     {c:"#8e6cc0", team:"Ban truyền thông (trưởng ban) · Tăng cường Ban ẩm thực", car:"Xe 2 – anh Kiên", bbq:"Cuộn bò nấm, xiên que", tasks:["Trước 06/11 tạo album ảnh chung, gửi link vào nhóm Zalo","16h30 cuộn bò nấm, xiên que cùng Bảo Anh","17h chụp ảnh tập thể lúc hoàng hôn cùng Ngọc; chụp ảnh, quay video suốt chuyến","Sau chuyến gom ảnh, video của cả đoàn vào album, đăng nhóm Zalo"]},
   "Nguyễn Đức Thắng":    {c:"#d9534f", team:"Ban nướng & lửa · Ban trò chơi", car:"Xe 3 – Hoàng", bbq:"Nhóm than, nướng BBQ 18h–20h", tasks:["04–05/11 cùng ban trò chơi chuẩn bị đồ teambuilding, Uno, bài theo phân chia của Hoàng","14h30 06/11 cùng ban trò chơi bày dụng cụ, đánh dấu sân; sau đó chơi teambuilding","17h30 nhóm than cùng Trung Long, Tùng","18h–20h nướng cùng ban nướng, vừa nướng vừa ăn","20h trông lửa trại cùng Trung Long, Tùng"]},
   "Phạm Quang Tùng":     {c:"#3d9970", team:"Ban nướng & lửa · Ban trò chơi", car:"Xe 2 – anh Kiên", bbq:"Nhóm than, nướng BBQ 18h–20h", tasks:["04–05/11 cùng ban trò chơi chuẩn bị đồ teambuilding, Uno, bài theo phân chia của Hoàng","14h30 06/11 cùng ban trò chơi bày dụng cụ, đánh dấu sân; sau đó chơi teambuilding","17h30 nhóm than cùng Trung Long, Đức Thắng","18h–20h nướng cùng ban nướng, vừa nướng vừa ăn","20h trông lửa trại cùng Trung Long, Đức Thắng"]},
   "Trần Thị Thanh Thoại":{c:"#ef476f", team:"Ban ẩm thực · Ban y tế", car:"Xe 1 – chị Thủy", bbq:"Rau, nước chấm", tasks:["Trước 06/11 chuẩn bị túi thuốc: hạ sốt, đau bụng, say xe, dị ứng, băng cá nhân, dầu gió, chống muỗi; hỏi trước ai say xe, dị ứng","Sáng 06/11 ướp thịt tại nhà cùng chị Thủy, Ngọc, Bảo Anh","12h30 đưa thuốc say xe cho ai cần trước khi xuất phát","16h30 rửa rau, cắt dưa chuột, cà chua, pha nước chấm cùng Ngọc","Mang túi thuốc theo khi đoàn đi bơi, zipline, kayak"]},
@@ -633,17 +713,17 @@ const PEOPLE = {
 };
 const TEAMS = [
   {n:"👑 Trưởng đoàn & thủ quỹ", cls:"", lead:"Dương Huy Hoàng", mem:["Dương Huy Hoàng"], job:["Đặt phòng, liên hệ khu, lập nhóm Zalo","Thu quỹ, ứng tiền cho các ban, trả tiền tại khu","Chốt sổ chi tiêu sau chuyến"]},
-  {n:"🍳 Ban ẩm thực · 7 người", cls:"t2", lead:"Cao Thị Minh Thủy", mem:["Cao Thị Minh Thủy","Dương Xuân Thắng","Trần Thị Thanh Thoại","Lý Bích Ngọc","Bùi Bảo Anh","Nguyễn Hải Long","Bùi Văn Kiên"], job:["Lên danh sách, đi chợ sáng 06/11, ướp thịt tại nhà","16h30 sơ chế, bày bàn, pha nước chấm","Chia đồ ăn theo đợt nướng","Tăng cường: Hải Long, Kiên"]},
+  {n:"🍳 Ban ẩm thực · 7 người", cls:"t2", lead:"Cao Thị Minh Thủy", mem:["Cao Thị Minh Thủy","Dương Xuân Thắng","Trần Thị Thanh Thoại","Lý Bích Ngọc","Bùi Bảo Anh","Lê Hải Long","Bùi Văn Kiên"], job:["Lên danh sách, đi chợ sáng 06/11, ướp thịt tại nhà","16h30 sơ chế, bày bàn, pha nước chấm","Chia đồ ăn theo đợt nướng","Tăng cường: Hải Long, Kiên"]},
   {n:"🔥 Ban nướng & lửa · 4 người", cls:"t3", lead:"Nguyễn Trung Long", mem:["Nguyễn Trung Long","Nguyễn Đức Thắng","Phạm Quang Tùng","Bùi Văn Dương"], job:["Mua xiên, giấy bạc, găng tay (khu tặng bếp nướng to, có than)","Nhóm than 17h30, nướng 18h–20h (vừa nướng vừa ăn)","Trông lửa trại từ 20h","Tăng cường: Dương"]},
   {n:"🎤 Ban văn nghệ · 3 người", cls:"t4", lead:"Bùi Văn Kiên", mem:["Bùi Văn Kiên","Bùi Văn Dương","Dương Xuân Thắng"], job:["Nhận loa kéo khu tặng, danh sách bài hát","MC, karaoke 20h–21h45","Kiên quản trò ma sói","Tăng cường: Xuân Thắng"]},
   {n:"🎲 Ban trò chơi · 5 người", cls:"t8", lead:"Dương Huy Hoàng", mem:["Dương Huy Hoàng","Nguyễn Trung Long","Phạm Quang Tùng","Nguyễn Đức Thắng","Dương Xuân Thắng"], job:["Chuẩn bị đồ teambuilding, 2 bộ Uno, 1 bộ bài","14h30 bày dụng cụ, đánh dấu sân","Hoàng quản trò toàn bộ teambuilding; trọng tài: chị Thủy","Uno, bài buổi tối tự chơi"]},
-  {n:"📸 Ban truyền thông · 4 người", cls:"t7", lead:"Nguyễn Hải Long", mem:["Nguyễn Hải Long","Lý Bích Ngọc","Nguyễn Trung Long","Dương Huy Hoàng"], job:["Ảnh tập thể lúc hoàng hôn 17h","Ảnh, video kỷ niệm; ảnh buổi BBQ, clip buổi nướng, lửa trại","Gom vào 1 album chung, đăng nhóm Zalo","Tăng cường: Trung Long, Hoàng"]},
+  {n:"📸 Ban truyền thông · 4 người", cls:"t7", lead:"Lê Hải Long", mem:["Lê Hải Long","Lý Bích Ngọc","Nguyễn Trung Long","Dương Huy Hoàng"], job:["Ảnh tập thể lúc hoàng hôn 17h","Ảnh, video kỷ niệm; ảnh buổi BBQ, clip buổi nướng, lửa trại","Gom vào 1 album chung, đăng nhóm Zalo","Tăng cường: Trung Long, Hoàng"]},
   {n:"🩹 Ban y tế", cls:"t6", mem:["Trần Thị Thanh Thoại"], job:["Thuốc hạ sốt, đau bụng, say xe, dị ứng","Băng cá nhân, dầu gió, chống muỗi"]},
   {n:"🚗 Lái xe", cls:"t5", mem:["Cao Thị Minh Thủy","Bùi Văn Kiên","Dương Huy Hoàng"], job:["Đổ xăng (Thủy, Kiên) / sạc đầy xe điện (Hoàng) trước 12h30","Chở người và đồ"]}
 ];
 const CARS = [
   {n:"Xe 1 – chị Thủy", e:"🚗", d:"Cao Thị Minh Thủy", p:["Trần Thị Thanh Thoại","Bùi Bảo Anh","Lý Bích Ngọc"], cargo:"🧊 Thùng đá, đồ tươi, gia vị"},
-  {n:"Xe 2 – anh Kiên", e:"🚙", d:"Bùi Văn Kiên", p:["Nguyễn Hải Long","Bùi Văn Dương","Phạm Quang Tùng"], cargo:"🎲 Uno, bài, đồ uống, đồ ăn vặt"},
+  {n:"Xe 2 – anh Kiên", e:"🚙", d:"Bùi Văn Kiên", p:["Lê Hải Long","Bùi Văn Dương","Phạm Quang Tùng"], cargo:"🎲 Uno, bài, đồ uống, đồ ăn vặt"},
   {n:"Xe 3 – Hoàng", e:"🚕", d:"Dương Huy Hoàng", p:["Dương Xuân Thắng","Nguyễn Đức Thắng","Nguyễn Trung Long"], cargo:"🍖 Thịt đã ướp, đồ nướng, nước lọc, bia"}
 ];
 const DAY1 = [
@@ -754,6 +834,49 @@ const GAMES = [
    safe:"Bắt buộc mặc áo phao suốt thời gian tham gia. Có cứu hộ hoặc xuồng của khu túc trực trên hồ. Ai không biết bơi, sức khỏe không đảm bảo thì báo trước để thay bằng người dự bị. Gió lớn, mưa giông hoặc cứu hộ yêu cầu thì tạm dừng, hoãn."}
 ];
 const MENUS = [["set-bbq.jpg","Set BBQ 250k/300k"],["menu-lau.jpg","Menu lẩu"],["met-lon-man.jpg","Mẹt lợn mán"],["met-ga-doi.jpg","Mẹt gà đồi"],["met-de.jpg","Mẹt dê đủ món"],["met-thap-cam.jpg","Mẹt thập cẩm"],["canh-mon-man.jpg","Canh & món mặn"],["rau-theo-mua.jpg","Rau theo mùa"],["an-sang.jpg","Ăn sáng"],["bang-gia-2026.jpg","Bảng giá lưu trú 2026"]];
+/* Sao kê quỹ, chép từ saoke/saoke.xlsx (ảnh gốc ở saoke/, bản đã che số tài khoản ở web/images/saoke/).
+   [thời gian, "thu"/"chi", người thực hiện, nội dung, số tiền (đồng), ảnh minh chứng (không có .jpg), chi tiết]
+   Chi tiết: items = [tên món, số lượng, thành tiền] chép từ hóa đơn · off = chiết khấu · note = ghi chú */
+const SAOKE = [
+  ["2026-10-29 10:30","thu","Dương Huy Hoàng","Đóng quỹ",1000000],
+  ["2026-10-29 10:35","thu","Dương Xuân Thắng","Đóng quỹ",1000000],
+  ["2026-10-29 10:43","thu","Nguyễn Trung Long","Đóng quỹ",1000000],
+  ["2026-10-29 10:49","thu","Bùi Văn Kiên","Đóng quỹ",1000000],
+  ["2026-10-29 11:29","thu","Lê Hải Long","Đóng quỹ",1000000],
+  ["2026-10-29 15:01","thu","Bùi Văn Dương","Đóng quỹ",1000000],
+  ["2026-10-29 15:02","thu","Trần Thị Thanh Thoại","Đóng quỹ",1000000],
+  ["2026-10-29 15:02","thu","Lý Bích Ngọc","Đóng quỹ",1000000],
+  ["2026-10-29 15:04","thu","Bùi Bảo Anh","Đóng quỹ",1000000],
+  ["2026-10-29 15:09","thu","Phạm Quang Tùng","Đóng quỹ",1000000],
+  ["2026-10-29 15:16","chi","Dương Huy Hoàng","Đặt cọc Villa view hồ 12 người ngày 06/11",2000000,"tpbank_291026_1516",
+    {note:"Chuyển khoản TPBank tiền cọc villa cho khu Suối Mơ. Phần còn lại trả khi ra về (khoản 07/11)."}],
+  ["2026-10-29 16:41","thu","Nguyễn Đức Thắng","Đóng quỹ",1000000],
+  ["2026-11-03 12:19","chi","Phạm Quang Tùng","Mua xiên tre, giấy bạc, găng tay",90000,"thanhdo_031126_1219",
+    {items:[["Màng nhôm bọc thực phẩm 30cm × 5m","1",27000],["Que xiên thịt 20cm","2",14000],["Xiên tăm 100 que 15cm","2",26000],["Găng tay TPE size L","1",23000]],
+     note:"Siêu thị Thành Đô. Hóa đơn in 193.800đ có cả đồ riêng (đã che trên ảnh); quỹ chỉ trả 4 món của đoàn."}],
+  ["2026-11-04 21:00","chi","Dương Huy Hoàng","Mua 02 thùng bia Sài Gòn và bơ Meizan tại Siêu thị TMART Cầu Diễn",554500,"tmart_041126_2100",
+    {items:[["Bơ Meizan 200g","1",14500],["Bia Sài Gòn Lager lon 330ml (2 thùng)","48 lon",585600]],off:45600}],
+  ["2026-11-05 09:18","chi","Dương Huy Hoàng","Mua gia vị, kim chi, xúc xích, cá viên tại Siêu thị Thành Đô Hồ Tùng Mậu",444150,"thanhdo_051126_0918",
+    {items:[["Kim chi cải thảo cắt lát Bibigo Ông Kim's 500g","2",82000],["Cà tím dài","820 g",9840],["Sữa đặc Ông Thọ tuýp 165g","1",19500],["Xốt muối ớt đỏ Chinsu 200g","2",45000],["Xốt Barona thịt nướng ngũ vị 80g","1",11700],["Xốt Barona nướng BBQ 80g","1",11700],["Xốt ướp thịt Hàn Quốc vị cay Cholimex 90g","2",25000],["Xốt ướp thịt nướng BBQ Otoki 80g","1",10200],["Sốt ướp thịt Hàn Quốc truyền thống O'Food 80g","1",10000],["Xốt Barona thịt nướng sả 80g","1",11700],["Xốt xá xíu Cholimex 70g","1",8200],["Sốt ướp thịt nướng Cholimex 70g","2",15000],["Xốt ướp thịt Hàn Quốc truyền thống Cholimex 90g","2",23000],["Xốt chấm thịt nướng Cholimex 270ml","2",55600],["Tương ớt Vifon 500g","1",17200],["Cá viên LC Foods 500g","1",32000],["Xúc xích Vealz Red 500g","1",42500],["Đậu bắp","315 g",9450],["Cải canh","286 g",4560]]}],
+  ["2026-11-05 16:41","chi","Bùi Bảo Anh","Mua thùng quýt",100000,"mbbank_051126_1641",
+    {note:"Chuyển khoản MB Bank từ tài khoản của Bảo Anh."}],
+  ["2026-11-05 17:22","chi","Bùi Bảo Anh","Mua bim bim, bánh kẹo",227952,"mbbank_051126_1722",
+    {note:"Chuyển khoản MB Bank từ tài khoản của Bảo Anh."}],
+  ["2026-11-05 18:33","thu","Cao Thị Minh Thủy","Đóng quỹ",1000000],
+  ["2026-11-06 06:00","chi","Dương Huy Hoàng","Mua thịt lợn, thịt bò, thịt gà, rau, ngô, dưa chuột",1282000,"dicho_061126_0600",
+    {items:[["Phi lê bò","1,1",286000],["Thăn bò","0,5",125000],["Nạc vai","1,2",180000],["Ba chỉ","1,1",165000],["Nầm","1,04",156000],["Má đùi gà","1,1",88000],["Lạp sườn nướng đá","1",85000],["Ba chỉ bò","1",95000],["Bột ớt","1",10000],["Rau cải","2",10000],["Ngô","3",24000],["Sả","1",2000],["Xà lách","1,4",28000],["Dưa chuột","2",28000]],
+     note:"Bảng kê tự lập khi đi chợ sáng 06/11."}],
+  ["2026-11-06 06:15","chi","Dương Huy Hoàng","Khay nhựa đế đen có nắp đựng đồ ăn, kéo",55000],
+  ["2026-11-06 10:17","chi","Dương Huy Hoàng","Mua nước lọc, coca, bánh kẹo, mì ly, nấm kim châm tại Siêu thị TMART Cầu Diễn",668900,"tmart_061126_1012",
+    {items:[["Bánh Oreo chocolate thỏi 61,25g","2",17000],["Nước khoáng Lavie 500ml","24 chai",96000],["Bột mì Meizan 500g","1",10500],["Coca-Cola lon 320ml","13 lon",117000],["Bánh gạo Ichi 180g","1",24500],["Khoai tây Poca vị sườn nướng 90g","2",44000],["Bánh xốp Sanghai jumbo vị sữa 240g","1",40000],["Bánh gạo AN vị tảo biển","1",16500],["Mì ly Modern lẩu Thái tôm 65g","15 ly",133500],["Xúc xích Red tiệt trùng 200g","3",61500],["Cốc giấy 210ml (40 cái)","1",29900],["Khăn rút COMOS 300 tờ","4",36000],["Snack Ostar tôm hùm 78g","2 + 1 tặng",44000],["Nấm kim châm Sao Việt 150g","2 + 2 tặng",19000]],off:20500}],
+  ["2026-11-06 10:20","chi","Dương Huy Hoàng","Mua thêm 01 thùng bia Sài Gòn",270000,"tmart_061126_1020",
+    {items:[["Bia Sài Gòn Lager lon 330ml (1 thùng)","24 lon",292800]],off:22800,note:"Siêu thị TMART Cầu Diễn."}],
+  ["2026-11-06 11:20","chi","Dương Huy Hoàng","Mua 04 tập lá mè tại Siêu thị AEON Xuân Thủy",40000],
+  ["2026-11-06 11:22","chi","Dương Huy Hoàng","Mua 02 bánh mì dài tại Siêu thị AEON Xuân Thủy",19600],
+  ["2026-11-06 14:40","chi","Dương Huy Hoàng","Thuê trọn gói xe điện di chuyển nội khu (30.000đ/người)",390000,"tpbank_061126_1440",
+    {note:"Chuyển khoản TPBank theo mã QR của xe điện."}],
+  ["2026-11-07 13:00","chi","Dương Huy Hoàng","Thanh toán toàn bộ chi phí tại KDL Suối Mơ (đã trừ 2.000.000đ tiền cọc)",6445000]
+];
 
 /* ================= HÀM TIỆN ÍCH ================= */
 const $ = s => document.querySelector(s);
@@ -860,7 +983,8 @@ function init(){
     b.outerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${b.dataset.id}?autoplay=1" title="${b.getAttribute('aria-label')}" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
   }));
   $('#lb').addEventListener('click', () => $('#lb').classList.remove('on'));
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') $('#lb').classList.remove('on'); });
+  // Esc đóng ảnh phóng to trước; hộp chi tiết sao kê (nếu đang mở) đóng ở lần bấm sau
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && $('#lb').classList.contains('on')) { $('#lb').classList.remove('on'); e.stopImmediatePropagation(); } });
 
   // Ngân sách
   const bars = (el, arr) => {
@@ -903,6 +1027,94 @@ function init(){
   bf.addEventListener('input', render);
   render();
   setTimeout(() => grow($('#ngansach')), 300);
+
+  // Sao kê: xếp theo thời gian, tính số dư sau từng giao dịch
+  const vnd = n => (n < 0 ? '−' : '') + fmt(Math.abs(n)) + 'đ';
+  const WD = ['Chủ nhật','Thứ 2','Thứ 3','Thứ 4','Thứ 5','Thứ 6','Thứ 7'];
+  const dayLbl = d => { const [y,m,dd] = d.split('-').map(Number); return `${WD[new Date(y,m-1,dd).getDay()]} · ${d.slice(8)}/${d.slice(5,7)}/${y}`; };
+  const isBank = p => /^(tpbank|mbbank)/.test(p || '');
+  const tx = SAOKE.map(([t,type,who,what,amt,pic,det],i) => ({i,t,type,who,what,amt,pic,det:det||{},day:t.slice(0,10),hm:t.slice(11)}))
+    .sort((a,b) => a.t < b.t ? -1 : a.t > b.t ? 1 : a.i - b.i);
+  let bal = 0;
+  tx.forEach(x => { bal += x.type === 'thu' ? x.amt : -x.amt; x.bal = bal; });
+  const sIn = tx.filter(x => x.type === 'thu'), sOut = tx.filter(x => x.type === 'chi');
+  const totIn = sIn.reduce((s,x)=>s+x.amt,0), totOut = sOut.reduce((s,x)=>s+x.amt,0);
+  const withPic = sOut.filter(x => x.pic).length;
+  const names = Object.keys(PEOPLE), paid = names.filter(n => sIn.some(x => x.who === n)), unpaid = names.filter(n => !paid.includes(n));
+
+  $('#skSum').innerHTML = `
+    <div class="card stat in reveal"><div class="ico">📥</div><b>${vnd(totIn)}</b><span>Tổng thu · ${paid.length}/${names.length} thành viên đã đóng quỹ</span></div>
+    <div class="card stat out reveal"><div class="ico">📤</div><b>${vnd(totOut)}</b><span>Tổng chi · ${sOut.length} khoản, ${withPic} khoản có hóa đơn hoặc xác nhận chuyển khoản</span></div>
+    <div class="card stat reveal ${bal < 0 ? 'out danger' : 'in'}"><div class="ico">${bal < 0 ? '⚠️' : '✅'}</div><b>${vnd(bal)}</b><span>${bal < 0 ? `Quỹ còn lại: chi vượt thu, chia đều 12 người ≈ ${vnd(Math.ceil(-bal/12))}/người` : 'Quỹ còn lại'}</span></div>`;
+
+  const skIcon = x => x.type === 'thu'
+    ? `<span class="sk-ic" style="background:${(PEOPLE[x.who] || {}).c || 'var(--leaf)'}" aria-hidden="true">${ini(x.who)}</span>`
+    : x.pic ? `<span class="sk-ic"><img src="images/saoke/thumb/${x.pic}.jpg" alt="" loading="lazy" decoding="async"></span>`
+    : `<span class="sk-ic none" aria-hidden="true">🧾</span>`;
+  const skRow = (x, showBal) => {
+    const k = tx.indexOf(x);
+    const amt = `<span class="sk-amt">${x.type === 'thu' ? '+' : '−'}${vnd(x.amt)}${showBal ? `<small>Dư ${vnd(x.bal)}</small>` : ''}</span>`;
+    if (x.type === 'thu') return `<div class="sk-row in">${skIcon(x)}<span class="sk-main"><b>${x.who}</b><small>${x.hm} · ${x.what}</small></span>${amt}</div>`;
+    const proof = x.pic ? (isBank(x.pic) ? '🏦 Chuyển khoản' : '🧾 Hóa đơn') : '<span class="sk-miss">Chưa có ảnh</span>';
+    return `<button class="sk-row out" data-k="${k}">${skIcon(x)}<span class="sk-main"><b>${x.what}</b><small>${x.hm} · ${x.who} · ${proof}</small></span>${amt}<span class="sk-go" aria-hidden="true">›</span></button>`;
+  };
+  const skList = (arr, head, showBal) => {
+    let h = `<div class="sk-list"><div class="sk-head">${head}</div>`, d = '';
+    arr.forEach(x => { if (x.day !== d) { d = x.day; h += `<div class="sk-day">${dayLbl(d)}</div>`; } h += skRow(x, showBal); });
+    return h + '</div>';
+  };
+  $('#skAll').innerHTML = skList(tx, `<span><b>${tx.length}</b> giao dịch, từ cũ đến mới</span><span>Số nhỏ bên phải: quỹ còn lại sau giao dịch</span>`, true);
+  $('#skIn').innerHTML = skList(sIn, `<span><b>${paid.length}/${names.length}</b> thành viên đã đóng quỹ${unpaid.length ? ` · chưa đóng: ${unpaid.join(', ')}` : ''}</span><span>Tổng thu <b>${vnd(totIn)}</b></span>`);
+  $('#skOut').innerHTML = skList(sOut, `<span><b>${sOut.length}</b> khoản chi · ${withPic} khoản có ảnh · bấm để xem chi tiết</span><span>Tổng chi <b>${vnd(totOut)}</b></span>`);
+
+  // Hộp chi tiết một khoản chi; ‹ › chuyển giữa các khoản chi theo thời gian
+  const skd = $('#skd'), skBox = skd.querySelector('.box'), skNav = sOut.map(x => tx.indexOf(x));
+  let skAt = -1, skBack = null;
+  const openSk = k => {
+    const x = tx[k], d = x.det, kind = isBank(x.pic) ? 'Xác nhận chuyển khoản' : 'Hóa đơn';
+    skAt = skNav.indexOf(k);
+    let items = '';
+    if (d.items) {
+      const sub = d.items.reduce((s,it)=>s+it[2],0);
+      items = `<div class="tbl"><table><tr><th>Món</th><th class="num">SL</th><th class="num">Thành tiền</th></tr>`
+        + d.items.map(([n,q,v]) => `<tr><td>${n}</td><td class="num">${q}</td><td class="num">${fmt(v)}</td></tr>`).join('')
+        + (d.off ? `<tr><td colspan="2">Cộng tiền hàng</td><td class="num">${fmt(sub)}</td></tr><tr><td colspan="2">Chiết khấu của siêu thị</td><td class="num">−${fmt(d.off)}</td></tr>` : '')
+        + `<tr class="total"><td colspan="2">Quỹ chi</td><td class="num">${fmt(sub - (d.off || 0))}</td></tr></table></div>`;
+    }
+    $('#skBody').innerHTML = `<span class="pill red">📤 Khoản chi</span>
+      <h3>${x.what}</h3>
+      <div class="amt out">−${vnd(x.amt)}</div>
+      <div class="dl"><b>Thời gian</b><div>${x.hm} · ${dayLbl(x.day)}</div><b>Người thực hiện</b><div>${x.who}</div><b>Quỹ còn lại</b><div>${vnd(x.bal)}</div></div>
+      ${d.note ? `<p class="note">${d.note}</p>` : ''}
+      ${items}
+      ${x.pic ? `<button class="pic" data-src="images/saoke/${x.pic}.jpg" aria-label="Phóng to ảnh"><img src="images/saoke/${x.pic}.jpg" alt="${kind}: ${x.what}" decoding="async"></button><p class="note" style="text-align:center;margin:6px 0 0">${kind} · bấm vào ảnh để phóng to</p>`
+        : `<div class="nopic">🧾 Chưa có ảnh hóa đơn hoặc xác nhận chuyển khoản cho khoản này.</div>`}`;
+    $('#skPos').textContent = `Khoản chi ${skAt + 1}/${skNav.length}`;
+    skd.querySelector('[data-go="-1"]').disabled = skAt <= 0;
+    skd.querySelector('[data-go="1"]').disabled = skAt >= skNav.length - 1;
+    if (!skd.classList.contains('on')) { skBack = document.activeElement; skd.classList.add('on'); document.body.style.overflow = 'hidden'; }
+    skBox.scrollTop = 0; skBox.focus({preventScroll:true});
+  };
+  const closeSk = () => {
+    if (!skd.classList.contains('on')) return;
+    skd.classList.remove('on'); document.body.style.overflow = '';
+    if (skBack) skBack.focus({preventScroll:true});
+  };
+  const stepSk = v => { const k = skNav[skAt + v]; if (k !== undefined) openSk(k); };
+  $('#saoke').addEventListener('click', e => { const b = e.target.closest('button.sk-row'); if (b) openSk(+b.dataset.k); });
+  skd.addEventListener('click', e => {
+    const g = e.target.closest('[data-go]');
+    if (g) { +g.dataset.go ? stepSk(+g.dataset.go) : closeSk(); return; }
+    const p = e.target.closest('.pic');
+    if (p) { const img = $('#lb img'); img.src = p.dataset.src; img.alt = p.querySelector('img').alt; $('#lb').classList.add('on'); return; }
+    if (e.target === skd) closeSk();
+  });
+  document.addEventListener('keydown', e => {
+    if (!skd.classList.contains('on') || $('#lb').classList.contains('on')) return;
+    if (e.key === 'Escape') closeSk();
+    else if (e.key === 'ArrowLeft') stepSk(-1);
+    else if (e.key === 'ArrowRight') stepSk(1);
+  });
 
   // Mốc chuẩn bị
   $('#milestones').innerHTML = MILE.map(([d,t]) => `<b>${d}</b><div>${t}</div>`).join('');

@@ -8,6 +8,7 @@
 | `sw.js` | Lưu sẵn trang trên điện thoại để xem được khi mất sóng |
 | `images/` | Ảnh thực đơn và bảng giá Suối Mơ (ảnh gốc, mở khi phóng to) |
 | `images/thumb/` | Ảnh thu nhỏ cho thư viện thực đơn, tải nhanh hơn |
+| `images/saoke/` | Ảnh hóa đơn, xác nhận chuyển khoản cho mục Sao kê (đã che số tài khoản cá nhân); `thumb/` là ảnh nhỏ |
 
 ## Đưa lên GitHub Pages
 1. Vào github.com → **New repository** → đặt tên, ví dụ `bavi2026`. Chọn **Public** (tài khoản miễn phí chỉ bật được Pages cho repo public).
