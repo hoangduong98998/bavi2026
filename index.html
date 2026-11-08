@@ -218,6 +218,9 @@ tr.grp td{background:#eef6f1;font-weight:800;color:var(--forest)}
 .sk-sum .stat b{font-size:26px;line-height:1.2;margin-bottom:2px}
 .sk-sum .in b{color:#2f7a4f}
 .sk-sum .out b{color:#b03a2e}
+#skSplit .card{margin-bottom:24px}
+.sk-calc{font-size:17px;margin-bottom:4px}
+.sk-calc b{color:#b03a2e;font-size:20px}
 .sk-list{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff;box-shadow:var(--shadow)}
 .sk-head{display:flex;justify-content:space-between;gap:4px 14px;flex-wrap:wrap;padding:12px 16px;background:#f3f7f4;font-size:14px;color:var(--muted)}
 .sk-head b{color:var(--forest)}
@@ -611,6 +614,7 @@ footer button{margin-top:10px}
     <h2 class="reveal">Sổ thu chi của quỹ</h2>
     <p class="lead reveal">Mọi khoản thu, chi của chuyến đi, xếp theo thời gian. Bấm vào một khoản chi để xem hóa đơn, xác nhận chuyển khoản và từng món đã mua. Số tài khoản cá nhân trên ảnh đã được che.</p>
     <div class="grid g3 sk-sum" id="skSum"></div>
+    <div id="skSplit"></div>
     <div class="tabs" data-group="sk">
       <button class="tab on" data-pane="skAll">📋 Tất cả</button>
       <button class="tab" data-pane="skIn">📥 Thu</button>
@@ -875,8 +879,13 @@ const SAOKE = [
   ["2026-11-06 11:22","chi","Dương Huy Hoàng","Mua 02 bánh mì dài tại Siêu thị AEON Xuân Thủy",19600],
   ["2026-11-06 14:40","chi","Dương Huy Hoàng","Thuê trọn gói xe điện di chuyển nội khu (30.000đ/người)",390000,"tpbank_061126_1440",
     {note:"Chuyển khoản TPBank theo mã QR của xe điện."}],
-  ["2026-11-07 13:00","chi","Dương Huy Hoàng","Thanh toán toàn bộ chi phí tại KDL Suối Mơ (đã trừ 2.000.000đ tiền cọc)",6445000]
+  ["2026-11-07 13:00","chi","Dương Huy Hoàng","Thanh toán toàn bộ chi phí tại KDL Suối Mơ (đã trừ 2.000.000đ tiền cọc)",6445000,"hoadon_071126_1300",
+    {items:[["01 căn villa","1",3100000],["Phụ thu 4 người","4",1000000],["Phụ thu dọn dẹp tối thứ 6","1",250000],["Lửa trại tối thứ 6","1",600000],["Cà phê gói","7",35000],["Túi đá","2",50000],["Nước lọc","12",120000],["Mì tôm hộp","6",90000],["Lẩu cá tầm","2",3000000],["Nước Dasani (thùng)","1",200000]],
+     off:2000000, offLbl:"Trừ tiền cọc đã chuyển ngày 29/10",
+     note:"Hóa đơn của khu Suối Mơ, tổng 8.445.000đ, trả tiền mặt. Đã cọc 2.000.000đ ngày 29/10 nên lần này chi 6.445.000đ."}]
 ];
+/* Phần chi vượt quỹ chia cho những người KHÔNG có tên trong who */
+const SK_FREE = {who:["Bùi Văn Kiên","Cao Thị Minh Thủy"], why:"Anh Kiên và chị Thủy lái xe nhưng không lấy tiền xăng, nên phần vượt quỹ chỉ chia cho 10 người còn lại."};
 
 /* ================= HÀM TIỆN ÍCH ================= */
 const $ = s => document.querySelector(s);
@@ -1041,11 +1050,17 @@ function init(){
   const totIn = sIn.reduce((s,x)=>s+x.amt,0), totOut = sOut.reduce((s,x)=>s+x.amt,0);
   const withPic = sOut.filter(x => x.pic).length;
   const names = Object.keys(PEOPLE), paid = names.filter(n => sIn.some(x => x.who === n)), unpaid = names.filter(n => !paid.includes(n));
+  const payers = names.filter(n => !SK_FREE.who.includes(n)), perHead = Math.ceil(Math.max(0, -bal) / payers.length);
 
   $('#skSum').innerHTML = `
     <div class="card stat in reveal"><div class="ico">📥</div><b>${vnd(totIn)}</b><span>Tổng thu · ${paid.length}/${names.length} thành viên đã đóng quỹ</span></div>
     <div class="card stat out reveal"><div class="ico">📤</div><b>${vnd(totOut)}</b><span>Tổng chi · ${sOut.length} khoản, ${withPic} khoản có hóa đơn hoặc xác nhận chuyển khoản</span></div>
-    <div class="card stat reveal ${bal < 0 ? 'out danger' : 'in'}"><div class="ico">${bal < 0 ? '⚠️' : '✅'}</div><b>${vnd(bal)}</b><span>${bal < 0 ? `Quỹ còn lại: chi vượt thu, chia đều 12 người ≈ ${vnd(Math.ceil(-bal/12))}/người` : 'Quỹ còn lại'}</span></div>`;
+    <div class="card stat reveal ${bal < 0 ? 'out danger' : 'in'}"><div class="ico">${bal < 0 ? '⚠️' : '✅'}</div><b>${vnd(bal)}</b><span>${bal < 0 ? `Quỹ còn lại: chi vượt quỹ, chia cho ${payers.length} người ≈ ${vnd(perHead)}/người` : 'Quỹ còn lại'}</span></div>`;
+  // Chia phần vượt quỹ
+  $('#skSplit').innerHTML = bal < 0 ? `<div class="card warn reveal"><h3>💸 Chia phần vượt quỹ</h3>
+    <p class="note" style="margin:0 0 10px">${SK_FREE.why}</p>
+    <div class="sk-calc"><b>${vnd(-bal)}</b> ÷ ${payers.length} người ≈ <b>${vnd(perHead)}/người</b></div>
+    <div class="people">${payers.map(n => chip(n)).join('')}</div></div>` : '';
 
   const skIcon = x => x.type === 'thu'
     ? `<span class="sk-ic" style="background:${(PEOPLE[x.who] || {}).c || 'var(--leaf)'}" aria-hidden="true">${ini(x.who)}</span>`
@@ -1078,7 +1093,7 @@ function init(){
       const sub = d.items.reduce((s,it)=>s+it[2],0);
       items = `<div class="tbl"><table><tr><th>Món</th><th class="num">SL</th><th class="num">Thành tiền</th></tr>`
         + d.items.map(([n,q,v]) => `<tr><td>${n}</td><td class="num">${q}</td><td class="num">${fmt(v)}</td></tr>`).join('')
-        + (d.off ? `<tr><td colspan="2">Cộng tiền hàng</td><td class="num">${fmt(sub)}</td></tr><tr><td colspan="2">Chiết khấu của siêu thị</td><td class="num">−${fmt(d.off)}</td></tr>` : '')
+        + (d.off ? `<tr><td colspan="2">Cộng tiền hàng</td><td class="num">${fmt(sub)}</td></tr><tr><td colspan="2">${d.offLbl || 'Chiết khấu của siêu thị'}</td><td class="num">−${fmt(d.off)}</td></tr>` : '')
         + `<tr class="total"><td colspan="2">Quỹ chi</td><td class="num">${fmt(sub - (d.off || 0))}</td></tr></table></div>`;
     }
     $('#skBody').innerHTML = `<span class="pill red">📤 Khoản chi</span>
